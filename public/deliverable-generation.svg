@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500" height="300" viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="500" height="300" fill="#1F1F1F"/>
+  
+  <!-- Left side: Research Data -->
+  <g transform="translate(30, 100)">
+    <rect width="100" height="130" rx="5" fill="#333333" stroke="#E1AD01" stroke-width="2"/>
+    <rect x="0" y="0" width="100" height="25" rx="5" fill="#E1AD01"/>
+    
+    <!-- Data visualization on source -->
+    <g transform="translate(10, 35)">
+      <!-- Bar chart -->
+      <rect x="5" y="20" width="10" height="40" fill="#E1AD01" opacity="0.7"/>
+      <rect x="20" y="10" width="10" height="50" fill="#E1AD01" opacity="0.8"/>
+      <rect x="35" y="15" width="10" height="45" fill="#E1AD01" opacity="0.7"/>
+      <rect x="50" y="5" width="10" height="55" fill="#E1AD01"/>
+      <rect x="65" y="25" width="10" height="35" fill="#E1AD01" opacity="0.9"/>
+      
+      <!-- Chart grid lines -->
+      <line x1="0" y1="60" x2="80" y2="60" stroke="#666666" stroke-width="1"/>
+      <line x1="0" y1="45" x2="80" y2="45" stroke="#666666" stroke-width="0.5" stroke-dasharray="2,2"/>
+      <line x1="0" y1="30" x2="80" y2="30" stroke="#666666" stroke-width="0.5" stroke-dasharray="2,2"/>
+      <line x1="0" y1="15" x2="80" y2="15" stroke="#666666" stroke-width="0.5" stroke-dasharray="2,2"/>
+      
+      <!-- Data table representation -->
+      <rect x="5" y="70" width="70" height="10" fill="#555555"/>
+      <rect x="5" y="80" width="70" height="8" fill="#444444"/>
+      <rect x="5" y="88" width="70" height="8" fill="#555555"/>
+      <rect x="5" y="96" width="70" height="8" fill="#444444"/>
+    </g>
+  </g>
+  
+  <!-- Center: Processing Cloud with animation -->
+  <g transform="translate(170, 130)">
+    <g>
+      <!-- Outer circle -->
+      <circle cx="60" cy="40" r="35" fill="#282828" stroke="#2EB8B8" stroke-width="2"/>
+      
+      <!-- Cloud outline -->
+      <path d="M40 25 C30 25, 25 35, 30 45 C20 50, 20 65, 30 70 C35 80, 50 80, 60 75 C70 85, 90 80, 95 70 C105 65, 105 50, 95 45 C100 35, 95 25, 85 25 C80 15, 65 15, 60 20 C55 15, 45 15, 40 25"
+        fill="#282828" stroke="#2EB8B8" stroke-width="2" stroke-linejoin="round"/>
+      
+      <!-- Processing icons -->
+      <g>
+        <animateTransform 
+          attributeName="transform" 
+          attributeType="XML" 
+          type="rotate" 
+          from="0 60 40" 
+          to="360 60 40" 
+          dur="30s" 
+          repeatCount="indefinite"/>
+    
+        <!-- Gear icon -->
+        <circle cx="45" cy="35" r="8" fill="none" stroke="#2EB8B8" stroke-width="1.5"/>
+        <path d="M45 27 L45 30 M45 40 L45 43 M37 35 L40 35 M50 35 L53 35" 
+              stroke="#2EB8B8" stroke-width="1.5"/>
+          
+        <!-- Code symbol -->
+        <text x="70" y="40" font-family="monospace" font-size="12" fill="#2EB8B8">&lt;/&gt;</text>
+        
+        <!-- Chart symbol -->
+        <g transform="translate(55, 55)">
+          <rect x="0" y="0" width="3" height="8" fill="#2EB8B8"/>
+          <rect x="4" y="3" width="3" height="5" fill="#2EB8B8"/>
+          <rect x="8" y="2" width="3" height="6" fill="#2EB8B8"/>
+        </g>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Right side: Three output types -->
+  
+  <!-- 1. Report -->
+  <g transform="translate(340, 80)">
+    <rect width="130" height="45" rx="5" fill="#333333" stroke="#8A2BE2" stroke-width="2">
+      <!-- Subtle pulse animation -->
+      <animate attributeName="stroke-opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="0" y="0" width="130" height="20" rx="5" fill="#8A2BE2"/>
+    
+    <!-- Document lines -->
+    <line x1="10" y1="30" x2="120" y2="30" stroke="#777777" stroke-width="1"/>
+    <line x1="10" y1="38" x2="100" y2="38" stroke="#777777" stroke-width="1"/>
+  </g>
+  
+  <!-- 2. Presentation -->
+  <g transform="translate(340, 140)">
+    <rect width="130" height="45" rx="5" fill="#333333" stroke="#2EB8B8" stroke-width="2">
+      <!-- Subtle pulse animation with delay -->
+      <animate attributeName="stroke-opacity" values="0.7;1;0.7" dur="3s" begin="1s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="0" y="0" width="130" height="20" rx="5" fill="#2EB8B8"/>
+    
+    <!-- Slide elements representation -->
+    <rect x="10" y="25" width="30" height="15" rx="2" fill="#2EB8B8" opacity="0.5"/>
+    <rect x="50" y="25" width="70" height="4" fill="#666666"/>
+    <rect x="50" y="32" width="60" height="4" fill="#666666"/>
+    <rect x="50" y="39" width="50" height="4" fill="#666666"/>
+  </g>
+  
+  <!-- 3. Dashboard -->
+  <g transform="translate(340, 200)">
+    <rect width="130" height="45" rx="5" fill="#333333" stroke="#E1AD01" stroke-width="2">
+      <!-- Subtle pulse animation with longer delay -->
+      <animate attributeName="stroke-opacity" values="0.7;1;0.7" dur="3s" begin="2s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="0" y="0" width="130" height="20" rx="5" fill="#E1AD01"/>
+    
+    <!-- Dashboard elements representation -->
+    <rect x="10" y="25" width="25" height="15" rx="2" fill="#E1AD01" opacity="0.5"/>
+    <rect x="40" y="25" width="25" height="15" rx="2" fill="#E1AD01" opacity="0.7"/>
+    <rect x="70" y="25" width="25" height="15" rx="2" fill="#E1AD01" opacity="0.4"/>
+    <rect x="100" y="25" width="25" height="15" rx="2" fill="#E1AD01" opacity="0.6"/>
+  </g>
+  
+  <!-- Animated connection paths with moving dots -->
+  <!-- Path from Research Data to Processing -->
+  <path d="M130 165 C150 165, 160 165, 170 170" stroke="#E1AD01" stroke-width="1.5" fill="none" stroke-dasharray="5,3"/>
+  <circle r="3" fill="#E1AD01">
+    <animateMotion 
+      path="M130 165 C150 165, 160 165, 170 170" 
+      dur="2s" 
+      repeatCount="indefinite"/>
+  </circle>
+  <circle r="3" fill="#E1AD01">
+    <animateMotion 
+      path="M130 165 C150 165, 160 165, 170 170" 
+      dur="2s"
+      begin="1s"
+      repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Path from Processing to Report -->
+  <path d="M295 145 C315 145, 325 105, 340 105" stroke="#8A2BE2" stroke-width="1.5" fill="none" stroke-dasharray="5,3"/>
+  <circle r="3" fill="#8A2BE2">
+    <animateMotion 
+      path="M295 145 C315 145, 325 105, 340 105" 
+      dur="2s"
+      repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Path from Processing to Presentation -->
+  <path d="M295 170 C315 170, 325 170, 340 170" stroke="#2EB8B8" stroke-width="1.5" fill="none" stroke-dasharray="5,3"/>
+  <circle r="3" fill="#2EB8B8">
+    <animateMotion 
+      path="M295 170 C315 170, 325 170, 340 170" 
+      dur="2.5s"
+      repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Path from Processing to Dashboard -->
+  <path d="M295 180 C315 180, 325 220, 340 220" stroke="#E1AD01" stroke-width="1.5" fill="none" stroke-dasharray="5,3"/>
+  <circle r="3" fill="#E1AD01">
+    <animateMotion 
+      path="M295 180 C315 180, 325 220, 340 220" 
+      dur="3s"
+      repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Floating particles around processing cloud -->
+  <circle cx="240" cy="140" r="2" fill="#2EB8B8">
+    <animate attributeName="opacity" values="0.4;0.8;0.4" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="140;145;140" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="cx" values="240;245;240" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  
+  <circle cx="260" cy="180" r="2" fill="#8A2BE2">
+    <animate attributeName="opacity" values="0.4;0.8;0.4" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="180;175;180" dur="5s" repeatCount="indefinite"/>
+    <animate attributeName="cx" values="260;265;260" dur="5s" repeatCount="indefinite"/>
+  </circle>
+  
+  <circle cx="220" cy="170" r="2" fill="#E1AD01">
+    <animate attributeName="opacity" values="0.4;0.8;0.4" dur="3.5s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="170;165;170" dur="4.5s" repeatCount="indefinite"/>
+    <animate attributeName="cx" values="220;215;220" dur="4.5s" repeatCount="indefinite"/>
+  </circle>
+</svg>

@@ -1,0 +1,40 @@
+<svg viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="200" rx="16" fill="#1F1F1F" />
+  <!-- Microphone -->
+  <g transform="translate(40, 40)">
+    <rect x="35" y="10" width="30" height="60" rx="15" fill="#8A2BE2" />
+    <rect x="45" y="70" width="10" height="20" fill="#8A2BE2" />
+    <line x1="50" y1="90" x2="50" y2="100" stroke="#8A2BE2" stroke-width="2" stroke-linecap="round" />
+    <path d="M30 50 C30 70, 70 70, 70 50" stroke="#8A2BE2" stroke-width="2" fill="none" />
+  </g>
+
+  <!-- Waveform -->
+  <g transform="translate(100, 110)">
+    <rect x="0" y="20" width="4" height="30" fill="#8A2BE2" rx="2" />
+    <rect x="10" y="40" width="4" height="10" fill="#8A2BE2" rx="2" />
+    <rect x="20" y="10" width="4" height="40" fill="#8A2BE2" rx="2" />
+    <rect x="30" y="30" width="4" height="20" fill="#8A2BE2" rx="2" />
+    <rect x="40" y="0" width="4" height="50" fill="#8A2BE2" rx="2" />
+    <rect x="50" y="35" width="4" height="15" fill="#8A2BE2" rx="2" />
+    <rect x="60" y="15" width="4" height="35" fill="#8A2BE2" rx="2" />
+    <rect x="70" y="25" width="4" height="25" fill="#8A2BE2" rx="2" />
+  </g>
+
+  <!-- Chat bubble left -->
+  <g transform="translate(180, 40)">
+    <rect x="0" y="0" width="80" height="40" rx="10" fill="#2E2E2E" />
+    <path d="M20 40 l5 10 l10 -10" fill="#2E2E2E" />
+    <text x="10" y="25" fill="#D1C4E9" font-size="10" font-family="sans-serif">
+      Hello, could you tell me...
+    </text>
+  </g>
+
+  <!-- Chat bubble right -->
+  <g transform="translate(60, 140)">
+    <rect x="0" y="0" width="100" height="40" rx="10" fill="#8A2BE2" />
+    <path d="M80 40 l5 10 l10 -10" fill="#8A2BE2" />
+    <text x="10" y="25" fill="#fff" font-size="10" font-family="sans-serif">
+      Yes — based on my experience at...
+    </text>
+  </g>
+</svg>
