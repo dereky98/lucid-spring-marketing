@@ -1,192 +1,126 @@
-import { motion } from "framer-motion";
-import { BarChart3, Check, FileText, Mic } from "lucide-react";
+import { motion, Variants } from "framer-motion";
 
 interface FeaturesSectionProps {
-  fadeIn: any;
+  fadeIn: Variants;
 }
 
 export default function FeaturesSection({ fadeIn }: FeaturesSectionProps) {
   return (
-    <section className="py-24 bg-gray-900 relative overflow-hidden">
-      {/* Background image with overlay */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="/placeholder.svg?height=1080&width=1920"
-          alt="Modern Building"
-          className="w-full h-full object-cover opacity-20"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-900 via-gray-900/90 to-gray-900"></div>
-      </div>
-
+    <section className="py-24 bg-[#f6f6e9] relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={fadeIn}
-          className="text-center mb-16 max-w-2xl mx-auto"
-        >
-          <h2 className="text-3xl sm:text-4xl font-light mb-4 text-white">
-            Our Intelligent Research Platform
-          </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto font-light">
-            Streamline your financial research and diligence processes with our comprehensive suite
-            of tools.
-          </p>
-        </motion.div>
-
-        {/* Feature 1: Voice Agent Interviews */}
-        <div className="grid md:grid-cols-12 gap-8 items-center mb-24">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          {/* Left Column: Header and Features */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="md:col-span-5 md:col-start-2"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeIn}
+            className="flex flex-col space-y-8"
           >
-            <div className="relative">
-              <div className="absolute -top-6 -left-6 w-full h-full bg-[#8A2BE2]/10 backdrop-blur-sm"></div>
-              <div className="relative bg-gray-800 p-8 shadow-lg border border-[#8A2BE2]/30">
-                <Mic className="h-10 w-10 text-[#8A2BE2] mb-4" />
-                <h3 className="text-2xl font-medium mb-3 text-white">Voice Agent Interviews</h3>
-                <p className="text-gray-300 mb-6">
-                  Our AI-powered voice agents conduct interviews with human-like conversation,
-                  adapting in real-time to participant responses from financial experts.
-                </p>
-                <ul className="space-y-3">
-                  {[
-                    "Natural conversation flow",
-                    "Real-time adaptation",
-                    "Multilingual support",
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start">
-                      <div className="mr-3 mt-1">
-                        <Check className="h-4 w-4 text-[#8A2BE2]" />
-                      </div>
-                      <span className="text-gray-300">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            <h2 className="text-3xl sm:text-4xl font-playfair font-medium mb-6 text-black">
+              Your Research Stack, Finally Unified.
+            </h2>
+
+            {/* Feature 1 */}
+            <div className="bg-[#F4F4F5] p-6 rounded-lg shadow-sm">
+              <h3 className="text-xl font-medium mb-2 text-black">A single pane of glass ...</h3>
+              <p className="text-gray-700">
+                Lucid Spring integrates with any data sources (internal or external) your firm uses,
+                and offers clear transparency to which were used.
+              </p>
+            </div>
+
+            {/* Feature 2 */}
+            <div className="bg-[#F4F4F5] p-6 rounded-lg shadow-sm">
+              <h3 className="text-xl font-medium mb-2 text-black">
+                .. tailored for Private Equity ..
+              </h3>
+              <p className="text-gray-700">
+                Lucid Spring&apos;s proprietary datalake and workflow tools are designed
+                specifically for Private Equity.
+              </p>
+            </div>
+
+            {/* Feature 3 */}
+            <div className="bg-[#F4F4F5] p-6 rounded-lg shadow-sm">
+              <h3 className="text-xl font-medium mb-2 text-black">.. that Works the Way You Do.</h3>
+              <p className="text-gray-700">
+                We don&apos;t offer one-size-fits-all tools. Instead, we partner with your team to
+                customize solutions to meet your unique needs. For some teams thats a turnkey
+                solution - for others, its flexibility to configure each step.
+              </p>
             </div>
           </motion.div>
 
+          {/* Right Column: Diagram */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="md:col-span-5 md:col-start-7"
+            className="flex justify-center items-center"
           >
-            <div className="aspect-video bg-[#8A2BE2]/5 overflow-hidden relative">
-              <img
-                src="/voice-agent.svg"
-                alt="Voice Agent Interface"
-                className="w-full h-full object-cover opacity-70"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent pointer-events-none"></div>
-              <div className="absolute bottom-0 left-0 right-0 p-6">
-                <div className="flex items-center text-white">
-                  <div className="w-3 h-3 bg-[#8A2BE2] rounded-full animate-pulse mr-2"></div>
-                  <p className="text-sm font-medium">Interview in progress</p>
+            <div className="max-w-md w-full">
+              {/* Turn-key Diligence Solution */}
+              <div
+                className="border-2 border-[#4F46E5] rounded-lg p-4 text-center mb-4"
+                style={{ background: "linear-gradient(to right, #C7D2FE, #E0E7FF)" }}
+              >
+                <h3 className="text-[#1E1B4B] font-medium text-lg">Turn-key Diligence Solution</h3>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4 mb-4">
+                {/* Expert engagement tools */}
+                <div
+                  className="border border-[#6366F1] rounded-lg p-4"
+                  style={{
+                    background: "linear-gradient(to right, rgb(172, 155, 249), rgb(199, 192, 245))",
+                  }}
+                >
+                  <h4 className="text-white font-medium text-base mb-2">Expert engagement tools</h4>
+                  <ul className="text-white text-sm space-y-2">
+                    <li>• Fine-tuned voice agents</li>
+                    <li>• Intelligent screening and follow-up calls</li>
+                  </ul>
+                </div>
+
+                {/* Research workflow tools */}
+                <div
+                  className="border border-[#F97316] rounded-lg p-4"
+                  style={{ background: "linear-gradient(to right, #F97316, #FDBA74)" }}
+                >
+                  <h4 className="text-white font-medium text-base mb-2">Research workflow tools</h4>
+                  <ul className="text-white text-sm space-y-2">
+                    <li>• Search all transcripts, across all vendors</li>
+                    <li>• Automated research deliverable generation</li>
+                  </ul>
                 </div>
               </div>
-            </div>
-          </motion.div>
-        </div>
 
-        {/* Feature 2: AI Data Extraction */}
-        <div className="grid md:grid-cols-12 gap-8 items-center mb-24">
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="md:col-span-5 md:col-start-2"
-          >
-            <div className="aspect-video bg-[#2EB8B8]/5 overflow-hidden relative">
-              <img
-                src="/data-extraction.svg"
-                alt="Data Extraction Process"
-                className="w-full h-full object-cover opacity-70"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent pointer-events-none opacity-20"></div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="md:col-span-5 md:col-start-7"
-          >
-            <div className="relative">
-              <div className="absolute -bottom-6 -right-6 w-full h-full bg-[#2EB8B8]/10 backdrop-blur-sm"></div>
-              <div className="relative bg-gray-800 p-8 shadow-lg border border-[#2EB8B8]/30">
-                <FileText className="h-10 w-10 text-[#2EB8B8] mb-4" />
-                <h3 className="text-2xl font-medium mb-3 text-white">Data Aggregation</h3>
-                <p className="text-gray-300 mb-6">
-                  Aggregate primary and secondary data sources under a single pane of glass
-                </p>
-                <ul className="space-y-3">
-                  {["Expert call transcripts", "Data rooms", "Public filings"].map((item, i) => (
-                    <li key={i} className="flex items-start">
-                      <div className="mr-3 mt-1">
-                        <Check className="h-4 w-4 text-[#2EB8B8]" />
-                      </div>
-                      <span className="text-gray-300">{item}</span>
-                    </li>
-                  ))}
-                </ul>
+              {/* Private market data engine */}
+              <div
+                className="border border-[#3B82F6] rounded-lg p-4 text-center mb-4"
+                style={{ background: "linear-gradient(to right, #3B82F6, #93C5FD)" }}
+              >
+                <h3 className="text-white font-medium text-base">Private market data engine</h3>
               </div>
-            </div>
-          </motion.div>
-        </div>
 
-        {/* Feature 3: Deliverable Generation */}
-        <div className="grid md:grid-cols-12 gap-8 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="md:col-span-5 md:col-start-2"
-          >
-            <div className="relative">
-              <div className="absolute -top-6 -left-6 w-full h-full bg-[#E1AD01]/10 backdrop-blur-sm"></div>
-              <div className="relative bg-gray-800 p-8 shadow-lg border border-[#E1AD01]/30">
-                <BarChart3 className="h-10 w-10 text-[#E1AD01] mb-4" />
-                <h3 className="text-2xl font-medium mb-3 text-white">Deliverable Generation</h3>
-                <p className="text-gray-300 mb-6">
-                  Automatically generate professional financial reports, presentations, and
-                  dashboards from your research data.
-                </p>
-                <ul className="space-y-3">
-                  {[
-                    "Customizable templates",
-                    "Interactive dashboards",
-                    "Export to multiple formats",
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start">
-                      <div className="mr-3 mt-1">
-                        <Check className="h-4 w-4 text-[#E1AD01]" />
-                      </div>
-                      <span className="text-gray-300">{item}</span>
-                    </li>
-                  ))}
-                </ul>
+              <div className="grid grid-cols-2 gap-4">
+                {/* Private data enrichment */}
+                <div
+                  className="border border-[#06B6D4] rounded-lg p-4 text-center"
+                  style={{ background: "linear-gradient(to right, #06B6D4, #67E8F9)" }}
+                >
+                  <h4 className="text-white font-medium text-base">Private data enrichment</h4>
+                </div>
+
+                {/* Public data enrichment */}
+                <div
+                  className="border border-[#10B981] rounded-lg p-4 text-center"
+                  style={{ background: "linear-gradient(to right, #10B981, #6EE7B7)" }}
+                >
+                  <h4 className="text-white font-medium text-base">Public data enrichment</h4>
+                </div>
               </div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="md:col-span-5 md:col-start-7"
-          >
-            <div className="aspect-video bg-[#E1AD01]/5 overflow-hidden relative">
-              <img
-                src="/deliverable-generation.svg"
-                alt="Report Generation"
-                className="w-full h-full object-cover opacity-70"
-              />
             </div>
           </motion.div>
         </div>

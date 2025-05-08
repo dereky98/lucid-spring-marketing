@@ -1,27 +1,27 @@
 "use client";
 
-import { useAnimation } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
-import CTASection from "@/components/CTASection";
-import DataEnrichment from "@/components/DataEnrichment";
-import FeaturesSection from "@/components/FeaturesSection";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
+import Testimonials from "@/components/Testimonials";
+import CTASection from "./CTASection";
+import FeaturesSection from "./FeaturesSection";
+import HowItWorks from "./HowItWorks";
+import PrivateByDesign from "./PrivateByDesign";
 
 export default function ClientHome() {
   const [isVisible, setIsVisible] = useState(false);
 
-  // Animation controls (if you need them elsewhere)
-  const fadeControls = useAnimation();
-
   /* ────────── section refs & visibility flags ────────── */
-  const researchRef = useRef<HTMLDivElement>(null);
   const dataRef = useRef<HTMLDivElement>(null);
+  const testimonialsRef = useRef<HTMLDivElement>(null);
+  const privateByDesignRef = useRef<HTMLDivElement>(null);
 
-  const [researchInView, setResearchInView] = useState(false);
   const [dataInView, setDataInView] = useState(false);
+  const [testimonialsInView, setTestimonialsInView] = useState(false);
+  const [privateByDesignInView, setPrivateByDesignInView] = useState(false);
 
   /* ────────── mount / intersection observers ────────── */
   useEffect(() => {
@@ -30,18 +30,21 @@ export default function ClientHome() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.target === researchRef.current) {
-            setResearchInView(entry.isIntersecting);
-          } else if (entry.target === dataRef.current) {
+          if (entry.target === dataRef.current) {
             setDataInView(entry.isIntersecting);
+          } else if (entry.target === testimonialsRef.current) {
+            setTestimonialsInView(entry.isIntersecting);
+          } else if (entry.target === privateByDesignRef.current) {
+            setPrivateByDesignInView(entry.isIntersecting);
           }
         });
       },
       { threshold: 0.2, rootMargin: "-100px" }
     );
 
-    if (researchRef.current) observer.observe(researchRef.current);
     if (dataRef.current) observer.observe(dataRef.current);
+    if (testimonialsRef.current) observer.observe(testimonialsRef.current);
+    if (privateByDesignRef.current) observer.observe(privateByDesignRef.current);
 
     return () => observer.disconnect();
   }, []);
@@ -57,11 +60,17 @@ export default function ClientHome() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-black text-gray-300">
+    <div className="flex flex-col min-h-screen bg-white text-gray-300">
       <Navbar />
       <Hero isVisible={isVisible} fadeIn={fadeIn} />
+      <div ref={testimonialsRef}>
+        <Testimonials isVisible={testimonialsInView} />
+      </div>
       <FeaturesSection fadeIn={fadeIn} />
-      <DataEnrichment dataRef={dataRef} dataInView={dataInView} fadeIn={fadeIn} />
+      <HowItWorks dataRef={dataRef} dataInView={dataInView} fadeIn={fadeIn} />
+      <div ref={privateByDesignRef}>
+        <PrivateByDesign isVisible={privateByDesignInView} />
+      </div>
       <CTASection fadeIn={fadeIn} />
       <Footer />
     </div>
