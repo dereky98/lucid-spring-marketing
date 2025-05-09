@@ -8,7 +8,7 @@ interface HeroProps {
 
 export default function Hero({ isVisible, fadeIn }: HeroProps) {
   return (
-    <div className="p-4 pt-20 bg-[#f6f6e9] min-h-screen flex items-center justify-center">
+    <div className="p-4 pt-20 bg-[#0A0C1B] min-h-screen flex items-center justify-center">
       <section
         className="relative w-full h-[90vh] flex items-center justify-center rounded-md overflow-hidden"
         style={{
@@ -35,13 +35,12 @@ export default function Hero({ isVisible, fadeIn }: HeroProps) {
             The OS for Private Market Research.
           </h1>
         </motion.div>
-
-        <div className="absolute left-8 bottom-8 z-10 max-w-xs flex items-center gap-3 bg-black/70 rounded-lg px-4 py-3">
-          <span className="flex items-center justify-center w-8 h-8 rounded-full bg-white/10 border border-white/20">
-            <ChevronDown className="text-white w-5 h-5" />
+        <div className="absolute left-8 bottom-8 z-10 max-w-xs flex items-center gap-4">
+          <span className="flex items-center justify-center w-10 h-10 min-w-[2.5rem] min-h-[2.5rem] rounded-full bg-neutral-800 border border-white/20">
+            <ChevronDown className="text-white w-6 h-6" />
           </span>
-          <p className="text-white/80 text-sm font-light">
-            Agents that run commercial diligences in 24 hours instead of weeks.
+          <p className="text-white text-lg font-light leading-snug">
+            Agents that run CDDs in 24 hours instead of weeks.
           </p>
         </div>
       </section>
