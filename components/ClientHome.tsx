@@ -60,14 +60,14 @@ export default function ClientHome() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-white text-gray-300">
+    <div className="flex flex-col min-h-screen bg-white">
       <Navbar />
       <Hero isVisible={isVisible} fadeIn={fadeIn} />
       <div ref={testimonialsRef}>
         <Testimonials isVisible={testimonialsInView} />
       </div>
       <FeaturesSection fadeIn={fadeIn} />
-      <section className="py-12 bg-[#f6f6e9] flex justify-center">
+      <section className="py-12 bg-white flex justify-center">
         <img
           src="/product-stack.svg"
           alt="Product Stack Diagram"

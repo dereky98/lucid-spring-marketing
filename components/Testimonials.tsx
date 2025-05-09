@@ -18,7 +18,7 @@ export default function Testimonials({ isVisible = true }: TestimonialsProps) {
   };
 
   return (
-    <section className="bg-[#f6f6e9] py-20">
+    <section className="bg-white py-20">
       <div className="container mx-auto px-6">
         <motion.div
           initial="hidden"
