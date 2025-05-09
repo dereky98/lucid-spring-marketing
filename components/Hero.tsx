@@ -1,4 +1,5 @@
 import { motion, Variants } from "framer-motion";
+import { ChevronDown } from "lucide-react";
 
 interface HeroProps {
   isVisible: boolean;
@@ -30,12 +31,15 @@ export default function Hero({ isVisible, fadeIn }: HeroProps) {
           variants={fadeIn}
           className="text-center px-4 relative z-10"
         >
-          <h1 className="text-xl font-playfair font-light text-white leading-tight">
-            The OS for Private Market Research
+          <h1 className="text-4xl font-playfair font-light text-white leading-tight">
+            The OS for Private Market Research.
           </h1>
         </motion.div>
 
-        <div className="absolute left-[25%] bottom-[10%] z-10 max-w-xs">
+        <div className="absolute left-8 bottom-8 z-10 max-w-xs flex items-center gap-3 bg-black/70 rounded-lg px-4 py-3">
+          <span className="flex items-center justify-center w-8 h-8 rounded-full bg-white/10 border border-white/20">
+            <ChevronDown className="text-white w-5 h-5" />
+          </span>
           <p className="text-white/80 text-sm font-light">
             Agents that help you run commercial diligences in 24 hours instead of weeks.
           </p>

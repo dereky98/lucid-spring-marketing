@@ -67,6 +67,13 @@ export default function ClientHome() {
         <Testimonials isVisible={testimonialsInView} />
       </div>
       <FeaturesSection fadeIn={fadeIn} />
+      <section className="py-12 bg-[#f6f6e9] flex justify-center">
+        <img
+          src="/product-stack.svg"
+          alt="Product Stack Diagram"
+          className="w-full max-w-2xl h-auto"
+        />
+      </section>
       <HowItWorks dataRef={dataRef} dataInView={dataInView} fadeIn={fadeIn} />
       <div ref={privateByDesignRef}>
         <PrivateByDesign isVisible={privateByDesignInView} />
