@@ -32,39 +32,7 @@ export default function Testimonials({ isVisible = true }: TestimonialsProps) {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Left Column */}
-          <motion.div
-            initial="hidden"
-            animate={isVisible ? "visible" : "hidden"}
-            variants={fadeIn}
-            className="bg-white/50 p-8 rounded-lg shadow-sm"
-          >
-            <p className="text-black text-lg mb-6 font-light leading-relaxed">
-              &ldquo;[Lucid Spring] directly helps our firm
-              <br />
-              save our investors time
-              <br />
-              build the critical mass of information necessary for us to be comfortable going to our
-              investment committee&rdquo;
-            </p>
-            <p className="text-black/70 italic">- investor, 10B+ AUM fund</p>
-          </motion.div>
-
-          {/* Right Column */}
-          <motion.div
-            initial="hidden"
-            animate={isVisible ? "visible" : "hidden"}
-            variants={fadeIn}
-            className="bg-white/50 p-8 rounded-lg shadow-sm"
-          >
-            <p className="text-black text-lg mb-6 font-light leading-relaxed">
-              &ldquo;There is so much value in having the best contacts and every reputable page
-              related to a deal .. I didn&rsquo;t appreciate how much I was missing&rdquo;
-            </p>
-            <p className="text-black/70 italic">- investor, 2B+ AUM fund</p>
-          </motion.div>
-        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12"></div>
       </div>
     </section>
   );
