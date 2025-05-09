@@ -8,7 +8,7 @@ interface CTASectionProps {
 
 export default function CTASection({ fadeIn }: CTASectionProps) {
   return (
-    <section className="py-20 bg-[#f6f6e9]">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-6">
         <motion.div
           initial="hidden"

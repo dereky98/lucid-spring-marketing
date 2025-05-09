@@ -9,7 +9,7 @@ interface HowItWorksProps {
 
 export default function HowItWorks({ dataRef, dataInView, fadeIn }: HowItWorksProps) {
   return (
-    <section ref={dataRef} className="py-24 bg-[#f6f6e9] relative">
+    <section ref={dataRef} className="py-24 bg-white relative">
       <div className="container mx-auto px-6 relative z-10">
         {/* Title above the cards */}
         <motion.div

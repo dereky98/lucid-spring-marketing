@@ -20,7 +20,7 @@ export default function PrivateByDesign({ isVisible = true }: PrivateByDesignPro
   };
 
   return (
-    <section className="bg-[#f6f6e9] py-16">
+    <section className="bg-white py-16">
       <div className="container mx-auto px-6">
         <motion.div
           initial="hidden"
