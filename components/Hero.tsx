@@ -41,7 +41,7 @@ export default function Hero({ isVisible, fadeIn }: HeroProps) {
             <ChevronDown className="text-white w-5 h-5" />
           </span>
           <p className="text-white/80 text-sm font-light">
-            Agents that help you run commercial diligences in 24 hours instead of weeks.
+            Agents that run commercial diligences in 24 hours instead of weeks.
           </p>
         </div>
       </section>
