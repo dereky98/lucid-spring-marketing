@@ -125,7 +125,7 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
             </div>
 
             <div
-              className="prose prose-invert prose-lg max-w-none prose-headings:font-playfair prose-a:text-purple-400 hover:prose-a:text-purple-300 prose-p:text-neutral-300 prose-strong:text-white prose-blockquote:border-l-purple-500 prose-pre:bg-gray-900"
+              className="prose prose-invert prose-lg max-w-none"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
           </article>
