@@ -7,10 +7,17 @@ interface HeroProps {
 }
 
 export default function Hero({ isVisible, fadeIn }: HeroProps) {
+  const scrollToNextSection = () => {
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <div className="p-4 pt-20 bg-[#0A0C1B] min-h-screen flex items-center justify-center">
+    <div className="bg-[#0A0C1B] h-screen w-full flex items-center justify-center">
       <section
-        className="relative w-full h-[90vh] flex items-center justify-center rounded-md overflow-hidden"
+        className="relative w-full h-screen flex items-center justify-center overflow-hidden"
         style={{
           backgroundColor: "#0A0C1B",
         }}
@@ -36,9 +43,12 @@ export default function Hero({ isVisible, fadeIn }: HeroProps) {
           </h1>
         </motion.div>
         <div className="absolute left-8 bottom-8 z-10 max-w-xs flex items-center gap-4">
-          <span className="flex items-center justify-center w-10 h-10 min-w-[2.5rem] min-h-[2.5rem] rounded-full bg-neutral-800 border border-white/20">
+          <button
+            onClick={scrollToNextSection}
+            className="flex items-center justify-center w-10 h-10 min-w-[2.5rem] min-h-[2.5rem] rounded-full bg-neutral-800 border border-white/20 hover:bg-neutral-700 transition-colors cursor-pointer"
+          >
             <ChevronDown className="text-white w-6 h-6" />
-          </span>
+          </button>
           <p className="text-white text-lg font-light leading-snug">
             Agents that run CDDs in 24 hours instead of weeks.
           </p>

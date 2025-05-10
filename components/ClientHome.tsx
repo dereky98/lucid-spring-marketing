@@ -181,9 +181,10 @@ export default function ClientHome() {
       className={`flex flex-col min-h-screen ${currentAppBgColor} transition-colors duration-500`}
     >
       <Navbar navbarTheme={navbarTheme} />
-      <div ref={heroRef} className="h-screen snap-start">
+      <div ref={heroRef} className="h-screen snap-start absolute top-0 left-0 w-full">
         <Hero isVisible={isVisible} fadeIn={fadeIn} />
       </div>
+      <div className="h-screen"></div> {/* Spacer to push content below hero */}
       <div
         ref={testimonialsRef}
         className={`py-12 flex justify-center ${otherSectionsVisibilityClass} transition-opacity duration-500`}

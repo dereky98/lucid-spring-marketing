@@ -90,32 +90,57 @@ export default function HowItWorks({ dataRef, dataInView, fadeIn }: HowItWorksPr
                 animate={{ opacity: i === activeCardIndex ? 1 : 0 }}
                 transition={{ duration: 0.6, ease: "easeInOut" }}
                 // Card itself is absolutely positioned to fill its parent (the flex-grow div)
-                className="absolute inset-0 flex flex-col md:flex-row bg-black rounded-xl shadow-2xl overflow-hidden items-stretch"
+                className="absolute inset-0 flex flex-col md:flex-row rounded-xl shadow-2xl overflow-hidden items-stretch"
               >
-                {/* Left Pane: Contains title in middle and description at bottom */}
-                <div className="md:w-1/3 p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col h-full order-2 md:order-1">
-                  {/* Title centered vertically */}
-                  <div className="flex-grow flex items-center">
-                    <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extralight">
-                      {cardTitles[i]}
-                    </h3>
+                {/* Animated glowing border wrapper */}
+                <div className="absolute inset-0 rounded-xl glow-border"></div>
+
+                <div className="absolute inset-0 bg-black rounded-xl z-10 flex flex-col md:flex-row">
+                  {/* Left Pane: Contains title in middle and description at bottom */}
+                  <div className="md:w-1/3 p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col h-full order-2 md:order-1">
+                    {/* Title centered vertically */}
+                    <div className="flex-grow flex items-center">
+                      <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extralight">
+                        {cardTitles[i]}
+                      </h3>
+                    </div>
+
+                    {/* Description placed at bottom of left panel */}
+                    <p className="text-base sm:text-lg text-gray-400 font-extralight mt-auto pt-4">
+                      {cardDescriptions[i]}
+                    </p>
                   </div>
 
-                  {/* Description placed at bottom of left panel */}
-                  <p className="text-base sm:text-lg text-gray-400 font-extralight mt-auto pt-4">
-                    {cardDescriptions[i]}
-                  </p>
-                </div>
-
-                {/* Right Pane: Image */}
-                <div className="md:w-2/3 order-1 md:order-2 h-[200px] xs:h-[250px] sm:h-[300px] md:h-auto relative">
-                  <img src={img} alt={cardTitles[i]} className="w-full h-full object-cover" />
+                  {/* Right Pane: Image */}
+                  <div className="md:w-2/3 order-1 md:order-2 h-[200px] xs:h-[250px] sm:h-[300px] md:h-auto relative">
+                    <img src={img} alt={cardTitles[i]} className="w-full h-full object-cover" />
+                  </div>
                 </div>
               </motion.div>
             ))}
           </div>
         </div>
       </div>
+
+      {/* Add CSS animation for the glowing border */}
+      <style jsx>{`
+        @keyframes glowPulse {
+          0% {
+            box-shadow: 0 0 6px 2px rgba(138, 43, 226, 0.3);
+          }
+          50% {
+            box-shadow: 0 0 12px 4px rgba(138, 43, 226, 0.5);
+          }
+          100% {
+            box-shadow: 0 0 6px 2px rgba(138, 43, 226, 0.3);
+          }
+        }
+
+        .glow-border {
+          animation: glowPulse 3s infinite ease-in-out;
+          pointer-events: none;
+        }
+      `}</style>
     </section>
   );
 }

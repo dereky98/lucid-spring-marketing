@@ -18,23 +18,19 @@ export default function Navbar({ navbarTheme }: NavbarProps) {
 
   // Determine colors based on theme
   const isDarkTheme = navbarTheme === "dark";
-  const bgColor = isDarkTheme ? "bg-[#0A0C1B]" : "bg-white";
+  const bgColor = isDarkTheme ? "bg-[#0A0C1B]/30" : "bg-white";
   const textColor = isDarkTheme ? "text-white" : "text-black";
   const logoSrc = isDarkTheme ? "/logo-white.svg" : "/logo-black.svg";
   const borderColor = isDarkTheme ? "border-none" : "border-neutral-200"; // Softer border for light theme
   const inputBgColor = isDarkTheme ? "bg-white/10" : "bg-neutral-100";
   const inputTextColor = isDarkTheme ? "text-white" : "text-black";
   const inputPlaceholderColor = isDarkTheme ? "placeholder-white/70" : "placeholder-neutral-500";
-  const glowEffect = isDarkTheme
-    ? "bg-gradient-to-b from-[#0A0C1B] to-[#0A0C1B]/90 shadow-sm shadow-purple-900/5"
-    : "";
 
   // Add console log to debug
   useEffect(() => {
     console.log("Navbar theme:", navbarTheme);
     console.log("Background color class:", bgColor);
-    console.log("Glow effect:", glowEffect);
-  }, [navbarTheme, bgColor, glowEffect]);
+  }, [navbarTheme, bgColor]);
 
   const handleJoinWaitlist = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -75,7 +71,7 @@ export default function Navbar({ navbarTheme }: NavbarProps) {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b backdrop-blur-md ${borderColor} ${bgColor} ${glowEffect} px-24`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b backdrop-blur-md ${borderColor} ${bgColor} px-32`}
     >
       <div className="flex items-center justify-between py-4 px-6">
         {/* Logo */}

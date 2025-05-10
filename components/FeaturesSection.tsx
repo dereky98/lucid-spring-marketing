@@ -27,7 +27,7 @@ const features = [
 
 export default function FeaturesSection({ fadeIn }: FeaturesSectionProps) {
   return (
-    <section className="pt-24 pb-56 bg-white relative overflow-hidden">
+    <section className="pt-12 pb-56 bg-white relative overflow-hidden">
       <div className="container px-4 mx-auto relative z-10">
         <motion.div
           initial="hidden"
