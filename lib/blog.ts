@@ -79,7 +79,7 @@ export async function getPostBySlug(slug: string): Promise<Post | undefined> {
     const matterResult = matter(fileContents);
     
     // Process content
-    const processedContent = await debugMarkdown(matterResult.content);
+    const processedContent = await processMarkdown(matterResult.content);
     
     return {
       slug,
@@ -113,27 +113,3 @@ async function processMarkdown(content: string): Promise<string> {
     return '';
   }
 }
-
-// Add a debug function to ensure markdown is being processed
-export async function debugMarkdown(content: string): Promise<string> {
-  try {
-    console.log('Original markdown content (first 300 chars):', content.slice(0, 300));
-    
-    // Process the content and get the HTML
-    const processed = await processMarkdown(content);
-    
-    // Log the HTML result
-    console.log('Processed HTML content (first 300 chars):', processed.slice(0, 300));
-    
-    // Check if the HTML contains paragraph tags and headers
-    const hasParagraphs = processed.includes('<p>');
-    const hasHeaders = processed.includes('<h');
-    console.log('Contains paragraphs:', hasParagraphs);
-    console.log('Contains headers:', hasHeaders);
-    
-    return processed;
-  } catch (error) {
-    console.error('Error in debugMarkdown:', error);
-    return '';
-  }
-} 

@@ -5,7 +5,7 @@ import { useToast } from "@/hooks/use-toast";
 import { addToWaitlist } from "@/lib/supabase";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface NavbarProps {
   navbarTheme: "dark" | "light";
@@ -18,16 +18,23 @@ export default function Navbar({ navbarTheme }: NavbarProps) {
 
   // Determine colors based on theme
   const isDarkTheme = navbarTheme === "dark";
-  const bgColor = isDarkTheme ? "bg-black/80" : "bg-white";
+  const bgColor = isDarkTheme ? "bg-[#0A0C1B]" : "bg-white";
   const textColor = isDarkTheme ? "text-white" : "text-black";
   const logoSrc = isDarkTheme ? "/logo-white.svg" : "/logo-black.svg";
-  const borderColor = isDarkTheme ? "border-[#1a1a2e]/30" : "border-neutral-200"; // Softer border for light theme
+  const borderColor = isDarkTheme ? "border-none" : "border-neutral-200"; // Softer border for light theme
   const inputBgColor = isDarkTheme ? "bg-white/10" : "bg-neutral-100";
   const inputTextColor = isDarkTheme ? "text-white" : "text-black";
   const inputPlaceholderColor = isDarkTheme ? "placeholder-white/70" : "placeholder-neutral-500";
   const glowEffect = isDarkTheme
-    ? "bg-gradient-to-b from-black/95 to-black/90 shadow-sm shadow-purple-900/5"
+    ? "bg-gradient-to-b from-[#0A0C1B] to-[#0A0C1B]/90 shadow-sm shadow-purple-900/5"
     : "";
+
+  // Add console log to debug
+  useEffect(() => {
+    console.log("Navbar theme:", navbarTheme);
+    console.log("Background color class:", bgColor);
+    console.log("Glow effect:", glowEffect);
+  }, [navbarTheme, bgColor, glowEffect]);
 
   const handleJoinWaitlist = async (e: React.FormEvent) => {
     e.preventDefault();

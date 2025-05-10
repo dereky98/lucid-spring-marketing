@@ -76,7 +76,7 @@ export default function HowItWorks({ dataRef, dataInView, fadeIn }: HowItWorksPr
             initial="hidden"
             animate={dataInView ? "visible" : "hidden"}
             variants={fadeIn}
-            className="mb-8 md:mb-10 text-center z-10"
+            className="mb-8 md:mb-10 text-center z-10 mt-8"
           >
             <h2 className="text-3xl sm:text-4xl font-playfair font-medium">How we do it</h2>
           </motion.div>
