@@ -1,5 +1,5 @@
 import { motion, Variants } from "framer-motion";
-import { RefObject } from "react";
+import { RefObject, useEffect, useRef, useState } from "react";
 
 interface HowItWorksProps {
   dataRef: RefObject<HTMLDivElement | null>;
@@ -21,56 +21,99 @@ const cardDescriptions = [
   "Generate research summaries ready to share with your investment committee or LPs.",
 ];
 
-export default function HowItWorks({ dataRef, dataInView, fadeIn }: HowItWorksProps) {
-  return (
-    <section ref={dataRef} className="py-24 bg-white relative">
-      <div className="container mx-auto px-6 relative z-10">
-        {/* Title above the cards */}
-        <motion.div
-          initial="hidden"
-          animate={dataInView ? "visible" : "hidden"}
-          variants={fadeIn}
-          className="mb-12"
-        >
-          <h2 className="text-3xl sm:text-4xl font-playfair font-medium text-black">
-            How we do it
-          </h2>
-        </motion.div>
+const CARD_SCROLL_DURATION_VH = 100; // Each card gets 100vh of scroll "space"
+const EXTRA_SCROLL_PAGES_FOR_LAST_CARD = 1; // Add 1 extra viewport scroll for the last card
 
-        {/* Cards: each takes a full row, image as proportional, gradient overlay */}
-        <div className="flex flex-col gap-8">
-          {cardImages.map((img, i) => (
-            <motion.div
-              key={img}
-              initial={{ opacity: 0, y: 20 }}
-              animate={dataInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.6, delay: i * 0.2 }}
-              className="relative overflow-hidden rounded-lg shadow-md h-[320px] md:h-[340px] flex items-stretch bg-black"
-            >
-              {/* Image, absolutely positioned on the right, object-contain */}
-              <div className="absolute inset-0 right-0 w-full h-full flex justify-end z-0">
-                <img
-                  src={img}
-                  alt={cardTitles[i]}
-                  className="object-contain h-full w-full md:w-2/3"
-                  style={{ objectPosition: "right center" }}
-                />
-                {/* Gradient overlay */}
-                <div
-                  className="absolute inset-0"
-                  style={{
-                    background:
-                      "linear-gradient(to right, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0.0) 80%)",
-                  }}
-                />
-              </div>
-              {/* Text content */}
-              <div className="relative z-10 flex flex-col justify-start h-full p-8 w-full md:w-1/2">
-                <h3 className="text-2xl font-semibold mb-4 text-white">{cardTitles[i]}</h3>
-                <p className="text-white/90 font-light">{cardDescriptions[i]}</p>
-              </div>
-            </motion.div>
-          ))}
+export default function HowItWorks({ dataRef, dataInView, fadeIn }: HowItWorksProps) {
+  const [activeCardIndex, setActiveCardIndex] = useState(0);
+  const sectionRef = dataRef; // Renaming for clarity within this component
+  const stickyContainerRef = useRef<HTMLDivElement>(null); // For the div that actually sticks
+
+  // Increase total scroll height to give the last card extra duration
+  const totalSectionScrollHeight =
+    (cardImages.length + EXTRA_SCROLL_PAGES_FOR_LAST_CARD) * CARD_SCROLL_DURATION_VH;
+
+  useEffect(() => {
+    const currentSectionRef = sectionRef.current;
+    if (!dataInView || !currentSectionRef) {
+      return;
+    }
+
+    const handleScroll = () => {
+      const sectionRect = currentSectionRef.getBoundingClientRect();
+      let scrollProgressWithinSection = -sectionRect.top;
+      if (scrollProgressWithinSection < 0) {
+        scrollProgressWithinSection = 0;
+      }
+      const pixelsPerCardCycle = window.innerHeight * (CARD_SCROLL_DURATION_VH / 100);
+      let newIndex = 0;
+      if (pixelsPerCardCycle > 0) {
+        newIndex = Math.floor(scrollProgressWithinSection / pixelsPerCardCycle);
+      }
+      newIndex = Math.max(0, Math.min(cardImages.length - 1, newIndex));
+      setActiveCardIndex(newIndex);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [dataInView, sectionRef, cardImages.length]); // cardImages.length in dep array is fine as it's stable
+
+  return (
+    <section
+      ref={sectionRef}
+      className="relative bg-[#0A0C1B] text-white"
+      style={{ height: `${totalSectionScrollHeight}vh` }} // Use updated scrollable height
+    >
+      {/* This div sticks to the viewport and acts as the stage */}
+      <div ref={stickyContainerRef} className="sticky top-0 h-screen w-full overflow-hidden">
+        {/* Container to center content within the sticky stage, using flex */}
+        <div className="container mx-auto px-4 sm:px-6 h-full flex flex-col items-center justify-start relative py-12 md:py-16">
+          <motion.div
+            initial="hidden"
+            animate={dataInView ? "visible" : "hidden"}
+            variants={fadeIn}
+            className="mb-8 md:mb-10 text-center z-10"
+          >
+            <h2 className="text-3xl sm:text-4xl font-playfair font-medium">How we do it</h2>
+          </motion.div>
+
+          {/* Cards Area: Takes up available space in the sticky stage, cards overlay */}
+          <div className="relative flex-grow w-full flex items-center justify-center">
+            {cardImages.map((img, i) => (
+              <motion.div
+                key={img + i} // Ensure unique key if img might not be unique
+                initial={{ opacity: 0 }}
+                animate={{ opacity: i === activeCardIndex ? 1 : 0 }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
+                // Card itself is absolutely positioned to fill its parent (the flex-grow div)
+                className="absolute inset-0 flex flex-col md:flex-row bg-black rounded-xl shadow-2xl overflow-hidden items-stretch"
+              >
+                {/* Left Pane: Contains title in middle and description at bottom */}
+                <div className="md:w-1/3 p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col h-full order-2 md:order-1">
+                  {/* Title centered vertically */}
+                  <div className="flex-grow flex items-center">
+                    <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extralight">
+                      {cardTitles[i]}
+                    </h3>
+                  </div>
+
+                  {/* Description placed at bottom of left panel */}
+                  <p className="text-base sm:text-lg text-gray-400 font-extralight mt-auto pt-4">
+                    {cardDescriptions[i]}
+                  </p>
+                </div>
+
+                {/* Right Pane: Image */}
+                <div className="md:w-2/3 order-1 md:order-2 h-[200px] xs:h-[250px] sm:h-[300px] md:h-auto relative">
+                  <img src={img} alt={cardTitles[i]} className="w-full h-full object-cover" />
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

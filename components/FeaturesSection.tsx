@@ -4,9 +4,30 @@ interface FeaturesSectionProps {
   fadeIn: Variants;
 }
 
+const features = [
+  {
+    title: "A Single Pane of Glass",
+    description:
+      "Lucid Spring integrates with any data sources (internal or external) your firm uses, and offers clear transparency to which were used.",
+    bgColor: "bg-[#F6F7F9]",
+  },
+  {
+    title: "Tailored for Private Equity",
+    description:
+      "Lucid Spring offers a purpose-built datalake and workflow suite tailored specifically for Private Equity, aligning tightly with the day-to-day needs of your firm.",
+    bgColor: "bg-[#F6F7F9]",
+  },
+  {
+    title: "Works the Way You Do",
+    description:
+      "We don't offer one-size-fits-all tools. Instead, we partner with your team to customize solutions to meet your unique needs. For some teams thats a turnkey solution - for others, its flexibility to configure each step.",
+    bgColor: "bg-gray-100",
+  },
+];
+
 export default function FeaturesSection({ fadeIn }: FeaturesSectionProps) {
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="pt-24 pb-56 bg-white relative overflow-hidden">
       <div className="container px-4 mx-auto relative z-10">
         <motion.div
           initial="hidden"
@@ -14,53 +35,30 @@ export default function FeaturesSection({ fadeIn }: FeaturesSectionProps) {
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeIn}
         >
-          <h2 className="text-3xl sm:text-4xl font-playfair font-medium mb-10 text-black text-left">
+          <h2 className="text-4xl font-playfair font-medium mb-10 text-black text-left">
             Your Research Stack, Finally Unified.
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Top row: two cards side by side */}
-            <div className="bg-gray-100 p-6 rounded-lg shadow-sm relative overflow-hidden min-h-[160px] pb-16">
-              <h3 className="text-xl font-medium mb-2 text-black">A Single Pane of Glass ...</h3>
-              <p className="text-gray-700">
-                Lucid Spring integrates with any data sources (internal or external) your firm uses,
-                and offers clear transparency to which were used.
-              </p>
-              <img
-                src="/globe-svg.png"
-                alt="Globe Icon"
-                className="absolute bottom-4 right-4 w-20 h-20 opacity-60 pointer-events-none select-none"
-              />
-            </div>
-            <div className="bg-gray-100 p-6 rounded-lg shadow-sm relative overflow-hidden min-h-[160px] pb-16">
-              <h3 className="text-xl font-medium mb-2 text-black">
-                .. Tailored for Private Equity ..
-              </h3>
-              <p className="text-gray-700">
-                Lucid Spring&apos;s proprietary datalake and workflow tools are designed
-                specifically for Private Equity.
-              </p>
-              <img
-                src="/briefcase-svg.png"
-                alt="Briefcase Icon"
-                className="absolute bottom-4 right-4 w-20 h-20 opacity-60 pointer-events-none select-none"
-              />
-            </div>
-          </div>
-          {/* Bottom row: one card full width */}
-          <div className="mt-6">
-            <div className="bg-gray-100 p-6 rounded-lg shadow-sm relative overflow-hidden min-h-[160px] pb-16">
-              <h3 className="text-xl font-medium mb-2 text-black">.. that Works the Way You Do.</h3>
-              <p className="text-gray-700">
-                We don&apos;t offer one-size-fits-all tools. Instead, we partner with your team to
-                customize solutions to meet your unique needs. For some teams thats a turnkey
-                solution - for others, its flexibility to configure each step.
-              </p>
-              <img
-                src="/puzzle_pieces-svg.png"
-                alt="Puzzle Pieces Icon"
-                className="absolute bottom-4 right-4 w-20 h-20 opacity-60 pointer-events-none select-none"
-              />
-            </div>
+
+          {/* Vertically stacked cards */}
+          <div className="flex flex-col gap-6">
+            {features.map((feature, index) => (
+              <div
+                key={index}
+                className={`${feature.bgColor} p-6 rounded-lg relative overflow-hidden min-h-[120px]`}
+              >
+                <div className="flex flex-col md:flex-row md:gap-x-6">
+                  {/* Left side: Title */}
+                  <div className="md:basis-1/2 md:max-w-[50%] shrink mb-4 md:mb-0">
+                    <h3 className="text-3xl font-light text-black">{feature.title}</h3>
+                  </div>
+
+                  {/* Right side: Description */}
+                  <div className="md:basis-1/2 md:min-w-[50%] grow shrink-0">
+                    <p className="text-[#7E7E7F] font-light">{feature.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </motion.div>
       </div>

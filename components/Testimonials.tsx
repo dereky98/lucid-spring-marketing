@@ -24,9 +24,9 @@ export default function Testimonials({ isVisible = true }: TestimonialsProps) {
           initial="hidden"
           animate={isVisible ? "visible" : "hidden"}
           variants={fadeIn}
-          className="text-start mb-16"
+          className="text-start"
         >
-          <h2 className="text-3xl md:text-4xl font-playfair text-black mb-2">
+          <h2 className="text-4xl font-playfair text-black mb-2">
             Trusted by Private Equity teams{" "}
             <span className="text-[#B57EDC]">managing a collective 85B+</span>
           </h2>
