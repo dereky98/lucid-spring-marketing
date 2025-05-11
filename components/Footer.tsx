@@ -15,10 +15,10 @@ export default function Footer() {
             <a href="/blog" className="text-sm hover:text-white transition-colors">
               Blog
             </a>
-            <a href="#" className="text-sm hover:text-white transition-colors">
+            <a href="/privacy" className="text-sm hover:text-white transition-colors">
               Privacy
             </a>
-            <a href="#" className="text-sm hover:text-white transition-colors">
+            <a href="/terms" className="text-sm hover:text-white transition-colors">
               Terms
             </a>
           </nav>
