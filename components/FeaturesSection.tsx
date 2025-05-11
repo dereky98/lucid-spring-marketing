@@ -49,7 +49,7 @@ export default function FeaturesSection({ fadeIn }: FeaturesSectionProps) {
                 <div className="flex flex-col md:flex-row md:gap-x-6">
                   {/* Left side: Title */}
                   <div className="md:basis-1/2 md:max-w-[50%] shrink mb-4 md:mb-0">
-                    <h3 className="text-3xl font-light text-black">{feature.title}</h3>
+                    <h3 className="text-lg mb-2 text-black">{feature.title}</h3>
                   </div>
 
                   {/* Right side: Description */}
