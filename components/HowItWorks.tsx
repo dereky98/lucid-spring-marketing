@@ -100,9 +100,7 @@ export default function HowItWorks({ dataRef, dataInView, fadeIn }: HowItWorksPr
                   <div className="md:w-1/3 p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col h-full order-2 md:order-1">
                     {/* Title centered vertically */}
                     <div className="flex-grow flex items-center">
-                      <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extralight">
-                        {cardTitles[i]}
-                      </h3>
+                      <h3 className="text-3xl font-playfair mb-4 text-white">{cardTitles[i]}</h3>
                     </div>
 
                     {/* Description placed at bottom of left panel */}
