@@ -71,9 +71,9 @@ export default function Navbar({ navbarTheme }: NavbarProps) {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b backdrop-blur-md ${borderColor} ${bgColor} px-32`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b backdrop-blur-md ${borderColor} ${bgColor}`}
     >
-      <div className="flex items-center justify-between py-4 px-6">
+      <div className="container mx-auto px-6 flex items-center justify-between py-4">
         {/* Logo */}
         <Link href="/" className="flex items-center group">
           <div className="relative">
