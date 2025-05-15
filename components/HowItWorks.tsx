@@ -10,7 +10,7 @@ interface HowItWorksProps {
 const cardImages = ["/agent-army.png", "/knowledge-graph.png", "/custom-materials.png"];
 
 const cardTitles = [
-  "An army of AI research agents",
+  "AI research agents",
   "Proprietary Intelligence Graph",
   "Customized Materials Creation",
 ];
