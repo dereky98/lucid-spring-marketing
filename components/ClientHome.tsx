@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import Testimonials from "@/components/Testimonials";
+import WaitlistModal from "@/components/WaitlistModal";
 import CTASection from "./CTASection";
 import FeaturesSection from "./FeaturesSection";
 import HowItWorks from "./HowItWorks";
@@ -207,6 +208,8 @@ export default function ClientHome() {
       <div className={`${otherSectionsVisibilityClass} transition-opacity duration-500`}>
         <Footer />
       </div>
+      {/* Global Modal */}
+      <WaitlistModal />
     </div>
   );
 }

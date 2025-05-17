@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="bg-black text-gray-300 py-6 border-t border-gray-800">
@@ -5,27 +7,21 @@ export default function Footer() {
         <div className="flex items-center space-x-6">
           <div className="flex items-center">
             <img src="/logo-white.svg" alt="Lucid Spring Logo" className="w-10 h-10 mr-2" />
-            <span className="text-white text-sm">Lucid Spring</span>
+            <span className="text-white text-lg">Lucid Spring</span>
           </div>
 
           <nav className="hidden sm:flex space-x-6">
-            <a href="#" className="text-sm hover:text-white transition-colors">
+            <Link href="/" className="text-lg hover:text-white transition-colors">
               Home
-            </a>
-            <a href="/blog" className="text-sm hover:text-white transition-colors">
+            </Link>
+            <Link href="/blog" className="text-lg hover:text-white transition-colors">
               Blog
-            </a>
-            <a href="/privacy" className="text-sm hover:text-white transition-colors">
-              Privacy
-            </a>
-            <a href="/terms" className="text-sm hover:text-white transition-colors">
-              Terms
-            </a>
+            </Link>
           </nav>
         </div>
 
         <div className="flex items-center space-x-4">
-          <span className="text-gray-500 text-sm">© Lucid Spring Inc.</span>
+          <span className="text-gray-500 text-lg">© Lucid Spring Inc.</span>
           <div className="flex space-x-2">
             <a
               href="https://www.linkedin.com/company/lucidspring"

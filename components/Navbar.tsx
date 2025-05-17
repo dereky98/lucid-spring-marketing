@@ -1,8 +1,8 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { useWaitlist } from "@/context/WaitlistContext";
 import { useToast } from "@/hooks/use-toast";
-import { addToWaitlist } from "@/lib/supabase";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -13,8 +13,8 @@ interface NavbarProps {
 
 export default function Navbar({ navbarTheme }: NavbarProps) {
   const [email, setEmail] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  const { openModal } = useWaitlist();
 
   // Determine colors based on theme
   const isDarkTheme = navbarTheme === "dark";
@@ -32,7 +32,7 @@ export default function Navbar({ navbarTheme }: NavbarProps) {
     console.log("Background color class:", bgColor);
   }, [navbarTheme, bgColor]);
 
-  const handleJoinWaitlist = async (e: React.FormEvent) => {
+  const handleJoinWaitlist = (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!email || !email.includes("@")) {
@@ -44,29 +44,8 @@ export default function Navbar({ navbarTheme }: NavbarProps) {
       return;
     }
 
-    setIsSubmitting(true);
-
-    try {
-      await addToWaitlist(email);
-
-      toast({
-        title: "Success!",
-        description: "You have successfully joined the Lucid Spring waitlist.",
-        variant: "success",
-      });
-
-      setEmail("");
-    } catch (error) {
-      console.error("Error adding to waitlist:", error);
-
-      toast({
-        title: "Something went wrong",
-        description: "There was a problem joining the waitlist. Please try again.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+    // Open the modal with the email from the navbar
+    openModal(email);
   };
 
   return (
@@ -103,18 +82,16 @@ export default function Navbar({ navbarTheme }: NavbarProps) {
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className={`relative ${inputBgColor} ${inputTextColor} ${inputPlaceholderColor} rounded-full w-sm px-4 py-2 text-sm border border-purple-900/10 focus:outline-none focus:ring focus:ring-purple-500/40`}
-                disabled={isSubmitting}
+                className={`relative ${inputBgColor} ${inputTextColor} ${inputPlaceholderColor} rounded-full w-sm px-4 py-2 text-md border border-purple-900/10 focus:outline-none focus:ring focus:ring-purple-500/40`}
               />
             </div>
             <div className="relative group">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600/30 to-indigo-600/30 rounded-full blur-sm opacity-60 group-hover:opacity-80 transition duration-300"></div>
               <Button
                 type="submit"
-                className="relative bg-[#4A1D96] text-white text-xs hover:bg-[#6029b8] rounded-full px-6 py-2 font-inter font-light transition-colors duration-300 z-10"
-                disabled={isSubmitting}
+                className="relative bg-[#4A1D96] text-white text-md hover:bg-[#6029b8] rounded-full px-6 py-2 font-inter font-light transition-colors duration-300 z-10"
               >
-                {isSubmitting ? "Joining..." : "Join Waitlist"}
+                Join Waitlist
               </Button>
             </div>
           </form>

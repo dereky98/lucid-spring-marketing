@@ -82,7 +82,7 @@ export default function HowItWorks({ dataRef, dataInView, fadeIn }: HowItWorksPr
           </motion.div>
 
           {/* Cards Area: Takes up available space in the sticky stage, cards overlay */}
-          <div className="relative flex-grow w-full flex items-center justify-center">
+          <div className="relative flex-grow w-full flex items-center justify-center border-[#B57EDC]/80 border rounded-xl">
             {cardImages.map((img, i) => (
               <motion.div
                 key={img + i} // Ensure unique key if img might not be unique
@@ -104,7 +104,7 @@ export default function HowItWorks({ dataRef, dataInView, fadeIn }: HowItWorksPr
                     </div>
 
                     {/* Description placed at bottom of left panel */}
-                    <p className="text-base sm:text-lg text-gray-400 font-extralight mt-auto pt-4">
+                    <p className="text-base sm:text-lg text-gray-200 font-extralight mt-auto pt-4">
                       {cardDescriptions[i]}
                     </p>
                   </div>
