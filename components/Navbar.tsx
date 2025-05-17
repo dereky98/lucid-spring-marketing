@@ -82,14 +82,14 @@ export default function Navbar({ navbarTheme }: NavbarProps) {
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className={`relative ${inputBgColor} ${inputTextColor} ${inputPlaceholderColor} rounded-full w-sm px-4 py-2 text-md border border-purple-900/10 focus:outline-none focus:ring focus:ring-purple-500/40`}
+                className={`relative ${inputBgColor} ${inputTextColor} ${inputPlaceholderColor} rounded-full w-sm px-4 py-2 text-sm border border-purple-900/10 focus:outline-none focus:ring focus:ring-purple-500/40`}
               />
             </div>
             <div className="relative group">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600/30 to-indigo-600/30 rounded-full blur-sm opacity-60 group-hover:opacity-80 transition duration-300"></div>
               <Button
                 type="submit"
-                className="relative bg-[#4A1D96] text-white text-md hover:bg-[#6029b8] rounded-full px-6 py-2 font-inter font-light transition-colors duration-300 z-10"
+                className="relative bg-[#4A1D96] text-white text-sm hover:bg-[#6029b8] rounded-full px-6 py-2 font-inter font-light transition-colors duration-300 z-10"
               >
                 Join Waitlist
               </Button>

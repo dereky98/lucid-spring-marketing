@@ -7,21 +7,21 @@ export default function Footer() {
         <div className="flex items-center space-x-6">
           <div className="flex items-center">
             <img src="/logo-white.svg" alt="Lucid Spring Logo" className="w-10 h-10 mr-2" />
-            <span className="text-white text-lg">Lucid Spring</span>
+            <span className="text-white text-md">Lucid Spring</span>
           </div>
 
           <nav className="hidden sm:flex space-x-6">
-            <Link href="/" className="text-lg hover:text-white transition-colors">
+            <Link href="/" className="text-md hover:text-white transition-colors">
               Home
             </Link>
-            <Link href="/blog" className="text-lg hover:text-white transition-colors">
+            <Link href="/blog" className="text-md hover:text-white transition-colors">
               Blog
             </Link>
           </nav>
         </div>
 
         <div className="flex items-center space-x-4">
-          <span className="text-gray-500 text-lg">© Lucid Spring Inc.</span>
+          <span className="text-gray-500 text-md">© Lucid Spring Inc.</span>
           <div className="flex space-x-2">
             <a
               href="https://www.linkedin.com/company/lucidspring"
