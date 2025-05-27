@@ -5,7 +5,6 @@ import { useEffect, useRef, useState } from "react";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
-import Testimonials from "@/components/Testimonials";
 import WaitlistModal from "@/components/WaitlistModal";
 import CTASection from "./CTASection";
 import FeaturesSection from "./FeaturesSection";
@@ -24,12 +23,10 @@ export default function ClientHome() {
   /* ────────── section refs ────────── */
   const heroRef = useRef<HTMLDivElement>(null);
   const dataRef = useRef<HTMLDivElement>(null);
-  const testimonialsRef = useRef<HTMLDivElement>(null);
   const privateByDesignRef = useRef<HTMLDivElement>(null);
 
   /* ────────── visibility flags for general animations ────────── */
   const [dataInView, setDataInView] = useState(false);
-  const [testimonialsInView, setTestimonialsInView] = useState(false);
   const [privateByDesignInView, setPrivateByDesignInView] = useState(false);
 
   /* ────────── state for navbar theme control based on Hero scroll ────────── */
@@ -42,9 +39,7 @@ export default function ClientHome() {
     const generalObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.target === testimonialsRef.current) {
-            setTestimonialsInView(entry.isIntersecting);
-          } else if (entry.target === privateByDesignRef.current) {
+          if (entry.target === privateByDesignRef.current) {
             setPrivateByDesignInView(entry.isIntersecting);
           }
         });
@@ -66,16 +61,13 @@ export default function ClientHome() {
     );
 
     const currentDataRef = dataRef.current;
-    const currentTestimonialsRef = testimonialsRef.current;
     const currentPrivateByDesignRef = privateByDesignRef.current;
 
     if (currentDataRef) howItWorksObserver.observe(currentDataRef);
-    if (currentTestimonialsRef) generalObserver.observe(currentTestimonialsRef);
     if (currentPrivateByDesignRef) generalObserver.observe(currentPrivateByDesignRef);
 
     return () => {
       if (currentDataRef) howItWorksObserver.unobserve(currentDataRef);
-      if (currentTestimonialsRef) generalObserver.unobserve(currentTestimonialsRef);
       if (currentPrivateByDesignRef) generalObserver.unobserve(currentPrivateByDesignRef);
       generalObserver.disconnect();
       howItWorksObserver.disconnect();
@@ -186,12 +178,6 @@ export default function ClientHome() {
         <Hero isVisible={isVisible} fadeIn={fadeIn} />
       </div>
       <div className="h-screen"></div> {/* Spacer to push content below hero */}
-      <div
-        ref={testimonialsRef}
-        className={`py-12 flex justify-center ${otherSectionsVisibilityClass} transition-opacity duration-500`}
-      >
-        <Testimonials isVisible={testimonialsInView} />
-      </div>
       <div className={`${otherSectionsVisibilityClass} transition-opacity duration-500`}>
         <FeaturesSection fadeIn={fadeIn} />
       </div>
