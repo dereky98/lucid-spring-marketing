@@ -20,7 +20,7 @@ export default function Hero({ isVisible, fadeIn }: HeroProps) {
     });
   };
 
-  const fullText = "The OS for Private Market Research.";
+  const fullText = "The Operating System for Private Market Investors.";
   const [typedText, setTypedText] = useState("");
   const [typingComplete, setTypingComplete] = useState(false);
 
@@ -95,7 +95,7 @@ export default function Hero({ isVisible, fadeIn }: HeroProps) {
             <ChevronDown className="text-white w-6 h-6" />
           </button>
           <p className="text-white text-lg font-light leading-snug">
-            Agents that run CDDs in 24 hours instead of weeks.
+            AI agents that unify diligence, monitoring, and reporting.
           </p>
         </motion.div>
       </section>

@@ -7,8 +7,6 @@ import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import WaitlistModal from "@/components/WaitlistModal";
 import CTASection from "./CTASection";
-import FeaturesSection from "./FeaturesSection";
-import HowItWorks from "./HowItWorks";
 import PrivateByDesign from "./PrivateByDesign";
 
 const NAVBAR_HEIGHT_ESTIMATE = 72; // px, adjust if Navbar height changes
@@ -178,10 +176,10 @@ export default function ClientHome() {
         <Hero isVisible={isVisible} fadeIn={fadeIn} />
       </div>
       <div className="h-screen"></div> {/* Spacer to push content below hero */}
-      <div className={`${otherSectionsVisibilityClass} transition-opacity duration-500`}>
+      {/* <div className={`${otherSectionsVisibilityClass} transition-opacity duration-500`}>
         <FeaturesSection fadeIn={fadeIn} />
-      </div>
-      <HowItWorks dataRef={dataRef} dataInView={dataInView} fadeIn={fadeIn} />
+      </div> */}
+      {/* <HowItWorks dataRef={dataRef} dataInView={dataInView} fadeIn={fadeIn} /> */}
       <div
         ref={privateByDesignRef}
         className={`${otherSectionsVisibilityClass} transition-opacity duration-500`}
