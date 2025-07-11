@@ -20,7 +20,7 @@ export default function Navbar({ navbarTheme }: NavbarProps) {
   const isDarkTheme = navbarTheme === "dark";
   const bgColor = isDarkTheme ? "bg-[#0A0C1B]/30" : "bg-white";
   const textColor = isDarkTheme ? "text-white" : "text-black";
-  const logoSrc = isDarkTheme ? "/logo-white.svg" : "/logo-black.svg";
+  const logoSrc = isDarkTheme ? "/palace_logo.png" : "/palace_logo.png";
   const borderColor = isDarkTheme ? "border-none" : "border-neutral-200"; // Softer border for light theme
   const inputBgColor = isDarkTheme ? "bg-white/10" : "bg-neutral-100";
   const inputTextColor = isDarkTheme ? "text-white" : "text-black";

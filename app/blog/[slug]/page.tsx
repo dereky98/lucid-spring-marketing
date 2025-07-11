@@ -91,7 +91,7 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
       name: "Palace",
       logo: {
         "@type": "ImageObject",
-        url: `${baseUrl}/lucidspringlogo.png`,
+        url: `${baseUrl}/palace_logo.png`,
       },
     },
     mainEntityOfPage: {
