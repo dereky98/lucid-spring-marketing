@@ -2,7 +2,6 @@
 
 import { useWaitlist } from "@/context/WaitlistContext";
 import { motion, Variants } from "framer-motion";
-import { ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
 
 interface HeroProps {
@@ -81,22 +80,6 @@ export default function Hero({ isVisible, fadeIn }: HeroProps) {
           >
             Join Waitlist
           </motion.button>
-        </motion.div>
-        <motion.div
-          className="absolute left-8 bottom-8 z-10 max-w-xs flex items-center gap-4"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: typingComplete ? 1 : 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <button
-            onClick={scrollToNextSection}
-            className="flex items-center justify-center w-10 h-10 min-w-[2.5rem] min-h-[2.5rem] rounded-full bg-neutral-800 border border-white/20 hover:bg-neutral-700 transition-colors cursor-pointer"
-          >
-            <ChevronDown className="text-white w-6 h-6" />
-          </button>
-          <p className="text-white text-lg font-light leading-snug">
-            AI agents that unify diligence, monitoring, and reporting.
-          </p>
         </motion.div>
       </section>
     </div>

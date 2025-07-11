@@ -2,12 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 
-import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
-import WaitlistModal from "@/components/WaitlistModal";
-import CTASection from "./CTASection";
-import PrivateByDesign from "./PrivateByDesign";
 
 const NAVBAR_HEIGHT_ESTIMATE = 72; // px, adjust if Navbar height changes
 const DARK_BG_COLOR = "bg-[#0A0C1B]";
@@ -176,24 +172,6 @@ export default function ClientHome() {
         <Hero isVisible={isVisible} fadeIn={fadeIn} />
       </div>
       <div className="h-screen"></div> {/* Spacer to push content below hero */}
-      {/* <div className={`${otherSectionsVisibilityClass} transition-opacity duration-500`}>
-        <FeaturesSection fadeIn={fadeIn} />
-      </div> */}
-      {/* <HowItWorks dataRef={dataRef} dataInView={dataInView} fadeIn={fadeIn} /> */}
-      <div
-        ref={privateByDesignRef}
-        className={`${otherSectionsVisibilityClass} transition-opacity duration-500`}
-      >
-        <PrivateByDesign isVisible={privateByDesignInView} />
-      </div>
-      <div className={`${otherSectionsVisibilityClass} transition-opacity duration-500`}>
-        <CTASection fadeIn={fadeIn} />
-      </div>
-      <div className={`${otherSectionsVisibilityClass} transition-opacity duration-500`}>
-        <Footer />
-      </div>
-      {/* Global Modal */}
-      <WaitlistModal />
     </div>
   );
 }
