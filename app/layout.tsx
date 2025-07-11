@@ -1,6 +1,7 @@
 import { Toaster } from "@/components/ui/toaster";
 import WaitlistModal from "@/components/WaitlistModal";
 import { WaitlistProvider } from "@/context/WaitlistContext";
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
@@ -35,6 +36,7 @@ export default function RootLayout({
           {children}
           <WaitlistModal />
           <Toaster />
+          <Analytics />
         </WaitlistProvider>
       </body>
     </html>
