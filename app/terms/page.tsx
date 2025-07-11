@@ -17,7 +17,7 @@ const TermsOfService: React.FC = () => {
           <div className="prose prose-invert max-w-none">
             <p className="text-gray-300 mb-8">
               THESE TERMS OF SERVICE (the &quot;Agreement&quot;) GOVERN CUSTOMER&apos;S ACCESS TO
-              AND USE OF THE SERVICE (AS DEFINED BELOW) PROVIDED BY LUCID SPRING, INC. (&quot;Lucid
+              AND USE OF THE SERVICE (AS DEFINED BELOW) PROVIDED BY PALACE, INC. (&quot;Lucid
               Spring&quot;). BY (A) PURCHASING ACCESS TO THE SERVICE THROUGH AN ONLINE ORDERING
               PROCESS THAT REFERENCES THIS AGREEMENT, (B) SIGNING UP FOR A FREE ACCESS PLAN THAT
               REFERENCES THIS AGREEMENT, OR (C) CLICKING A BOX INDICATING ACCEPTANCE, CUSTOMER
@@ -38,13 +38,12 @@ const TermsOfService: React.FC = () => {
 
               <h3 className="text-xl font-medium mb-3">1.1 Service Description</h3>
               <p className="text-gray-300 mb-4">
-                Lucid Spring is a software platform that connects professionals to expert insights
-                and structured knowledge, enabling faster and higher-quality research across
-                industries (the &quot;Service&quot;). All content posted, uploaded, or stored by
-                Users is considered a &quot;User Submission.&quot; Lucid Spring may also offer
-                templates, support documents, or reference content (&quot;Lucid Spring
-                Content&quot;). The underlying software code is proprietary and not provided to
-                Customer.
+                Palace is a software platform that connects professionals to expert insights and
+                structured knowledge, enabling faster and higher-quality research across industries
+                (the &quot;Service&quot;). All content posted, uploaded, or stored by Users is
+                considered a &quot;User Submission.&quot; Palace may also offer templates, support
+                documents, or reference content (&quot;Palace Content&quot;). The underlying
+                software code is proprietary and not provided to Customer.
               </p>
 
               <h3 className="text-xl font-medium mb-3">1.2 Customer&apos;s Subscription</h3>
@@ -56,15 +55,15 @@ const TermsOfService: React.FC = () => {
 
               <h3 className="text-xl font-medium mb-3">1.3 Ownership</h3>
               <p className="text-gray-300 mb-4">
-                Lucid Spring retains all right, title, and interest in the Service, Software, Lucid
-                Spring Content, documentation, and all related intellectual property (&quot;Lucid
-                Spring Materials&quot;).
+                Palace retains all right, title, and interest in the Service, Software, Palace
+                Content, documentation, and all related intellectual property (&quot;Palace
+                Materials&quot;).
               </p>
 
               <h3 className="text-xl font-medium mb-3">1.4 Permissions</h3>
               <p className="text-gray-300 mb-4">
-                User roles and permissions are configurable by Customer. Lucid Spring is not
-                responsible for any misconfigured permissions.
+                User roles and permissions are configurable by Customer. Palace is not responsible
+                for any misconfigured permissions.
               </p>
             </section>
 
@@ -91,7 +90,7 @@ const TermsOfService: React.FC = () => {
             <section className="mb-8">
               <h2 className="text-2xl font-semibold mb-4">3. Third-Party Applications</h2>
               <p className="text-gray-300 mb-4">
-                The Service may integrate with third-party tools (e.g., GitHub, Slack). Lucid Spring
+                The Service may integrate with third-party tools (e.g., GitHub, Slack). Palace
                 disclaims responsibility for those tools. Customer is solely responsible for any
                 data shared with such third-party applications.
               </p>
@@ -109,8 +108,7 @@ const TermsOfService: React.FC = () => {
 
               <h3 className="text-xl font-medium mb-3">4.2 Payment</h3>
               <p className="text-gray-300 mb-4">
-                Fees are charged via credit card or ACH by Lucid Spring or its third-party
-                processor.
+                Fees are charged via credit card or ACH by Palace or its third-party processor.
               </p>
 
               <h3 className="text-xl font-medium mb-3">4.3 Taxes</h3>
@@ -143,7 +141,7 @@ const TermsOfService: React.FC = () => {
 
               <h3 className="text-xl font-medium mb-3">5.3 Post-Termination</h3>
               <p className="text-gray-300 mb-4">
-                Lucid Spring may delete all Customer data after 30 days unless otherwise requested.
+                Palace may delete all Customer data after 30 days unless otherwise requested.
               </p>
 
               <h3 className="text-xl font-medium mb-3">5.4 Survival</h3>
@@ -165,8 +163,8 @@ const TermsOfService: React.FC = () => {
 
               <h3 className="text-xl font-medium mb-3">6.2 Disclaimer</h3>
               <p className="text-gray-300 mb-4">
-                THE SERVICE IS PROVIDED &quot;AS IS.&quot; LUCID SPRING DISCLAIMS ALL IMPLIED
-                WARRANTIES, INCLUDING MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+                THE SERVICE IS PROVIDED &quot;AS IS.&quot; PALACE DISCLAIMS ALL IMPLIED WARRANTIES,
+                INCLUDING MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
               </p>
             </section>
 
@@ -175,8 +173,8 @@ const TermsOfService: React.FC = () => {
             <section className="mb-8">
               <h2 className="text-2xl font-semibold mb-4">7. Limitation of Liability</h2>
               <p className="text-gray-300 mb-4">
-                LUCID SPRING WILL NOT BE LIABLE FOR INDIRECT OR CONSEQUENTIAL DAMAGES, LOST PROFITS,
-                OR DAMAGES EXCEEDING THE FEES PAID IN THE PRECEDING TWELVE (12) MONTHS.
+                PALACE WILL NOT BE LIABLE FOR INDIRECT OR CONSEQUENTIAL DAMAGES, LOST PROFITS, OR
+                DAMAGES EXCEEDING THE FEES PAID IN THE PRECEDING TWELVE (12) MONTHS.
               </p>
             </section>
 
@@ -204,7 +202,7 @@ const TermsOfService: React.FC = () => {
 
               <h3 className="text-xl font-medium mb-3">8.4 Feedback</h3>
               <p className="text-gray-300 mb-4">
-                Lucid Spring may use Feedback provided by Customer to improve the Service, without
+                Palace may use Feedback provided by Customer to improve the Service, without
                 restriction.
               </p>
             </section>
@@ -216,25 +214,24 @@ const TermsOfService: React.FC = () => {
 
               <h3 className="text-xl font-medium mb-3">9.1 User Information</h3>
               <p className="text-gray-300 mb-4">
-                Customer grants Lucid Spring the right to store and process User Information (e.g.,
+                Customer grants Palace the right to store and process User Information (e.g.,
                 emails, IPs) as necessary to operate the Service.
               </p>
 
               <h3 className="text-xl font-medium mb-3">9.2 User Submissions</h3>
               <p className="text-gray-300 mb-4">
-                Customer retains ownership of submissions but grants Lucid Spring the right to use
-                them solely to provide the Service.
+                Customer retains ownership of submissions but grants Palace the right to use them
+                solely to provide the Service.
               </p>
 
               <h3 className="text-xl font-medium mb-3">9.3 Service Data</h3>
               <p className="text-gray-300 mb-4">
-                Lucid Spring may use anonymized and aggregated usage data for improvement and
-                analytics.
+                Palace may use anonymized and aggregated usage data for improvement and analytics.
               </p>
 
               <h3 className="text-xl font-medium mb-3">9.4 Security</h3>
               <p className="text-gray-300 mb-4">
-                Lucid Spring employs reasonable security practices. Notwithstanding the foregoing,
+                Palace employs reasonable security practices. Notwithstanding the foregoing,
                 Customer is responsible for maintaining appropriate security, protection, and backup
                 of its own hardware, software, systems, and Customer Data.
               </p>
@@ -247,8 +244,8 @@ const TermsOfService: React.FC = () => {
 
               <h3 className="text-xl font-medium mb-3">10.1 Publicity</h3>
               <p className="text-gray-300 mb-4">
-                Lucid Spring may identify Customer and use Customer&apos;s name, logo, trademarks,
-                or service marks on its website and marketing materials unless Customer opts out by
+                Palace may identify Customer and use Customer&apos;s name, logo, trademarks, or
+                service marks on its website and marketing materials unless Customer opts out by
                 written request.
               </p>
 
@@ -259,8 +256,8 @@ const TermsOfService: React.FC = () => {
 
               <h3 className="text-xl font-medium mb-3">10.3 Service Changes</h3>
               <p className="text-gray-300 mb-4">
-                Lucid Spring may update the Service but not materially reduce core features. Updates
-                to these Terms require 30 days&apos; notice.
+                Palace may update the Service but not materially reduce core features. Updates to
+                these Terms require 30 days&apos; notice.
               </p>
 
               <h3 className="text-xl font-medium mb-3">10.4 Relationship</h3>

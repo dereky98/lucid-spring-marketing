@@ -57,15 +57,9 @@ export default function Navbar({ navbarTheme }: NavbarProps) {
         <Link href="/" className="flex items-center group">
           <div className="relative">
             <div className="absolute inset-0 bg-purple-500/10 rounded-full blur-sm opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
-            <Image
-              src={logoSrc}
-              alt="Lucid Spring"
-              width={40}
-              height={40}
-              className="relative z-10"
-            />
+            <Image src={logoSrc} alt="Palace" width={40} height={40} className="relative z-10" />
           </div>
-          <span className={`ml-2 text-xl font-medium ${textColor} font-iowan`}>Lucid Spring</span>
+          <span className={`ml-2 text-xl font-medium ${textColor} font-iowan`}>Palace</span>
         </Link>
 
         {/* CTA Buttons */}

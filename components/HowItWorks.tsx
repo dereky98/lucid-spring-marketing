@@ -17,7 +17,7 @@ const cardTitles = [
 
 const cardDescriptions = [
   "Our AI agents can conduct calls, validate information shared by data providers, and tailor information to your stated request or thesis.",
-  "Lucid Spring is built on a proprietary data lake - giving our research agents and outputs a contextual edge.",
+  "Palace is built on a proprietary data lake - giving our research agents and outputs a contextual edge.",
   "Generate research summaries ready to share with your investment committee or LPs.",
 ];
 

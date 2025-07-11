@@ -54,9 +54,9 @@ export default function Testimonials({ isVisible = true }: TestimonialsProps) {
           >
             <div className="flex-1">
               <p className="text-xl font-normal leading-relaxed text-black mb-6">
-                &ldquo;[Lucid Spring] directly helps our firm save our investors time build the
-                critical mass of information necessary for us to be comfortable going to our
-                investment committee&rdquo;
+                &ldquo;[Palace] directly helps our firm save our investors time build the critical
+                mass of information necessary for us to be comfortable going to our investment
+                committee&rdquo;
               </p>
             </div>
             <div className="mt-auto">

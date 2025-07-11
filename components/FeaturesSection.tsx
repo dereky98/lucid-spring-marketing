@@ -9,14 +9,14 @@ const features = [
   {
     title: "A Single Pane of Glass",
     description:
-      "Lucid Spring integrates with any data sources (internal or external) your firm uses, and offers clear transparency to which were used.",
+      "Palace integrates with any data sources (internal or external) your firm uses, and offers clear transparency to which were used.",
     bgColor: "bg-[#F2F2F2]",
     image: "/pane-of-glass.svg",
   },
   {
     title: "Tailored for private market investors",
     description:
-      "Lucid Spring offers a purpose-built datalake and workflow suite tailored specifically for private market investors, aligning tightly with the day-to-day needs of your firm.",
+      "Palace offers a purpose-built datalake and workflow suite tailored specifically for private market investors, aligning tightly with the day-to-day needs of your firm.",
     bgColor: "bg-[#F2F2F2]",
     image: "/tailored-for-pe.svg",
   },

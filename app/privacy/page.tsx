@@ -16,16 +16,16 @@ const PrivacyPolicy: React.FC = () => {
 
           <section className="mb-8">
             <p className="text-gray-300 mb-6">
-              At Lucid Spring (&quot;Lucid Spring&quot;), we take your privacy seriously. Please
-              read this Privacy Policy to learn how we treat your personal data. By using or
-              accessing our Services in any manner, you acknowledge that you accept the practices
-              and policies outlined below, and you hereby consent that we will collect, use and
-              share your information as described in this Privacy Policy.
+              At Palace (&quot;Palace&quot;), we take your privacy seriously. Please read this
+              Privacy Policy to learn how we treat your personal data. By using or accessing our
+              Services in any manner, you acknowledge that you accept the practices and policies
+              outlined below, and you hereby consent that we will collect, use and share your
+              information as described in this Privacy Policy.
             </p>
             <p className="text-gray-300 mb-6">
-              Remember that your use of Lucid Spring&apos;s Services is at all times subject to our
-              Terms of Service. Any terms we use in this Policy without defining them have the
-              definitions given to them in the Terms of Service.
+              Remember that your use of Palace&apos;s Services is at all times subject to our Terms
+              of Service. Any terms we use in this Policy without defining them have the definitions
+              given to them in the Terms of Service.
             </p>
             <p className="text-gray-300 mb-6">
               If you have a disability, you may access this Privacy Policy in an alternative format
@@ -235,7 +235,7 @@ const PrivacyPolicy: React.FC = () => {
                 <ul className="list-disc list-inside text-gray-300 ml-4 space-y-2">
                   <li>
                     Responding to correspondence that we receive from you, contacting you when
-                    necessary or requested, and sending you information about Lucid Spring or the
+                    necessary or requested, and sending you information about Palace or the
                     Services.
                   </li>
                   <li>
@@ -256,7 +256,7 @@ const PrivacyPolicy: React.FC = () => {
                     incidents and potentially illegal or prohibited activities.
                   </li>
                   <li>
-                    Protecting the rights, property or safety of you, Lucid Spring or another party.
+                    Protecting the rights, property or safety of you, Palace or another party.
                   </li>
                   <li>Enforcing any agreements with you.</li>
                   <li>
@@ -413,10 +413,10 @@ const PrivacyPolicy: React.FC = () => {
             <p className="text-gray-300 mb-4">
               We&apos;re constantly trying to improve our Services, so we may need to change this
               Privacy Policy from time to time, but we will alert you to any such changes by placing
-              a notice on the Lucid Spring website, by sending you an email and/or by some other
-              means. Please note that if you&apos;ve opted not to receive legal notice emails from
-              us (or you haven&apos;t provided us with your email address), those legal notices will
-              still govern your use of the Services, and you are still responsible for reading and
+              a notice on the Palace website, by sending you an email and/or by some other means.
+              Please note that if you&apos;ve opted not to receive legal notice emails from us (or
+              you haven&apos;t provided us with your email address), those legal notices will still
+              govern your use of the Services, and you are still responsible for reading and
               understanding them. If you use the Services after any changes to the Privacy Policy
               have been posted, that means you agree to all of the changes. Use of information we
               collect is subject to the Privacy Policy in effect at the time such information is

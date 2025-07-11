@@ -17,9 +17,9 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Lucid Spring - AI-Powered Market Intelligence",
+  title: "Palace - A second brain for private market investors",
   description:
-    "Unlock market insights and gain competitive advantage with Lucid Spring's AI-powered market intelligence platform.",
+    "Our platform lets private equity funds track and analyze portfolio companies. We unify your back-office to automate tasks like benchmarking and reporting.",
 };
 
 export default function RootLayout({

@@ -6,8 +6,8 @@ export default function Footer() {
       <div className="container mx-auto px-4 flex items-center justify-between">
         <div className="flex items-center space-x-6">
           <div className="flex items-center">
-            <img src="/logo-white.svg" alt="Lucid Spring Logo" className="w-10 h-10 mr-2" />
-            <span className="text-white text-md">Lucid Spring</span>
+            <img src="/logo-white.svg" alt="Palace Logo" className="w-10 h-10 mr-2" />
+            <span className="text-white text-md">Palace</span>
           </div>
 
           <nav className="hidden sm:flex space-x-6">

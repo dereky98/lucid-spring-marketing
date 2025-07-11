@@ -82,7 +82,7 @@ export default function WaitlistModal() {
 
       toast({
         title: "Success!",
-        description: "You have successfully joined the Lucid Spring waitlist.",
+        description: "You have successfully joined the Palace waitlist.",
         variant: "success",
       });
 
@@ -109,7 +109,7 @@ export default function WaitlistModal() {
         <DialogHeader className="mb-4">
           <DialogTitle className="text-xl text-white">Join our waitlist</DialogTitle>
           <DialogDescription className="text-gray-400 text-base">
-            Get early access to Lucid Spring&apos;s private market research platform.
+            Get early access to Palace&apos;s private market research platform.
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-5 pt-4">

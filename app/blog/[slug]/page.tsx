@@ -25,12 +25,12 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
 
   if (!post) {
     return {
-      title: "Post Not Found | Lucid Spring Blog",
+      title: "Post Not Found | Palace Blog",
       description: "The requested blog post could not be found",
     };
   }
 
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://lucidspring.com";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://trypalace.com";
   const ogImage = {
     url: `${baseUrl}/api/og?title=${encodeURIComponent(post.title)}`,
     width: 1200,
@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   };
 
   return {
-    title: `${post.title} | Lucid Spring Blog`,
+    title: `${post.title} | Palace Blog`,
     description: post.excerpt,
     openGraph: {
       title: post.title,
@@ -70,7 +70,7 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
   // Debug: Log the first part of the HTML content
   console.log("POST CONTENT (first 500 chars):", post.content.slice(0, 500));
 
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://lucidspring.com";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://trypalace.com";
 
   // Create JSON-LD structured data
   const jsonLd = {
@@ -88,7 +88,7 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
     image: `${baseUrl}/api/og?title=${encodeURIComponent(post.title)}`,
     publisher: {
       "@type": "Organization",
-      name: "Lucid Spring",
+      name: "Palace",
       logo: {
         "@type": "ImageObject",
         url: `${baseUrl}/lucidspringlogo.png`,

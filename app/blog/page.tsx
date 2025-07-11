@@ -4,9 +4,9 @@ import { getAllPosts } from "@/lib/blog";
 import { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://lucidspring.com";
-  const title = "Blog | Lucid Spring";
-  const description = "Latest insights, updates, and articles from Lucid Spring";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://trypalace.com";
+  const title = "Blog | Palace";
+  const description = "Latest insights, updates, and articles from Palace";
 
   return {
     title,
@@ -17,10 +17,10 @@ export async function generateMetadata(): Promise<Metadata> {
       type: "website",
       images: [
         {
-          url: `${baseUrl}/api/og?title=${encodeURIComponent("Lucid Spring Blog")}`,
+          url: `${baseUrl}/api/og?title=${encodeURIComponent("Palace Blog")}`,
           width: 1200,
           height: 630,
-          alt: "Lucid Spring Blog",
+          alt: "Palace Blog",
         },
       ],
     },
@@ -28,7 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
       card: "summary_large_image",
       title,
       description,
-      images: [`${baseUrl}/api/og?title=${encodeURIComponent("Lucid Spring Blog")}`],
+      images: [`${baseUrl}/api/og?title=${encodeURIComponent("Palace Blog")}`],
     },
   };
 }
