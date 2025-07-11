@@ -1,4 +1,5 @@
 import { Toaster } from "@/components/ui/toaster";
+import WaitlistModal from "@/components/WaitlistModal";
 import { WaitlistProvider } from "@/context/WaitlistContext";
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
@@ -32,6 +33,7 @@ export default function RootLayout({
       <body className={`${inter.className} ${playfair.variable}`}>
         <WaitlistProvider>
           {children}
+          <WaitlistModal />
           <Toaster />
         </WaitlistProvider>
       </body>

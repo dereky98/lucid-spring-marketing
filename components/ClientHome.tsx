@@ -160,8 +160,6 @@ export default function ClientHome() {
   };
 
   const currentAppBgColor = appBgTheme === "dark" ? DARK_BG_COLOR : LIGHT_BG_COLOR;
-  const otherSectionsVisibilityClass =
-    appBgTheme === "dark" ? "opacity-0 invisible" : "opacity-100 visible";
 
   return (
     <div

@@ -12,13 +12,6 @@ interface HeroProps {
 export default function Hero({ isVisible, fadeIn }: HeroProps) {
   const { openModal } = useWaitlist();
 
-  const scrollToNextSection = () => {
-    window.scrollTo({
-      top: window.innerHeight,
-      behavior: "smooth",
-    });
-  };
-
   const fullText = "The Operating System for Private Market Investors.";
   const [typedText, setTypedText] = useState("");
   const [typingComplete, setTypingComplete] = useState(false);
