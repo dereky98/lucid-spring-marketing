@@ -7,7 +7,7 @@ const features = [
   "No training on your data",
   "Modern and secure data practices",
   "End to end encryption",
-  "Audited and tested",
+  "Audited and tested (SOC-2)",
 ];
 
 export default function BuiltForScale() {
