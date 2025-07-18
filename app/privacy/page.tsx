@@ -6,7 +6,7 @@ import React from "react";
 const PrivacyPolicy: React.FC = () => {
   return (
     <>
-      <Navbar navbarTheme="dark" />
+      <Navbar />
       <div className="flex flex-col items-center min-h-screen p-8 bg-[#111111]">
         <div className="w-full max-w-4xl text-white">
           <br />

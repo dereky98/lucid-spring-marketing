@@ -6,7 +6,7 @@ import React from "react";
 const TermsOfService: React.FC = () => {
   return (
     <>
-      <Navbar navbarTheme="dark" />
+      <Navbar />
       <main className="flex flex-col items-center p-8 bg-[#111111]">
         <div className="w-full max-w-4xl text-white">
           <br />

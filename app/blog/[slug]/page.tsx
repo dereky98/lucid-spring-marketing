@@ -106,7 +106,7 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Navbar navbarTheme="dark" />
+      <Navbar />
       <main className="flex-grow container mx-auto px-4 py-16 md:py-24">
         <div className="max-w-3xl mx-auto">
           <Link

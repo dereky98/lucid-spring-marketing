@@ -38,7 +38,7 @@ export default async function BlogPage() {
 
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-b from-[#0A0C1B] to-black text-white">
-      <Navbar navbarTheme="dark" />
+      <Navbar />
       <main className="flex-grow container mx-auto px-4 py-24">
         <div className="max-w-5xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold mb-8 text-white font-playfair font-light">

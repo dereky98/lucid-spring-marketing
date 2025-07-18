@@ -1,13 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Hero from "@/components/Hero";
-import Navbar from "@/components/Navbar";
-import Features from "@/components/Features";
-import FeatureCards from "@/components/FeatureCards";
-import DesignedToScale from "@/components/DesignedToScale";
-import Integrations from "@/components/Integrations";
 import BuiltForScale from "@/components/BuiltForScale";
+import DesignedToScale from "@/components/DesignedToScale";
+import FeatureCards from "@/components/FeatureCards";
+import Features from "@/components/Features";
+import Hero from "@/components/Hero";
+import Integrations from "@/components/Integrations";
+import Navbar from "@/components/Navbar";
+import { useEffect, useState } from "react";
 
 export default function ClientHome() {
   const [isVisible, setIsVisible] = useState(false);
@@ -27,7 +27,7 @@ export default function ClientHome() {
 
   return (
     <div className="min-h-screen">
-      <Navbar navbarTheme="dark" />
+      <Navbar />
       <Hero isVisible={isVisible} fadeIn={fadeIn} />
       <Features />
       <FeatureCards />
