@@ -52,7 +52,7 @@ export default function FloatingSquares() {
     const spacingX = Math.max(35, Math.min(50, vw * 3)); // Dynamic spacing
     const shapeWidth = Math.max(24, Math.min(40, vw * 2.5));
     const shapeHeight = Math.max(40, Math.min(70, vw * 4));
-    const minVerticalGap = shapeHeight * 0.3; // Minimum 30% gap between shapes
+    const minVerticalGap = shapeHeight * 0.5; // Minimum 50% gap between shapes
     
     // Calculate number of columns that fit in available width
     const maxColumns = Math.floor((availableWidth - baseX * 2) / spacingX);
@@ -106,19 +106,23 @@ export default function FloatingSquares() {
           const startY = centerY - totalHeight / 2;
           baseY = startY + (spacing * i);
         } else {
-          // Progressive tapering effect
+          // Progressive tapering effect with randomness
           const colProgress = col / (numColumns - 3); // Progress excluding the last 3 columns
+          
+          // Add random variation to the tapering
+          const randomTaperOffset = seededRandom(col * 23) * 0.15 - 0.075; // -7.5% to +7.5%
           
           // Left columns use most height but stay within bounds
           const verticalPadding = dimensions.height * (0.12 + colProgress * 0.08); // 12% to 20% padding
-          const taperFactor = 1 - (colProgress * 0.4); // Reduces by up to 40%
+          const taperFactor = Math.max(0.4, Math.min(1, (1 - (colProgress * 0.4)) + randomTaperOffset)); // Reduces by up to 40% with variation
           
           // Calculate available space
           const totalAvailable = dimensions.height - (verticalPadding * 2);
           const effectiveHeight = totalAvailable * taperFactor;
           
-          // Center the tapered distribution
-          const startY = verticalPadding + (totalAvailable - effectiveHeight) / 2;
+          // Center the tapered distribution with some random offset
+          const centerOffset = (seededRandom(col * 37) - 0.5) * dimensions.height * 0.05; // Random center offset
+          const startY = verticalPadding + (totalAvailable - effectiveHeight) / 2 + centerOffset;
           
           // Distribute shapes across the effective height
           if (shapesInColumn === 1) {
@@ -129,7 +133,23 @@ export default function FloatingSquares() {
           }
         }
         
-        const yVariation = (seededRandom(col * 100 + i * 13) - 0.5) * dimensions.height * 0.08;
+        // Y variation - more variation for left columns, less for right
+        let yVariationAmount: number;
+        if (col < 3) {
+          // Large variation for leftmost columns
+          yVariationAmount = dimensions.height * 0.06;
+        } else if (col < 6) {
+          // Medium variation for early columns
+          yVariationAmount = dimensions.height * 0.04;
+        } else if (col >= numColumns - 3) {
+          // Small variation for rightmost columns to prevent overlap
+          yVariationAmount = shapeHeight * 0.15;
+        } else {
+          // Gradual reduction for middle columns
+          yVariationAmount = dimensions.height * 0.03;
+        }
+        
+        const yVariation = (seededRandom(col * 100 + i * 13) - 0.5) * yVariationAmount;
         const y = Math.max(30, Math.min(dimensions.height - 30, baseY + yVariation));
         
         const x = baseX + col * spacingX;
