@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function SingleFeature() {
   return (
-    <section className="relative min-h-screen flex items-center px-8 py-32 overflow-hidden bg-[#EFF1F2]">
+    <section id="product" className="relative min-h-screen flex items-center px-8 py-32 overflow-hidden bg-[#EFF1F2]">
       <div className="max-w-5xl mx-auto w-full">
         {/* Dashboard Image with parallelogram background */}
         <motion.div

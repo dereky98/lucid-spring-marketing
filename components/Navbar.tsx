@@ -20,6 +20,13 @@ export default function Navbar() {
   const logoColor = isScrolled ? "text-black" : "text-white";
   const navLinkHoverColor = isScrolled ? "hover:text-gray-500" : "hover:text-white";
 
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 pt-8 px-8">
       <div className="bg-[#D5DFE573]/45 backdrop-blur-md rounded-full px-6 py-3 flex items-center justify-between max-w-2xl mx-auto">
@@ -33,24 +40,24 @@ export default function Navbar() {
 
         {/* Center - Navigation Links */}
         <nav className="hidden md:flex items-center space-x-8">
-          <Link
-            href="/product"
-            className={`text-[#272727] ${navLinkHoverColor} transition-colors text-md`}
+          <button
+            onClick={() => scrollToSection("product")}
+            className={`text-[#272727] ${navLinkHoverColor} transition-colors text-md cursor-pointer`}
           >
             Product
-          </Link>
-          <Link
-            href="/capabilities"
-            className={`text-[#272727] ${navLinkHoverColor} transition-colors text-md`}
+          </button>
+          <button
+            onClick={() => scrollToSection("capabilities")}
+            className={`text-[#272727] ${navLinkHoverColor} transition-colors text-md cursor-pointer`}
           >
             Capabilities
-          </Link>
-          <Link
-            href="/about"
-            className={`text-[#272727] ${navLinkHoverColor} transition-colors text-md`}
+          </button>
+          <button
+            onClick={() => scrollToSection("security")}
+            className={`text-[#272727] ${navLinkHoverColor} transition-colors text-md cursor-pointer`}
           >
-            About
-          </Link>
+            Security
+          </button>
         </nav>
 
         {/* Right side - CTA Button */}

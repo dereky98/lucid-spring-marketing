@@ -26,7 +26,7 @@ const features = [
 
 export default function FeatureCards() {
   return (
-    <section className="py-32 px-8 bg-[#EFF1F2]">
+    <section id="capabilities" className="py-32 px-8 bg-[#EFF1F2]">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {features.map((feature, index) => (

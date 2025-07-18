@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Integrations() {
   return (
-    <section className="relative py-48 px-8 bg-[#EFF1F2]">
+    <section className="relative pt-24 px-8 bg-[#EFF1F2]">
       <div className="max-w-6xl mx-auto w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           {/* Text content on the left */}
