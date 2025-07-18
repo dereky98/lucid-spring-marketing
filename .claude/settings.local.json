@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__figma-dev-mode-mcp-server__get_image",
+      "mcp__figma-dev-mode-mcp-server__get_code",
+      "Bash(npx puppeteer screenshot:*)",
+      "Bash(ls:*)",
+      "Bash(node:*)"
+    ],
+    "deny": []
+  }
+}

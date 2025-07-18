@@ -1,8 +1,8 @@
 "use client";
 
-import { useWaitlist } from "@/context/WaitlistContext";
 import { motion, Variants } from "framer-motion";
-import { useEffect, useState } from "react";
+import { ChevronDown } from "lucide-react";
+import FloatingSquares from "./FloatingSquares";
 
 interface HeroProps {
   isVisible: boolean;
@@ -10,71 +10,61 @@ interface HeroProps {
 }
 
 export default function Hero({ isVisible, fadeIn }: HeroProps) {
-  const { openModal } = useWaitlist();
-
-  const fullText = "The Operating System for Private Market Investors.";
-  const [typedText, setTypedText] = useState("");
-  const [typingComplete, setTypingComplete] = useState(false);
-
-  useEffect(() => {
-    if (isVisible) {
-      let i = 0;
-      setTypedText("");
-      setTypingComplete(false);
-      const typingInterval = setInterval(() => {
-        if (i < fullText.length) {
-          setTypedText(fullText.substring(0, i + 1));
-          i++;
-        } else {
-          clearInterval(typingInterval);
-          setTypingComplete(true);
-        }
-      }, 50);
-
-      return () => clearInterval(typingInterval);
-    }
-  }, [isVisible, fullText]);
-
   return (
-    <div className="bg-[#0A0C1B] h-screen w-full flex items-center justify-center">
-      <section
-        className="relative w-full h-screen flex items-center justify-center overflow-hidden"
-        style={{
-          backgroundColor: "#0A0C1B",
-        }}
-      >
-        <div
-          className="absolute inset-0 w-full h-full"
-          style={{
-            backgroundImage: "url('/hero-background.png')",
-            backgroundSize: "contain",
-            backgroundPosition: "center center",
-            backgroundRepeat: "no-repeat",
-          }}
-        ></div>
-        <div className="bg-black/30 w-full h-full absolute"></div>
+    <div className="relative h-screen w-full flex items-center justify-center overflow-hidden">
+      {/* Linear gradient background with exact colors */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#5465FF] to-[#503AF3]" />
+
+      {/* Animated floating squares background */}
+      <FloatingSquares />
+
+      {/* Content */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-8 grid grid-cols-12 items-center h-full">
+        <div className="col-span-1 sm:col-span-2 md:col-span-3 lg:col-span-4 xl:col-span-5" />{" "}
+        {/* Space for floating shapes */}
         <motion.div
           initial="hidden"
           animate={isVisible ? "visible" : "hidden"}
           variants={fadeIn}
-          className="text-center px-4 relative z-10"
+          className="col-span-11 sm:col-span-10 md:col-span-9 lg:col-span-8 xl:col-span-7 text-left"
         >
-          <h1 className="text-4xl font-playfair font-light text-white leading-tight min-h-[2em]">
-            {typedText}
-            <span className="animate-pulse">|</span>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold text-white mb-3 tracking-tight whitespace-nowrap">
+            Build your data palace
           </h1>
 
-          <motion.button
-            initial={{ opacity: 0 }}
-            animate={{ opacity: typingComplete ? 1 : 0 }}
-            transition={{ duration: 0.8 }}
-            className="px-6 py-2.5 bg-white text-[#0A0C1B] text-lg rounded-md font-normal hover:bg-white/80 transition-colors"
-            onClick={() => openModal()}
-          >
-            Join Waitlist
-          </motion.button>
+          <h3 className="text-2xl md:tex-3xl font-normal text-white/80 mb-10">
+            A second brain for private market investors
+          </h3>
+
+          <div className="flex items-center gap-6">
+            <button className="bg-white text-gray-900 px-8 py-3 rounded-full font-medium hover:bg-white/90 transition-all shadow-lg">
+              Request a demo
+            </button>
+
+            <p className="text-white/70 text-sm">
+              Track what you've seen.
+              <br />
+              Understand what you own.
+            </p>
+          </div>
         </motion.div>
-      </section>
+      </div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 1,
+          duration: 0.8,
+          repeat: Infinity,
+          repeatType: "reverse",
+          ease: "easeInOut",
+        }}
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+      >
+        <ChevronDown className="w-6 h-6 text-white/50" />
+      </motion.div>
     </div>
   );
 }
