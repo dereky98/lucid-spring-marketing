@@ -11,7 +11,7 @@ const features = [
     image: "/unify-fragmented-documents.png",
   },
   {
-    title: "Dynamically updating reports",
+    title: "Dynamically update reports",
     description:
       "Generate rollup views without rebuilding spreadsheets. Have the reports update in real time as you collect data.",
     image: "/dynamically-updating-reports.png",

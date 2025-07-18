@@ -51,8 +51,7 @@ export default function DesignedToScale() {
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
               Each team member that you add to your palace will be able to leverage all the past
-              reporting and dynamically update as new investments are made and new content is
-              uploaded
+              reporting and stay updated as new investments are made and new content is uploaded
             </p>
           </motion.div>
         </div>

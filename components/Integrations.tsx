@@ -20,7 +20,7 @@ export default function Integrations() {
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
               Your palace can link to your entire stack and is built to funnel quality information
-              into a team wide resource that can serve as the single source of truth
+              into a team wide resource that can serve as a single source of truth
             </p>
           </motion.div>
 
