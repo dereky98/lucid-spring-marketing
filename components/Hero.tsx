@@ -2,7 +2,9 @@
 
 import { motion, Variants } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import { useState } from "react";
 import FloatingSquares from "./FloatingSquares";
+import DemoModal from "./DemoModal";
 
 interface HeroProps {
   isVisible: boolean;
@@ -10,6 +12,8 @@ interface HeroProps {
 }
 
 export default function Hero({ isVisible, fadeIn }: HeroProps) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className="relative h-screen w-full flex items-center justify-center overflow-hidden">
       {/* Linear gradient background with exact colors */}
@@ -37,7 +41,10 @@ export default function Hero({ isVisible, fadeIn }: HeroProps) {
           </h3>
 
           <div className="flex items-center gap-6">
-            <button className="bg-white text-gray-900 px-8 py-3 rounded-full font-medium hover:bg-white/90 transition-all shadow-lg">
+            <button 
+              onClick={() => setIsModalOpen(true)}
+              className="bg-white text-gray-900 px-8 py-3 rounded-full font-medium hover:bg-white/90 transition-all shadow-lg"
+            >
               Request a demo
             </button>
 
@@ -65,6 +72,9 @@ export default function Hero({ isVisible, fadeIn }: HeroProps) {
       >
         <ChevronDown className="w-6 h-6 text-white/50" />
       </motion.div>
+
+      {/* Demo Modal */}
+      <DemoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 }

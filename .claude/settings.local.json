@@ -5,7 +5,8 @@
       "mcp__figma-dev-mode-mcp-server__get_code",
       "Bash(npx puppeteer screenshot:*)",
       "Bash(ls:*)",
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "Bash(npx:*)"
     ],
     "deny": []
   }

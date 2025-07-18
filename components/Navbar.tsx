@@ -3,9 +3,11 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import DemoModal from "./DemoModal";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -61,10 +63,16 @@ export default function Navbar() {
         </nav>
 
         {/* Right side - CTA Button */}
-        <Button className="bg-white text-gray-900 hover:bg-white/90 rounded-full px-6 py-2 text-md font-medium">
+        <Button 
+          onClick={() => setIsModalOpen(true)}
+          className="bg-white text-gray-900 hover:bg-white/90 rounded-full px-6 py-2 text-md font-medium"
+        >
           Request a demo
         </Button>
       </div>
+
+      {/* Demo Modal */}
+      <DemoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </header>
   );
 }
