@@ -138,10 +138,10 @@ export default function SingleFeature() {
           viewport={{ once: true }}
           className="max-w-lg pl-4"
         >
-          <h2 className="text-xl md:text-2xl font-semibold text-gray-900 mb-4 leading-tight">
+          <h2 className="text-xl md:text-2xl font-medium text-gray-900 mb-4 leading-tight">
             Capture your fund's memory
           </h2>
-          <p className="text-sm text-black leading-relaxed">
+          <p className="text-sm text-gray-700 leading-tight font-light">
             Track every company in your portfolio with a system tailored to you. Compare growth,
             margins, headcount, and much more.
           </p>

@@ -135,10 +135,10 @@ export default function DesignedToScale() {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-2xl md:text-3xl font-semibold text-black mb-4 leading-tight">
+            <h2 className="text-xl md:text-2xl font-medium text-gray-900 mb-4 leading-tight">
               Designed to scale with your team
             </h2>
-            <p className="text-md text-black leading-relaxed">
+            <p className="text-md text-gray-700 leading-tight font-light">
               Give your team instant access to the insights they need. Assign role-based permissions
               for all historical and active reporting.
             </p>

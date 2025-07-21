@@ -74,10 +74,10 @@ export default function Integrations() {
             viewport={{ once: true }}
             className="flex flex-col pt-8"
           >
-            <h2 className="text-2xl md:text-3xl font-semibold text-black mb-4 leading-tight">
+            <h2 className="text-xl md:text-2xl font-medium text-gray-900 mb-4 leading-tight">
               Integrations
             </h2>
-            <p className="text-md text-black leading-relaxed">
+            <p className="text-md text-gray-700 leading-tight font-light">
               Create a single pane of glass for your team to access key investment information - any
               type, from any source.
             </p>

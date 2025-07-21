@@ -163,10 +163,8 @@ export default function FeatureCards() {
               viewport={{ once: true }}
               className="px-4"
             >
-              <h3 className="text-lg text-start font-semibold text-gray-900 mb-2">
-                {feature.title}
-              </h3>
-              <p className="text-gray-600 text-sm text-start leading-relaxed">
+              <h3 className="text-lg text-start font-medium text-gray-900 mb-2">{feature.title}</h3>
+              <p className="text-gray-700 text-sm text-start leading-tight font-light">
                 {feature.description}
               </p>
             </motion.div>
