@@ -20,13 +20,13 @@ export default function Hero({ isVisible, fadeIn }: HeroProps) {
       <div className="absolute inset-0 bg-gradient-to-br from-[#5465FF] to-[#503AF3]" />
 
       {/* Content */}
-      <div className="relative z-10 w-full px-4 sm:px-8 lg:px-20 xl:px-32 flex flex-col lg:flex-row items-center justify-center lg:justify-start h-full gap-8 lg:gap-12">
-        {/* Dashboard Screenshot */}
+      <div className="relative z-10 w-full px-4 sm:px-8 lg:px-20 xl:px-32 flex flex-row items-center justify-center h-full gap-4 sm:gap-6 md:gap-8 lg:gap-12">
+        {/* Dashboard Screenshot - 50% width */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="w-full lg:w-auto flex-shrink-0 max-w-[500px] lg:max-w-none"
+          className="w-1/2 flex-shrink-0"
         >
           <div className="relative inline-block w-full">
             <Image
@@ -41,7 +41,7 @@ export default function Hero({ isVisible, fadeIn }: HeroProps) {
             {/* Corner gradient fills */}
             {/* Top left gradient - fills bottom right section */}
             <div
-              className="absolute"
+              className="absolute hidden sm:block"
               style={{
                 top: "-74px",
                 left: "-74px",
@@ -54,7 +54,7 @@ export default function Hero({ isVisible, fadeIn }: HeroProps) {
 
             {/* Top right gradient - fills bottom left section */}
             <div
-              className="absolute"
+              className="absolute hidden sm:block"
               style={{
                 top: "-36px",
                 right: "-36px",
@@ -67,7 +67,7 @@ export default function Hero({ isVisible, fadeIn }: HeroProps) {
 
             {/* Bottom left gradient - fills top right section */}
             <div
-              className="absolute"
+              className="absolute hidden sm:block"
               style={{
                 bottom: "-38px",
                 left: "-38px",
@@ -80,7 +80,7 @@ export default function Hero({ isVisible, fadeIn }: HeroProps) {
 
             {/* Bottom right gradient - fills top left section */}
             <div
-              className="absolute"
+              className="absolute hidden sm:block"
               style={{
                 bottom: "-92px",
                 right: "-92px",
@@ -94,7 +94,7 @@ export default function Hero({ isVisible, fadeIn }: HeroProps) {
             {/* Corner lines */}
             {/* Top left - horizontal line */}
             <div
-              className="absolute bg-[#8D96F1]"
+              className="absolute bg-[#8D96F1] hidden sm:block"
               style={{
                 top: "0",
                 left: "-92px",
@@ -104,7 +104,7 @@ export default function Hero({ isVisible, fadeIn }: HeroProps) {
             />
             {/* Top left - vertical line */}
             <div
-              className="absolute bg-[#8D96F1]"
+              className="absolute bg-[#8D96F1] hidden sm:block"
               style={{
                 top: "-74px",
                 left: "0",
@@ -115,7 +115,7 @@ export default function Hero({ isVisible, fadeIn }: HeroProps) {
 
             {/* Top right - horizontal line */}
             <div
-              className="absolute bg-[#8D96F1]"
+              className="absolute bg-[#8D96F1] hidden sm:block"
               style={{
                 top: "0",
                 right: "-36px",
@@ -125,7 +125,7 @@ export default function Hero({ isVisible, fadeIn }: HeroProps) {
             />
             {/* Top right - vertical line */}
             <div
-              className="absolute bg-[#8D96F1]"
+              className="absolute bg-[#8D96F1] hidden sm:block"
               style={{
                 top: "-58px",
                 right: "0",
@@ -136,7 +136,7 @@ export default function Hero({ isVisible, fadeIn }: HeroProps) {
 
             {/* Bottom left - horizontal line */}
             <div
-              className="absolute bg-[#8D96F1]"
+              className="absolute bg-[#8D96F1] hidden sm:block"
               style={{
                 bottom: "0",
                 left: "-38px",
@@ -146,7 +146,7 @@ export default function Hero({ isVisible, fadeIn }: HeroProps) {
             />
             {/* Bottom left - vertical line */}
             <div
-              className="absolute bg-[#8D96F1]"
+              className="absolute bg-[#8D96F1] hidden sm:block"
               style={{
                 bottom: "-111px",
                 left: "0",
@@ -157,7 +157,7 @@ export default function Hero({ isVisible, fadeIn }: HeroProps) {
 
             {/* Bottom right - horizontal line */}
             <div
-              className="absolute bg-[#8D96F1]"
+              className="absolute bg-[#8D96F1] hidden sm:block"
               style={{
                 bottom: "0",
                 right: "-183px",
@@ -167,7 +167,7 @@ export default function Hero({ isVisible, fadeIn }: HeroProps) {
             />
             {/* Bottom right - vertical line */}
             <div
-              className="absolute bg-[#8D96F1]"
+              className="absolute bg-[#8D96F1] hidden sm:block"
               style={{
                 bottom: "-92px",
                 right: "0",
@@ -178,30 +178,30 @@ export default function Hero({ isVisible, fadeIn }: HeroProps) {
           </div>
         </motion.div>
 
-        {/* Text Content */}
+        {/* Text Content - 50% width */}
         <motion.div
           initial="hidden"
           animate={isVisible ? "visible" : "hidden"}
           variants={fadeIn}
-          className="flex-1 text-center lg:text-left max-w-2xl w-full lg:w-auto"
+          className="w-1/2 text-left"
         >
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-white mb-3 tracking-tight">
+          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-white mb-2 sm:mb-3 tracking-tight">
             Build your data palace
           </h1>
 
-          <h3 className="text-xl sm:text-2xl md:text-3xl font-normal text-white/80 mb-6 lg:mb-10">
+          <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light text-white/80 mb-4 sm:mb-6 lg:mb-10">
             A second brain for private market investors
           </h3>
 
-          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 justify-center lg:justify-start">
+          <div className="flex flex-col gap-3 sm:gap-4">
             <button
               onClick={() => setIsModalOpen(true)}
-              className="bg-white text-gray-900 px-6 sm:px-8 py-3 rounded-full font-medium hover:bg-white/90 transition-all shadow-lg w-full sm:w-auto"
+              className="bg-white text-gray-900 px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-full font-medium hover:bg-white/90 transition-all shadow-lg text-sm sm:text-base"
             >
               Request a demo
             </button>
 
-            <p className="text-white/70 text-sm text-center sm:text-left">
+            <p className="text-white/70 text-xs sm:text-sm">
               Track what you&apos;ve seen.
               <br />
               Understand what you own.

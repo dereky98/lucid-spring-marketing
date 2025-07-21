@@ -61,18 +61,19 @@ export default function BuiltForScale() {
   return (
     <section id="security" className="relative py-32 px-8 bg-[#EFF1F2]">
       <div className="max-w-5xl mx-auto w-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          {/* Text content on the left */}
+        <div className="flex flex-row gap-4 sm:gap-6 md:gap-8 lg:gap-16 items-center">
+          {/* Text content on the left - 50% */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
+            className="w-1/2"
           >
-            <h2 className="text-xl md:text-2xl font-medium text-gray-900 mb-2 leading-tight">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-medium text-gray-900 mb-1 sm:mb-2 leading-tight">
               Built for scale. Designed for trust. <br />
             </h2>
-            <h3 className="text-md md:text-lg font-light text-gray-700 mb-4 leading-tight">
+            <h3 className="text-sm sm:text-md md:text-lg font-light text-gray-700 mb-2 sm:mb-4 leading-tight">
               Palace is audited and certified by industry-leading <br />
               third party standards.
             </h3>
@@ -120,18 +121,18 @@ export default function BuiltForScale() {
             </ul>
           </motion.div>
 
-          {/* Security badges grid on the right */}
+          {/* Security badges grid on the right - 50% */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="grid grid-cols-2 gap-4"
+            className="w-1/2 grid grid-cols-2 gap-4"
           >
             {securityBadges.map((badge, index) => (
               <div key={index} className="relative">
                 <div
-                  className="p-12 flex items-center justify-center border-[1px] border-[#B3C0C8]"
+                  className="p-4 sm:p-8 md:p-12 flex items-center justify-center border-[1px] border-[#B3C0C8]"
                   style={{ backgroundColor: "#5361FD26" }}
                 >
                   {/* Corner lines for each square */}
@@ -267,7 +268,7 @@ export default function BuiltForScale() {
                     alt={badge.alt}
                     width={80}
                     height={80}
-                    className="w-20 h-20 object-contain"
+                    className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 object-contain"
                     style={{
                       filter: badge.src.endsWith(".svg")
                         ? "none"

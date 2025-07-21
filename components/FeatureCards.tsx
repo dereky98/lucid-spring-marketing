@@ -27,13 +27,18 @@ const features = [
 export default function FeatureCards() {
   return (
     <section id="capabilities" className="py-32 px-8 bg-[#EFF1F2]">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-2xl sm:max-w-3xl md:max-w-4xl mx-auto px-4 sm:px-6 md:px-8">
         {/* Images with borders and corner extensions */}
-        <div className="relative grid grid-cols-1 md:grid-cols-3 gap-0 mb-3">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="relative grid grid-cols-3 gap-0 mb-3">
           {/* Corner lines for the image grid only */}
           {/* Top left - horizontal line */}
           <div
-            className="absolute bg-[#B3C0C8]"
+            className="absolute bg-[#B3C0C8] hidden sm:block"
             style={{
               top: "0",
               left: "-28px",
@@ -43,7 +48,7 @@ export default function FeatureCards() {
           />
           {/* Top left - vertical line */}
           <div
-            className="absolute bg-[#B3C0C8]"
+            className="absolute bg-[#B3C0C8] hidden sm:block"
             style={{
               top: "-68px",
               left: "0",
@@ -54,28 +59,28 @@ export default function FeatureCards() {
 
           {/* Top right - horizontal line */}
           <div
-            className="absolute bg-[#B3C0C8]"
+            className="absolute bg-[#B3C0C8] hidden sm:block"
             style={{
               top: "0",
-              right: "-42px",
-              width: "42px",
+              right: "-43px",
+              width: "43px",
               height: "1px",
             }}
           />
           {/* Top right - vertical line */}
           <div
-            className="absolute bg-[#B3C0C8]"
+            className="absolute bg-[#B3C0C8] hidden sm:block"
             style={{
               top: "-58px",
               right: "0",
               width: "1px",
-              height: "58px",
+              height: "59px",
             }}
           />
 
           {/* Bottom left - horizontal line */}
           <div
-            className="absolute bg-[#B3C0C8]"
+            className="absolute bg-[#B3C0C8] hidden sm:block"
             style={{
               bottom: "0",
               left: "-96px",
@@ -85,7 +90,7 @@ export default function FeatureCards() {
           />
           {/* Bottom left - vertical line */}
           <div
-            className="absolute bg-[#B3C0C8]"
+            className="absolute bg-[#B3C0C8] hidden sm:block"
             style={{
               bottom: "-112px",
               left: "0",
@@ -96,46 +101,42 @@ export default function FeatureCards() {
 
           {/* Bottom right - horizontal line */}
           <div
-            className="absolute bg-[#B3C0C8]"
+            className="absolute bg-[#B3C0C8] hidden sm:block"
             style={{
               bottom: "0",
-              right: "-20px",
-              width: "20px",
+              right: "-21px",
+              width: "21px",
               height: "1px",
             }}
           />
           {/* Bottom right - vertical line */}
           <div
-            className="absolute bg-[#B3C0C8]"
+            className="absolute bg-[#B3C0C8] hidden sm:block"
             style={{
               bottom: "-20px",
               right: "0",
               width: "1px",
-              height: "20px",
+              height: "21px",
             }}
           />
 
           {/* Top right gradient - fills bottom left section */}
           <div
-            className="absolute"
+            className="absolute hidden sm:block"
             style={{
               top: "-58px",
-              right: "-42px",
-              width: "42px",
-              height: "58px",
+              right: "-43px",
+              width: "43px",
+              height: "59px",
               background:
                 "linear-gradient(to top right, rgba(213, 223, 229, 0.6) 0%, rgba(213, 223, 229, 0.4) 20%, rgba(213, 223, 229, 0.2) 30%, transparent 50%)",
             }}
           />
 
           {features.map((feature, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className={`h-64 p-2 overflow-hidden border-t-[1px] border-b-[1px] border-[#B3C0C8] bg-transparent ${
+              className={`h-32 sm:h-48 md:h-64 p-1 sm:p-2 overflow-hidden border-t-[1px] border-b-[1px] border-[#B3C0C8] bg-transparent ${
                 index === 0 ? "border-l-[1px]" : ""
               }${index === 2 ? "border-r-[1px]" : ""}${
                 index === 1 ? "border-l-[1px] border-r-[1px]" : ""
@@ -148,9 +149,9 @@ export default function FeatureCards() {
                 height={200}
                 className="object-contain h-full w-full"
               />
-            </motion.div>
+            </div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Titles and descriptions below the image grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-0">

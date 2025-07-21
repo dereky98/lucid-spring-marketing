@@ -7,14 +7,14 @@ export default function DesignedToScale() {
   return (
     <section className="relative py-32 px-8 bg-[#EFF1F2]">
       <div className="max-w-4xl mx-auto w-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center overflow-visible">
-          {/* Image on the left */}
+        <div className="flex flex-row gap-4 sm:gap-6 md:gap-8 items-center overflow-visible">
+          {/* Image on the left - 50% */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="relative overflow-visible"
+            className="w-1/2 relative overflow-visible"
           >
             <div className="relative overflow-visible">
               {/* Team collaboration image */}
@@ -30,7 +30,7 @@ export default function DesignedToScale() {
                 {/* Corner lines */}
                 {/* Top left - horizontal line */}
                 <div
-                  className="absolute bg-[#B3C0C8]"
+                  className="absolute bg-[#B3C0C8] hidden sm:block"
                   style={{
                     top: "0",
                     left: "-46px",
@@ -40,7 +40,7 @@ export default function DesignedToScale() {
                 />
                 {/* Top left - vertical line */}
                 <div
-                  className="absolute bg-[#B3C0C8]"
+                  className="absolute bg-[#B3C0C8] hidden sm:block"
                   style={{
                     top: "-20px",
                     left: "0",
@@ -51,7 +51,7 @@ export default function DesignedToScale() {
 
                 {/* Top right - horizontal line */}
                 <div
-                  className="absolute bg-[#B3C0C8]"
+                  className="absolute bg-[#B3C0C8] hidden sm:block"
                   style={{
                     top: "0",
                     right: "-25px",
@@ -61,7 +61,7 @@ export default function DesignedToScale() {
                 />
                 {/* Top right - vertical line */}
                 <div
-                  className="absolute bg-[#B3C0C8]"
+                  className="absolute bg-[#B3C0C8] hidden sm:block"
                   style={{
                     top: "-35px",
                     right: "0",
@@ -72,7 +72,7 @@ export default function DesignedToScale() {
 
                 {/* Bottom left - horizontal line */}
                 <div
-                  className="absolute bg-[#B3C0C8]"
+                  className="absolute bg-[#B3C0C8] hidden sm:block"
                   style={{
                     bottom: "0",
                     left: "-45px",
@@ -82,7 +82,7 @@ export default function DesignedToScale() {
                 />
                 {/* Bottom left - vertical line */}
                 <div
-                  className="absolute bg-[#B3C0C8]"
+                  className="absolute bg-[#B3C0C8] hidden sm:block"
                   style={{
                     bottom: "-60px",
                     left: "0",
@@ -93,7 +93,7 @@ export default function DesignedToScale() {
 
                 {/* Bottom right - horizontal line */}
                 <div
-                  className="absolute bg-[#B3C0C8]"
+                  className="absolute bg-[#B3C0C8] hidden sm:block"
                   style={{
                     bottom: "0",
                     right: "-20px",
@@ -103,7 +103,7 @@ export default function DesignedToScale() {
                 />
                 {/* Bottom right - vertical line */}
                 <div
-                  className="absolute bg-[#B3C0C8]"
+                  className="absolute bg-[#B3C0C8] hidden sm:block"
                   style={{
                     bottom: "-22px",
                     right: "0",
@@ -114,7 +114,7 @@ export default function DesignedToScale() {
 
                 {/* Bottom left gradient - fills top right section */}
                 <div
-                  className="absolute"
+                  className="absolute hidden sm:block"
                   style={{
                     bottom: "-60px",
                     left: "-45px",
@@ -128,17 +128,18 @@ export default function DesignedToScale() {
             </div>
           </motion.div>
 
-          {/* Text content on the right */}
+          {/* Text content on the right - 50% */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
+            className="w-1/2"
           >
-            <h2 className="text-xl md:text-2xl font-medium text-gray-900 mb-4 leading-tight">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-medium text-gray-900 mb-2 sm:mb-4 leading-tight">
               Designed to scale with your team
             </h2>
-            <p className="text-md text-gray-700 leading-tight font-light">
+            <p className="text-sm sm:text-md text-gray-700 leading-tight font-light">
               Give your team instant access to the insights they need. Assign role-based permissions
               for all historical and active reporting.
             </p>
