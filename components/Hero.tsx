@@ -20,21 +20,21 @@ export default function Hero({ isVisible, fadeIn }: HeroProps) {
       <div className="absolute inset-0 bg-gradient-to-br from-[#5465FF] to-[#503AF3]" />
 
       {/* Content */}
-      <div className="relative z-10 w-full px-8 lg:px-20 xl:px-32 flex items-center justify-start h-full gap-8">
+      <div className="relative z-10 w-full px-4 sm:px-8 lg:px-20 xl:px-32 flex flex-col lg:flex-row items-center justify-center lg:justify-start h-full gap-8 lg:gap-12">
         {/* Dashboard Screenshot */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="hidden lg:block flex-shrink-0"
+          className="w-full lg:w-auto flex-shrink-0 max-w-[500px] lg:max-w-none"
         >
-          <div className="relative inline-block">
+          <div className="relative inline-block w-full">
             <Image
               src="/hero-dashboard.png"
               alt="Palace Dashboard"
               width={700}
               height={490}
-              className="block"
+              className="block w-full h-auto"
               priority
             />
 
@@ -74,7 +74,7 @@ export default function Hero({ isVisible, fadeIn }: HeroProps) {
                 width: "38px",
                 height: "38px",
                 background:
-                  "linear-gradient(to bottom left, rgba(255, 255, 255, 0.6) 0%, rgba(141, 150, 241, 0.3) 20%, transparent 40%)",
+                  "linear-gradient(to bottom left, rgba(255, 255, 255, 0.6) 0%, rgba(141, 150, 241, 0.3) 25%, transparent 50%)",
               }}
             />
 
@@ -183,25 +183,25 @@ export default function Hero({ isVisible, fadeIn }: HeroProps) {
           initial="hidden"
           animate={isVisible ? "visible" : "hidden"}
           variants={fadeIn}
-          className="flex-1 text-left max-w-xl"
+          className="flex-1 text-center lg:text-left max-w-2xl w-full lg:w-auto"
         >
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold text-white mb-3 tracking-tight whitespace-nowrap">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-white mb-3 tracking-tight">
             Build your data palace
           </h1>
 
-          <h3 className="text-2xl md:tex-3xl font-normal text-white/80 mb-10">
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-normal text-white/80 mb-6 lg:mb-10">
             A second brain for private market investors
           </h3>
 
-          <div className="flex items-center gap-6">
+          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 justify-center lg:justify-start">
             <button
               onClick={() => setIsModalOpen(true)}
-              className="bg-white text-gray-900 px-8 py-3 rounded-full font-medium hover:bg-white/90 transition-all shadow-lg"
+              className="bg-white text-gray-900 px-6 sm:px-8 py-3 rounded-full font-medium hover:bg-white/90 transition-all shadow-lg w-full sm:w-auto"
             >
               Request a demo
             </button>
 
-            <p className="text-white/70 text-sm">
+            <p className="text-white/70 text-sm text-center sm:text-left">
               Track what you&apos;ve seen.
               <br />
               Understand what you own.

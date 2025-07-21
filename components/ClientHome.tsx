@@ -3,7 +3,8 @@
 import BuiltForScale from "@/components/BuiltForScale";
 import DesignedToScale from "@/components/DesignedToScale";
 import FeatureCards from "@/components/FeatureCards";
-import Features from "@/components/Features";
+import Footer from "@/components/Footer";
+import FundMemory from "@/components/FundMemory";
 import Hero from "@/components/Hero";
 import Integrations from "@/components/Integrations";
 import Navbar from "@/components/Navbar";
@@ -29,11 +30,12 @@ export default function ClientHome() {
     <div className="min-h-screen">
       <Navbar />
       <Hero isVisible={isVisible} fadeIn={fadeIn} />
-      <Features />
+      <FundMemory />
       <FeatureCards />
       <DesignedToScale />
       <Integrations />
       <BuiltForScale />
+      <Footer />
     </div>
   );
 }
