@@ -139,8 +139,8 @@ export default function DesignedToScale() {
               Designed to scale with your team
             </h2>
             <p className="text-md text-black leading-relaxed">
-              Each team member that you add to your Palace will be able to leverage all the past
-              reporting and stay updated as new investments are made and new content is uploaded
+              Give your team instant access to the insights they need. Assign role-based permissions
+              for all historical and active reporting.
             </p>
           </motion.div>
         </div>

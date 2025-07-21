@@ -78,8 +78,8 @@ export default function Integrations() {
               Integrations
             </h2>
             <p className="text-md text-black leading-relaxed">
-              Your Palace can link to your entire stack and is built to funnel quality information
-              into a team wide resource that can serve as a single source of truth
+              Create a single pane of glass for your team to access key investment information - any
+              type, from any source.
             </p>
           </motion.div>
         </div>
@@ -90,9 +90,7 @@ export default function Integrations() {
           onClick={() => setIsExpanded(!isExpanded)}
           className="w-full flex items-center justify-center gap-2 py-2 text-black hover:text-gray-700 transition-colors"
         >
-          <span className="text-lg font-medium">
-            {isExpanded ? "Collapse Integrations" : "Explore Integrations"}
-          </span>
+          <span className="text-lg font-medium">Explore Integrations</span>
           {isExpanded ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
         </button>
 
