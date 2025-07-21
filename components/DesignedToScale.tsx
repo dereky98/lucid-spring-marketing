@@ -24,7 +24,7 @@ export default function DesignedToScale() {
                   alt="Team collaboration"
                   width={400}
                   height={267}
-                  className="w-full h-auto block border-[1.5px] border-[#B3C0C8]"
+                  className="w-full h-auto block border-[1px] border-[#B3C0C8]"
                 />
 
                 {/* Corner lines */}
@@ -35,7 +35,7 @@ export default function DesignedToScale() {
                     top: "0",
                     left: "-46px",
                     width: "46px",
-                    height: "1.5px",
+                    height: "1px",
                   }}
                 />
                 {/* Top left - vertical line */}
@@ -44,7 +44,7 @@ export default function DesignedToScale() {
                   style={{
                     top: "-20px",
                     left: "0",
-                    width: "1.5px",
+                    width: "1px",
                     height: "20px",
                   }}
                 />
@@ -56,7 +56,7 @@ export default function DesignedToScale() {
                     top: "0",
                     right: "-25px",
                     width: "25px",
-                    height: "1.5px",
+                    height: "1px",
                   }}
                 />
                 {/* Top right - vertical line */}
@@ -65,7 +65,7 @@ export default function DesignedToScale() {
                   style={{
                     top: "-35px",
                     right: "0",
-                    width: "1.5px",
+                    width: "1px",
                     height: "35px",
                   }}
                 />
@@ -77,7 +77,7 @@ export default function DesignedToScale() {
                     bottom: "0",
                     left: "-45px",
                     width: "45px",
-                    height: "1.5px",
+                    height: "1px",
                   }}
                 />
                 {/* Bottom left - vertical line */}
@@ -86,7 +86,7 @@ export default function DesignedToScale() {
                   style={{
                     bottom: "-60px",
                     left: "0",
-                    width: "1.5px",
+                    width: "1px",
                     height: "60px",
                   }}
                 />
@@ -98,7 +98,7 @@ export default function DesignedToScale() {
                     bottom: "0",
                     right: "-20px",
                     width: "20px",
-                    height: "1.5px",
+                    height: "1px",
                   }}
                 />
                 {/* Bottom right - vertical line */}
@@ -107,7 +107,7 @@ export default function DesignedToScale() {
                   style={{
                     bottom: "-22px",
                     right: "0",
-                    width: "1.5px",
+                    width: "1px",
                     height: "22px",
                   }}
                 />

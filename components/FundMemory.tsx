@@ -26,7 +26,7 @@ export default function SingleFeature() {
                 alt="Dashboard showing portfolio data"
                 width={900}
                 height={600}
-                className="w-full h-auto block border-[1.5px] border-[#B3C0C8]"
+                className="w-full h-auto block border-[1px] border-[#B3C0C8]"
               />
 
               {/* Bottom left gradient - fills top right section */}
@@ -50,7 +50,7 @@ export default function SingleFeature() {
                   top: "0",
                   left: "-26px",
                   width: "26px",
-                  height: "1.5px",
+                  height: "1px",
                 }}
               />
               {/* Top left - vertical line */}
@@ -59,7 +59,7 @@ export default function SingleFeature() {
                 style={{
                   top: "-28px",
                   left: "0",
-                  width: "1.5px",
+                  width: "1px",
                   height: "28px",
                 }}
               />
@@ -71,7 +71,7 @@ export default function SingleFeature() {
                   top: "0",
                   right: "-32px",
                   width: "32px",
-                  height: "1.5px",
+                  height: "1px",
                 }}
               />
               {/* Top right - vertical line */}
@@ -80,7 +80,7 @@ export default function SingleFeature() {
                 style={{
                   top: "-22px",
                   right: "0",
-                  width: "1.5px",
+                  width: "1px",
                   height: "22px",
                 }}
               />
@@ -92,7 +92,7 @@ export default function SingleFeature() {
                   bottom: "0",
                   left: "-100px",
                   width: "100px",
-                  height: "1.5px",
+                  height: "1px",
                 }}
               />
               {/* Bottom left - vertical line */}
@@ -101,7 +101,7 @@ export default function SingleFeature() {
                 style={{
                   bottom: "-125px",
                   left: "0",
-                  width: "1.5px",
+                  width: "1px",
                   height: "125px",
                 }}
               />
@@ -113,7 +113,7 @@ export default function SingleFeature() {
                   bottom: "0",
                   right: "-30px",
                   width: "30px",
-                  height: "1.5px",
+                  height: "1px",
                 }}
               />
               {/* Bottom right - vertical line */}
@@ -122,7 +122,7 @@ export default function SingleFeature() {
                 style={{
                   bottom: "-24px",
                   right: "0",
-                  width: "1.5px",
+                  width: "1px",
                   height: "24px",
                 }}
               />

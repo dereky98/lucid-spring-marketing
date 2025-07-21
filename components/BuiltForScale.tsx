@@ -131,7 +131,7 @@ export default function BuiltForScale() {
             {securityBadges.map((badge, index) => (
               <div key={index} className="relative">
                 <div
-                  className="p-12 flex items-center justify-center border-[1.5px] border-[#B3C0C8]"
+                  className="p-12 flex items-center justify-center border-[1px] border-[#B3C0C8]"
                   style={{ backgroundColor: "#5361FD26" }}
                 >
                   {/* Corner lines for each square */}
@@ -142,7 +142,7 @@ export default function BuiltForScale() {
                       top: "0",
                       left: `-${badge.corners.topLeft.h}px`,
                       width: `${badge.corners.topLeft.h}px`,
-                      height: "1.5px",
+                      height: "1px",
                     }}
                   />
                   {/* Top left - vertical */}
@@ -151,7 +151,7 @@ export default function BuiltForScale() {
                     style={{
                       top: `-${badge.corners.topLeft.v}px`,
                       left: "0",
-                      width: "1.5px",
+                      width: "1px",
                       height: `${badge.corners.topLeft.v}px`,
                     }}
                   />
@@ -162,7 +162,7 @@ export default function BuiltForScale() {
                       top: "0",
                       right: `-${badge.corners.topRight.h}px`,
                       width: `${badge.corners.topRight.h}px`,
-                      height: "1.5px",
+                      height: "1px",
                     }}
                   />
                   {/* Top right - vertical */}
@@ -171,7 +171,7 @@ export default function BuiltForScale() {
                     style={{
                       top: `-${badge.corners.topRight.v}px`,
                       right: "0",
-                      width: "1.5px",
+                      width: "1px",
                       height: `${badge.corners.topRight.v}px`,
                     }}
                   />
@@ -182,7 +182,7 @@ export default function BuiltForScale() {
                       bottom: "0",
                       left: `-${badge.corners.bottomLeft.h}px`,
                       width: `${badge.corners.bottomLeft.h}px`,
-                      height: "1.5px",
+                      height: "1px",
                     }}
                   />
                   {/* Bottom left - vertical */}
@@ -191,7 +191,7 @@ export default function BuiltForScale() {
                     style={{
                       bottom: `-${badge.corners.bottomLeft.v}px`,
                       left: "0",
-                      width: "1.5px",
+                      width: "1px",
                       height: `${badge.corners.bottomLeft.v}px`,
                     }}
                   />
@@ -202,7 +202,7 @@ export default function BuiltForScale() {
                       bottom: "0",
                       right: `-${badge.corners.bottomRight.h}px`,
                       width: `${badge.corners.bottomRight.h}px`,
-                      height: "1.5px",
+                      height: "1px",
                     }}
                   />
                   {/* Bottom right - vertical */}
@@ -211,7 +211,7 @@ export default function BuiltForScale() {
                     style={{
                       bottom: `-${badge.corners.bottomRight.v}px`,
                       right: "0",
-                      width: "1.5px",
+                      width: "1px",
                       height: `${badge.corners.bottomRight.v}px`,
                     }}
                   />

@@ -38,7 +38,7 @@ export default function FeatureCards() {
               top: "0",
               left: "-28px",
               width: "28px",
-              height: "1.5px",
+              height: "1px",
             }}
           />
           {/* Top left - vertical line */}
@@ -47,7 +47,7 @@ export default function FeatureCards() {
             style={{
               top: "-68px",
               left: "0",
-              width: "1.5px",
+              width: "1px",
               height: "68px",
             }}
           />
@@ -59,7 +59,7 @@ export default function FeatureCards() {
               top: "0",
               right: "-42px",
               width: "42px",
-              height: "1.5px",
+              height: "1px",
             }}
           />
           {/* Top right - vertical line */}
@@ -68,7 +68,7 @@ export default function FeatureCards() {
             style={{
               top: "-58px",
               right: "0",
-              width: "1.5px",
+              width: "1px",
               height: "58px",
             }}
           />
@@ -80,7 +80,7 @@ export default function FeatureCards() {
               bottom: "0",
               left: "-96px",
               width: "96px",
-              height: "1.5px",
+              height: "1px",
             }}
           />
           {/* Bottom left - vertical line */}
@@ -89,7 +89,7 @@ export default function FeatureCards() {
             style={{
               bottom: "-112px",
               left: "0",
-              width: "1.5px",
+              width: "1px",
               height: "112px",
             }}
           />
@@ -101,7 +101,7 @@ export default function FeatureCards() {
               bottom: "0",
               right: "-20px",
               width: "20px",
-              height: "1.5px",
+              height: "1px",
             }}
           />
           {/* Bottom right - vertical line */}
@@ -110,7 +110,7 @@ export default function FeatureCards() {
             style={{
               bottom: "-20px",
               right: "0",
-              width: "1.5px",
+              width: "1px",
               height: "20px",
             }}
           />
@@ -135,10 +135,10 @@ export default function FeatureCards() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className={`h-64 p-2 overflow-hidden border-t-[1.5px] border-b-[1.5px] border-[#B3C0C8] bg-transparent ${
-                index === 0 ? "border-l-[1.5px]" : ""
-              }${index === 2 ? "border-r-[1.5px]" : ""}${
-                index === 1 ? "border-l-[1.5px] border-r-[1.5px]" : ""
+              className={`h-64 p-2 overflow-hidden border-t-[1px] border-b-[1px] border-[#B3C0C8] bg-transparent ${
+                index === 0 ? "border-l-[1px]" : ""
+              }${index === 2 ? "border-r-[1px]" : ""}${
+                index === 1 ? "border-l-[1px] border-r-[1px]" : ""
               }`}
             >
               <Image
