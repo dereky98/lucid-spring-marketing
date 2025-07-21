@@ -154,7 +154,7 @@ export default function FeatureCards() {
         </motion.div>
 
         {/* Titles and descriptions below the image grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
+        <div className="grid grid-cols-3 gap-0">
           {features.map((feature, index) => (
             <motion.div
               key={index}
@@ -162,10 +162,10 @@ export default function FeatureCards() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 + 0.3 }}
               viewport={{ once: true }}
-              className="px-4"
+              className="px-2 sm:px-3 md:px-4"
             >
-              <h3 className="text-lg text-start font-medium text-gray-900 mb-2">{feature.title}</h3>
-              <p className="text-gray-700 text-sm text-start leading-tight font-light">
+              <h3 className="text-xs sm:text-sm md:text-lg text-start font-medium text-gray-900 mb-1 sm:mb-2">{feature.title}</h3>
+              <p className="text-gray-700 text-[10px] sm:text-xs md:text-sm text-start leading-tight font-light">
                 {feature.description}
               </p>
             </motion.div>

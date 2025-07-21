@@ -193,10 +193,10 @@ export default function Hero({ isVisible, fadeIn }: HeroProps) {
             A second brain for private market investors
           </h3>
 
-          <div className="flex flex-col gap-3 sm:gap-4">
+          <div className="flex flex-row items-center gap-3 sm:gap-4">
             <button
               onClick={() => setIsModalOpen(true)}
-              className="bg-white text-gray-900 px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-full font-medium hover:bg-white/90 transition-all shadow-lg text-sm sm:text-base"
+              className="bg-white text-gray-900 px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 rounded-full font-medium hover:bg-white/90 transition-all shadow-lg text-xs sm:text-sm whitespace-nowrap"
             >
               Request a demo
             </button>
