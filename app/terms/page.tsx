@@ -312,29 +312,23 @@ const TermsOfService: React.FC = () => {
             <section className="mb-8">
               <p className="text-gray-300">
                 To view this agreement online, visit:{" "}
-                <a
-                  href="https://www.lucidspring.com/terms"
-                  className="text-blue-400 hover:text-blue-300"
-                >
-                  https://www.lucidspring.com/terms
+                <a href="https://www.palace.so/terms" className="text-blue-400 hover:text-blue-300">
+                  https://www.palace.so/terms
                 </a>
               </p>
               <p className="text-gray-300">
                 To view our privacy practices, visit:{" "}
                 <a
-                  href="https://www.lucidspring.com/privacy"
+                  href="https://www.palace.so/privacy"
                   className="text-blue-400 hover:text-blue-300"
                 >
-                  https://www.lucidspring.com/privacy
+                  https://www.palace.so/privacy
                 </a>
               </p>
               <p className="text-gray-300">
                 For all inquiries, contact:{" "}
-                <a
-                  href="mailto:leeds@lucidspring.com"
-                  className="text-blue-400 hover:text-blue-300"
-                >
-                  leeds@lucidspring.com
+                <a href="mailto:support@palace.so" className="text-blue-400 hover:text-blue-300">
+                  support@palace.so
                 </a>
               </p>
             </section>

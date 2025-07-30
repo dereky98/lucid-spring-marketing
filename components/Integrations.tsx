@@ -49,7 +49,7 @@ export default function Integrations() {
   return (
     <section className="relative pt-24 px-8 bg-[#EFF1F2]">
       <div className="max-w-4xl mx-auto w-full">
-        <div className="flex flex-row gap-4 sm:gap-6 md:gap-8 items-start">
+        <div className="flex flex-row gap-4 sm:gap-6 md:gap-8 items-center">
           {/* Dashboard image on the left - 50% */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -73,7 +73,7 @@ export default function Integrations() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="w-1/2 flex flex-col pt-0 sm:pt-4 md:pt-8"
+            className="w-1/2 flex flex-col justify-center"
           >
             <h2 className="text-lg sm:text-xl md:text-2xl font-medium text-gray-900 mb-2 sm:mb-4 leading-tight">
               Integrations
