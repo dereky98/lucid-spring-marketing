@@ -3,9 +3,9 @@
 export default function Footer() {
   return (
     <footer className="py-8 bg-white border-t border-gray-200">
-      <div className="mx-auto px-[10%] flex justify-between items-center">
+      <div className="mx-auto px-[10%] flex flex-col-reverse items-center gap-4 sm:flex-row sm:justify-between sm:items-center">
         {/* Social icons on the left */}
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-6 justify-center">
           {/* LinkedIn */}
           <a
             href="https://www.linkedin.com/company/trypalace/"
@@ -46,8 +46,9 @@ export default function Footer() {
         </div>
 
         {/* Copyright text on the right */}
-        <div className="text-sm text-gray-500">
-          Copyright 2025 Lucid Spring Inc. All Rights Reserved.
+        <div className="text-xs leading-5 text-gray-500 text-center sm:text-right">
+          <div>Copyright 2025 Lucid Spring Inc.</div>
+          <div>All Rights Reserved.</div>
         </div>
       </div>
     </footer>
