@@ -3,6 +3,7 @@
 import BuiltForScale from "@/components/BuiltForScale";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
+import Integrations from "@/components/Integrations";
 import Navbar from "@/components/Navbar";
 import PortfolioAnalysis from "@/components/PortfolioAnalysis";
 import SimplifiedReporting from "@/components/SimplifiedReporting";
@@ -34,6 +35,7 @@ export default function ClientHome() {
       <PortfolioAnalysis />
       <SimplifiedReporting />
       <TeamInSync />
+      <Integrations />
       <BuiltForScale />
       <Footer />
     </div>

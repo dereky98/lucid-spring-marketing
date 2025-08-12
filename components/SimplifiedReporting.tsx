@@ -45,21 +45,21 @@ export default function SimplifiedReporting() {
               <span className="flex h-7 items-center">→</span>
               <p className="leading-7">
                 <span className="font-semibold">Automate reminders:</span> proactively request
-                portcos for required reporting
+                portcos for required reporting.
               </p>
             </li>
             <li className="flex items-start gap-3">
               <span className="flex h-7 items-center">→</span>
               <p className="leading-7">
-                <span className="font-semibold">Normalize data:</span> automatically extract data
-                into the views your team wants
+                <span className="font-semibold">In the loop:</span> Dashboards are updated via live
+                integrations, allowing you real-time insight into data.
               </p>
             </li>
             <li className="flex items-start gap-3">
               <span className="flex h-7 items-center">→</span>
               <p className="leading-7">
-                <span className="font-semibold">Fully customizable:</span> solutions tailored to
-                your firm’s needs
+                <span className="font-semibold">Fully customizable:</span> Use templated solutions
+                or build bepoke dashboards per company.
               </p>
             </li>
           </ul>

@@ -22,22 +22,15 @@ export default function TeamInSync() {
             <li className="flex items-start gap-3">
               <span className="flex h-7 items-center">→</span>
               <p className="leading-7">
-                <span className="font-semibold">Admin tool sync:</span> automatically track emails
-                and meetings
+                <span className="font-semibold">Personas:</span> Assign and manage user personas and
+                role-based permissions (portfolio company, investment team, finance, IR).
               </p>
             </li>
             <li className="flex items-start gap-3">
               <span className="flex h-7 items-center">→</span>
               <p className="leading-7">
-                <span className="font-semibold">Store anything:</span> Easily search any documents
-                from CIMs to diligence memos
-              </p>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="flex h-7 items-center">→</span>
-              <p className="leading-7">
-                <span className="font-semibold">Tailored notifications:</span> set notifications for
-                exactly what you want to see
+                <span className="font-semibold">Workflows:</span> Establish reminders,
+                responsibilities, and approvals to streamling reporting and analysis.
               </p>
             </li>
           </ul>
