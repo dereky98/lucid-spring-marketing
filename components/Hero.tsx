@@ -44,7 +44,7 @@ export default function Hero() {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Enter your email to see an example"
+            placeholder="john.doe@fund.com"
             className="flex-1 min-w-0 bg-transparent text-sm text-[#272727] placeholder:text-[#272727]/60 focus:outline-none"
             onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
           />
