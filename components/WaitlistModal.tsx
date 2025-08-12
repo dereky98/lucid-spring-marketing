@@ -15,7 +15,8 @@ import { useToast } from "@/hooks/use-toast";
 import { addToWaitlist } from "@/lib/supabase";
 import { cn } from "@/lib/utils";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
-import { CheckCircle2, X } from "lucide-react";
+import { X } from "lucide-react";
+import Script from "next/script";
 import * as React from "react";
 import { useEffect, useState } from "react";
 
@@ -49,7 +50,7 @@ const CustomDialogContent = React.forwardRef<
 CustomDialogContent.displayName = DialogPrimitive.Content.displayName;
 
 export default function WaitlistModal() {
-  const { isModalOpen, closeModal, prefillEmail } = useWaitlist();
+  const { isModalOpen, closeModal, prefillEmail, autoSubmit } = useWaitlist();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -62,6 +63,31 @@ export default function WaitlistModal() {
       setEmail(prefillEmail);
     }
   }, [prefillEmail]);
+
+  // Ensure success view is shown immediately when auto-submitting
+  useEffect(() => {
+    if (isModalOpen && autoSubmit && prefillEmail) {
+      setIsSuccess(true);
+    }
+  }, [isModalOpen, autoSubmit, prefillEmail]);
+
+  // Auto-submit when requested
+  useEffect(() => {
+    if (isModalOpen && autoSubmit && prefillEmail) {
+      // Submit without requiring name
+      (async () => {
+        setIsSubmitting(true);
+        try {
+          await addToWaitlist(prefillEmail, "");
+          setIsSuccess(true);
+        } catch (error) {
+          console.error("Error auto-joining waitlist:", error);
+        } finally {
+          setIsSubmitting(false);
+        }
+      })();
+    }
+  }, [isModalOpen, autoSubmit, prefillEmail]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -110,10 +136,19 @@ export default function WaitlistModal() {
   return (
     <Dialog open={isModalOpen} onOpenChange={handleOpenChange}>
       <CustomDialogContent>
+        {/* Animation player for .lottie files */}
+        <Script
+          src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"
+          strategy="afterInteractive"
+        />
         {isSuccess ? (
           <div className="flex flex-col items-center text-center py-6">
             <div className="mb-4 animate-fadeIn">
-              <CheckCircle2 className="h-16 w-16 text-green-500" />
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: `<dotlottie-player autoplay src="/Checkmark%20and%20burst.lottie" style="width:96px;height:96px"></dotlottie-player>`,
+                }}
+              />
             </div>
             <DialogTitle className="text-2xl font-semibold text-[#272727]">
               You’re on the waitlist

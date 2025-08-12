@@ -9,7 +9,9 @@ export default function Hero() {
   const [email, setEmail] = useState("");
 
   const handleSubmit = () => {
-    openModal(email);
+    openModal(email, true);
+    // Clear the input immediately so when the modal closes it's reset
+    setEmail("");
   };
 
   return (
