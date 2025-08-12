@@ -1,0 +1,57 @@
+"use client";
+
+import Image from "next/image";
+
+export default function PortfolioAnalysis() {
+  return (
+    <section className="relative z-0 w-full bg-white pt-36 sm:pt-44 md:pt-52">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-6 py-20 sm:py-24 md:grid-cols-2 md:gap-14">
+        {/* Left copy */}
+        <div>
+          <h2 className="font-playfair text-3xl leading-snug text-[#272727] sm:text-4xl">
+            Portfolio Analysis
+          </h2>
+          <div className="mt-6 h-px w-72 bg-black/20" />
+          <ul className="mt-6 space-y-6 text-sm text-[#272727]/85 sm:text-base">
+            <li className="flex items-start gap-3">
+              <span className="flex h-7 items-center">→</span>
+              <p className="leading-7">
+                <span className="font-semibold">Flexible:</span> Pull key metrics from any format
+                (CSV, Microsoft Office, PDF, etc)
+              </p>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="flex h-7 items-center">→</span>
+              <p className="leading-7">
+                <span className="font-semibold">Exportable:</span> Export to excel for deeper
+                analysis
+              </p>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="flex h-7 items-center">→</span>
+              <p className="leading-7">
+                <span className="font-semibold">Always-on:</span> Be the first to know when a number
+                shifts or a risk appears
+              </p>
+            </li>
+          </ul>
+        </div>
+
+        {/* Right visual */}
+        <div className="relative">
+          <div className="absolute inset-0 -z-10 rounded-3xl" />
+          <div className="rounded-3xl p-2">
+            <Image
+              src="/screen-faster.png"
+              alt="Portfolio Analysis mock"
+              width={780}
+              height={620}
+              className="h-auto w-full rounded-2xl"
+              priority
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

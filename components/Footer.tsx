@@ -2,7 +2,7 @@
 
 export default function Footer() {
   return (
-    <footer className="py-8 bg-[#EFF1F2] border-t border-gray-200">
+    <footer className="py-8 bg-white border-t border-gray-200">
       <div className="mx-auto px-[10%] flex justify-between items-center">
         {/* Social icons on the left */}
         <div className="flex items-center gap-6">

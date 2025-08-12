@@ -15,7 +15,7 @@ import { useToast } from "@/hooks/use-toast";
 import { addToWaitlist } from "@/lib/supabase";
 import { cn } from "@/lib/utils";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
-import { X } from "lucide-react";
+import { CheckCircle2, X } from "lucide-react";
 import * as React from "react";
 import { useEffect, useState } from "react";
 
@@ -26,21 +26,21 @@ const CustomDialogContent = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <DialogPortal>
     <DialogOverlay
-      className="fixed inset-0 z-50 bg-black/80 animate-fadeIn"
-      style={{ animationDuration: "500ms" }}
+      className="fixed inset-0 z-50 bg-black/40 animate-fadeIn"
+      style={{ animationDuration: "300ms" }}
     />
     <DialogPrimitive.Content
       ref={ref}
       className={cn(
-        "fixed left-1/2 top-1/2 z-50 grid w-full max-w-2xl -translate-x-1/2 -translate-y-1/2 gap-4 border bg-[#0A0C1B] border-gray-800 p-8 shadow-lg sm:rounded-lg animate-fadeIn",
+        "fixed left-1/2 top-1/2 z-50 grid w-full max-w-xl -translate-x-1/2 -translate-y-1/2 gap-4 border bg-white border-gray-200 p-8 shadow-xl sm:rounded-xl animate-fadeIn",
         className
       )}
-      style={{ animationDuration: "500ms" }}
+      style={{ animationDuration: "300ms" }}
       {...props}
     >
       {children}
-      <DialogPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
-        <X className="h-4 w-4 text-white" />
+      <DialogPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none">
+        <X className="h-4 w-4 text-gray-500" />
         <span className="sr-only">Close</span>
       </DialogPrimitive.Close>
     </DialogPrimitive.Content>
@@ -54,6 +54,7 @@ export default function WaitlistModal() {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  const [isSuccess, setIsSuccess] = useState(false);
 
   // Update email when prefillEmail changes
   useEffect(() => {
@@ -80,16 +81,10 @@ export default function WaitlistModal() {
     try {
       await addToWaitlist(email, name);
 
-      toast({
-        title: "Success!",
-        description: "You have successfully joined the Palace waitlist.",
-        variant: "success",
-      });
-
-      // Reset form and close modal
-      setName("");
-      setEmail("");
-      closeModal();
+      // Show success state inside the modal
+      setIsSuccess(true);
+      setIsSubmitting(false);
+      return;
     } catch (error) {
       console.error("Error adding to waitlist:", error);
 
@@ -103,53 +98,89 @@ export default function WaitlistModal() {
     }
   };
 
+  const handleOpenChange = (open: boolean) => {
+    if (!open) {
+      setIsSuccess(false);
+      setName("");
+      setEmail("");
+      closeModal();
+    }
+  };
+
   return (
-    <Dialog open={isModalOpen} onOpenChange={(open) => !open && closeModal()}>
+    <Dialog open={isModalOpen} onOpenChange={handleOpenChange}>
       <CustomDialogContent>
-        <DialogHeader className="mb-4">
-          <DialogTitle className="text-xl text-white">Join our waitlist</DialogTitle>
-          <DialogDescription className="text-gray-400 text-base">
-            Get early access to Palace&apos;s private market research platform.
-          </DialogDescription>
-        </DialogHeader>
-        <form onSubmit={handleSubmit} className="space-y-5 pt-4">
-          <div className="space-y-2">
-            <label htmlFor="name" className="text-sm font-medium text-gray-300">
-              Name
-            </label>
-            <input
-              id="name"
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="w-full rounded-md border border-gray-700 bg-gray-800/50 px-4 py-3 text-white placeholder-gray-500 focus:border-purple-500/60 focus:outline-none"
-              placeholder="Enter your name"
-            />
+        {isSuccess ? (
+          <div className="flex flex-col items-center text-center py-6">
+            <div className="mb-4 animate-fadeIn">
+              <CheckCircle2 className="h-16 w-16 text-green-500" />
+            </div>
+            <DialogTitle className="text-2xl font-semibold text-[#272727]">
+              You’re on the waitlist
+            </DialogTitle>
+            <DialogDescription className="mt-2 text-gray-600">
+              Thanks for joining. We’ll reach out with next steps shortly.
+            </DialogDescription>
+            <div className="mt-6 w-full">
+              <Button
+                type="button"
+                onClick={() => handleOpenChange(false)}
+                className="w-full bg-[#272727] text-white text-lg py-3 h-auto hover:bg-[#3a3a3a] transition-colors duration-200 rounded-full"
+              >
+                Close
+              </Button>
+            </div>
           </div>
-          <div className="space-y-2">
-            <label htmlFor="email" className="text-sm font-medium text-gray-300">
-              Email *
-            </label>
-            <input
-              id="email"
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full rounded-md border border-gray-700 bg-gray-800/50 px-4 py-3 text-white placeholder-gray-500 focus:border-purple-500/60 focus:outline-none"
-              placeholder="Enter your email"
-              required
-            />
-          </div>
-          <DialogFooter className="mt-8">
-            <Button
-              type="submit"
-              className="w-full bg-[#4A1D96] text-white text-lg py-3 h-auto hover:bg-[#6029b8] transition-colors duration-300 rounded-full"
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? "Joining..." : "Join Waitlist"}
-            </Button>
-          </DialogFooter>
-        </form>
+        ) : (
+          <>
+            <DialogHeader className="mb-4">
+              <DialogTitle className="text-2xl font-semibold text-[#272727]">
+                Join our waitlist
+              </DialogTitle>
+              <DialogDescription className="text-gray-600 text-base">
+                Get early access to Palace&apos;s private market research platform.
+              </DialogDescription>
+            </DialogHeader>
+            <form onSubmit={handleSubmit} className="space-y-5 pt-4">
+              <div className="space-y-2">
+                <label htmlFor="name" className="text-sm font-medium text-gray-700">
+                  Name
+                </label>
+                <input
+                  id="name"
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="w-full rounded-md border border-gray-200 bg-white px-4 py-3 text-[#272727] placeholder-gray-400 focus:border-gray-400 focus:outline-none"
+                  placeholder="Enter your name"
+                />
+              </div>
+              <div className="space-y-2">
+                <label htmlFor="email" className="text-sm font-medium text-gray-700">
+                  Email *
+                </label>
+                <input
+                  id="email"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full rounded-md border border-gray-200 bg-white px-4 py-3 text-[#272727] placeholder-gray-400 focus:border-gray-400 focus:outline-none"
+                  placeholder="Enter your email"
+                  required
+                />
+              </div>
+              <DialogFooter className="mt-8">
+                <Button
+                  type="submit"
+                  className="w-full bg-[#272727] text-white text-lg py-3 h-auto hover:bg-[#3a3a3a] transition-colors duration-200 rounded-full"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Joining..." : "Join Waitlist"}
+                </Button>
+              </DialogFooter>
+            </form>
+          </>
+        )}
       </CustomDialogContent>
     </Dialog>
   );

@@ -59,7 +59,7 @@ const securityBadges = [
 
 export default function BuiltForScale() {
   return (
-    <section id="security" className="relative py-32 px-8 bg-[#EFF1F2]">
+    <section id="security" className="relative py-32 px-8 bg-white">
       <div className="max-w-5xl mx-auto w-full">
         <div className="flex flex-row gap-4 sm:gap-6 md:gap-8 lg:gap-16 items-center">
           {/* Text content on the left - 50% */}

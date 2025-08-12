@@ -1,13 +1,12 @@
 "use client";
 
 import BuiltForScale from "@/components/BuiltForScale";
-import DesignedToScale from "@/components/DesignedToScale";
-import FeatureCards from "@/components/FeatureCards";
 import Footer from "@/components/Footer";
-import FundMemory from "@/components/FundMemory";
 import Hero from "@/components/Hero";
-import Integrations from "@/components/Integrations";
 import Navbar from "@/components/Navbar";
+import PortfolioAnalysis from "@/components/PortfolioAnalysis";
+import SimplifiedReporting from "@/components/SimplifiedReporting";
+import TeamInSync from "@/components/TeamInSync";
 import { useEffect, useState } from "react";
 
 export default function ClientHome() {
@@ -29,11 +28,12 @@ export default function ClientHome() {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <Hero isVisible={isVisible} fadeIn={fadeIn} />
-      <FundMemory />
-      <FeatureCards />
-      <DesignedToScale />
-      <Integrations />
+
+      {/* New hero includes the dashboard image and background */}
+      <Hero />
+      <PortfolioAnalysis />
+      <SimplifiedReporting />
+      <TeamInSync />
       <BuiltForScale />
       <Footer />
     </div>
