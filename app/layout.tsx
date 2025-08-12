@@ -32,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${playfair.variable}`}>
+      <body className={`${inter.className} ${playfair.variable} font-light`}>
         <WaitlistProvider>
           {children}
           <WaitlistModal />

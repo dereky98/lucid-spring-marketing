@@ -44,7 +44,7 @@ export default function SimplifiedReporting() {
             <li className="flex items-start gap-3">
               <span className="flex h-7 items-center">→</span>
               <p className="leading-7">
-                <span className="font-semibold">Automate reminders:</span> proactively request
+                <span className="font-semibold">Automate reminders:</span> Proactively request
                 portcos for required reporting.
               </p>
             </li>
