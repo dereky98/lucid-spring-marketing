@@ -13,7 +13,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative w-full overflow-visible min-h-screen">
+    <section className="relative w-full overflow-visible min-h-svh">
       {/* Single clouds background that spans full width */}
       <Image
         src="/hero-background.png"
@@ -26,11 +26,14 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center px-6 pt-36 pb-12 text-center sm:pt-44 md:pt-48">
         <h1 className="font-playfair text-4xl leading-tight text-[#272727] sm:text-5xl md:text-6xl">
-          Qualify better deals, <span className="italic">faster</span>
+          <span className="font-thin">Your fund’s</span>{" "}
+          <span className="font-semibold">second brain</span>
         </h1>
         <p className="mt-4 max-w-3xl text-sm text-[#272727]/80 sm:text-base">
-          A deal origination platform purpose-built for private markets investing. Deal
-          intelligence, Relationship intelligence, Market intelligence.
+          One platform for investment monitoring and reporting.
+        </p>
+        <p className="mt-1 max-w-3xl text-sm text-[#272727]/80 sm:text-base">
+          Real-time analysis of your portfolio company data, fund reports, and connected systems.
         </p>
 
         {/* CTA input pill */}
@@ -39,7 +42,7 @@ export default function Hero() {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="See an example workspace"
+            placeholder="Enter your email to see an example"
             className="flex-1 min-w-0 bg-transparent text-sm text-[#272727] placeholder:text-[#272727]/60 focus:outline-none"
             onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
           />
@@ -53,7 +56,7 @@ export default function Hero() {
       </div>
 
       {/* Dashboard mock with callouts; spill into next section */}
-      <div className="relative z-10 mx-auto -mb-20 mt-6 flex max-w-5xl justify-center px-6 sm:mt-8 sm:-mb-24 md:mt-10 md:-mb-32 lg:-mb-40">
+      <div className="relative z-10 mx-auto -mb-24 mt-6 flex max-w-5xl justify-center px-6 sm:mt-8 md:mt-10">
         <div className="relative w-full">
           <Image
             src="/hero-dashboard.png"

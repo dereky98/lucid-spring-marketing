@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function PortfolioAnalysis() {
@@ -7,7 +8,12 @@ export default function PortfolioAnalysis() {
     <section className="relative z-0 w-full bg-white pt-36 sm:pt-44 md:pt-52">
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-6 py-20 sm:py-24 md:grid-cols-2 md:gap-14">
         {/* Left copy */}
-        <div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <h2 className="font-playfair text-3xl leading-snug text-[#272727] sm:text-4xl">
             Portfolio Analysis
           </h2>
@@ -35,14 +41,20 @@ export default function PortfolioAnalysis() {
               </p>
             </li>
           </ul>
-        </div>
+        </motion.div>
 
         {/* Right visual */}
-        <div className="relative">
+        <motion.div
+          className="relative"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <div className="absolute inset-0 -z-10 rounded-3xl" />
           <div className="rounded-3xl p-2">
             <Image
-              src="/screen-faster.png"
+              src="/portfolio-analysis.png"
               alt="Portfolio Analysis mock"
               width={780}
               height={620}
@@ -50,7 +62,7 @@ export default function PortfolioAnalysis() {
               priority
             />
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

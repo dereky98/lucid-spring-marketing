@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function SimplifiedReporting() {
@@ -7,7 +8,13 @@ export default function SimplifiedReporting() {
     <section className="relative w-full bg-white">
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-6 py-20 sm:py-24 md:grid-cols-2 md:gap-14">
         {/* Left visual */}
-        <div className="relative order-2 md:order-1">
+        <motion.div
+          className="relative order-2 md:order-1"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <div className="absolute inset-0 -z-10 rounded-2xl" />
           <div className="rounded-3xl p-2">
             <Image
@@ -19,10 +26,16 @@ export default function SimplifiedReporting() {
               priority
             />
           </div>
-        </div>
+        </motion.div>
 
         {/* Right copy */}
-        <div className="order-1 md:order-2">
+        <motion.div
+          className="order-1 md:order-2"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <h2 className="font-playfair text-3xl leading-snug text-[#272727] sm:text-4xl">
             Simplified Reporting
           </h2>
@@ -50,7 +63,7 @@ export default function SimplifiedReporting() {
               </p>
             </li>
           </ul>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

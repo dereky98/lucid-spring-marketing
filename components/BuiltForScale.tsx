@@ -64,10 +64,10 @@ export default function BuiltForScale() {
         <div className="flex flex-row gap-4 sm:gap-6 md:gap-8 lg:gap-16 items-center">
           {/* Text content on the left - 50% */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true, amount: 0.2 }}
             className="w-1/2"
           >
             <h2 className="text-lg sm:text-xl md:text-2xl font-medium text-gray-900 mb-1 sm:mb-2 leading-tight">
@@ -83,10 +83,10 @@ export default function BuiltForScale() {
               {features.map((feature, index) => (
                 <motion.li
                   key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.08 }}
+                  viewport={{ once: true, amount: 0.2 }}
                   className="flex items-center"
                 >
                   <span className="text-[#5361FD] mr-3 flex-shrink-0">
@@ -123,10 +123,10 @@ export default function BuiltForScale() {
 
           {/* Security badges grid on the right - 50% */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true, amount: 0.2 }}
             className="w-1/2 grid grid-cols-2 gap-4"
           >
             {securityBadges.map((badge, index) => (

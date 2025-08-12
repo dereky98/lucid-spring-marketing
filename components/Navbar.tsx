@@ -8,7 +8,7 @@ export default function Navbar() {
   const { openModal } = useWaitlist();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 px-6 sm:px-8 pt-6">
+    <header className="absolute top-0 left-0 right-0 z-50 px-6 sm:px-8 pt-6">
       <div className="mx-auto w-full max-w-lg">
         <div className="flex items-center justify-between rounded-full bg-[#D5DFE573]/60 px-4 py-2">
           {/* Brand */}
