@@ -32,7 +32,7 @@ export default function Hero() {
         lowlightColor: 0xa4d5f2,
         baseColor: 0x0099bb,
         blurFactor: 0.52,
-        speed: 1.2,
+        speed: 2.5,
         zoom: 1.5,
       });
       setVantaEffect(effect);
