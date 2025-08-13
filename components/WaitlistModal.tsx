@@ -173,7 +173,7 @@ export default function WaitlistModal() {
                 Join our waitlist
               </DialogTitle>
               <DialogDescription className="text-gray-600 text-base">
-                Get early access to Palace&apos;s private market research platform.
+                Get early access to Palace.
               </DialogDescription>
             </DialogHeader>
             <form onSubmit={handleSubmit} className="space-y-5 pt-4">
