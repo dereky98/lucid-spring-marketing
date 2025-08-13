@@ -12,6 +12,7 @@ export default function Hero() {
   const [vantaEffect, setVantaEffect] = useState<any>(null);
   const [loaded, setLoaded] = useState(0);
   const [initError, setInitError] = useState<string | null>(null);
+  const [vantaReady, setVantaReady] = useState(false);
 
   // Basic WebGL support check to avoid crashes on some mobile browsers
   function isWebGLAvailable() {
@@ -64,6 +65,13 @@ export default function Hero() {
           zoom: 1.5,
         });
         setVantaEffect(effect);
+        // Mark ready after Vanta attaches and renders at least one frame
+        requestAnimationFrame(() => {
+          // Heuristic: presence of a canvas means renderer attached
+          const hasCanvas = !!vantaRef.current?.querySelector("canvas");
+          if (hasCanvas) setVantaReady(true);
+          else setTimeout(() => setVantaReady(true), 300);
+        });
       } catch (e: any) {
         console.error("Vanta init error", e);
         setInitError(e?.message || "Vanta init error");
@@ -71,6 +79,7 @@ export default function Hero() {
     }
     return () => {
       if (vantaEffect) vantaEffect.destroy?.();
+      setVantaReady(false);
     };
   }, [loaded, vantaEffect]);
 
@@ -83,7 +92,7 @@ export default function Hero() {
         fill
         priority
         className={`object-cover object-center absolute inset-0 -z-20 transition-opacity duration-500 ${
-          vantaEffect ? "opacity-0" : "opacity-100"
+          vantaReady ? "opacity-0" : "opacity-100"
         }`}
       />
 
