@@ -23,7 +23,8 @@ export default function PortfolioAnalysis() {
               <span className="flex h-7 items-center">→</span>
               <p className="leading-7">
                 <span className="font-semibold">Flexible:</span> Pull key metrics from structured
-                (CSV, Excel, Tableau) or unstructured (board decks, monthly report packs, etc.).
+                (CSV, Excel, Tableau) or unstructured (board decks, monthly report packs, etc.)
+                data.
               </p>
             </li>
             <li className="flex items-start gap-3">
