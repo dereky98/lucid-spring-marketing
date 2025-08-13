@@ -35,7 +35,7 @@ export default function Navbar() {
             href="https://calendly.com/leedsrising/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full bg-[#282828] px-4 py-2 text-xs font-normal text-white shadow hover:bg-white/90"
+            className="rounded-full bg-[#282828] px-4 py-2 text-xs font-normal text-white shadow hover:bg-[#282828]/90"
           >
             Request a demo
           </a>
