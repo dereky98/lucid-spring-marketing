@@ -2,11 +2,15 @@
 
 import { useWaitlist } from "@/context/WaitlistContext";
 import Image from "next/image";
-import { useState } from "react";
+import Script from "next/script";
+import { useEffect, useRef, useState } from "react";
 
 export default function Hero() {
   const { openModal } = useWaitlist();
   const [email, setEmail] = useState("");
+  const vantaRef = useRef<HTMLDivElement | null>(null);
+  const [vantaEffect, setVantaEffect] = useState<any>(null);
+  const [loaded, setLoaded] = useState(0);
 
   const handleSubmit = () => {
     openModal(email, true);
@@ -14,15 +18,52 @@ export default function Hero() {
     setEmail("");
   };
 
+  useEffect(() => {
+    if (!vantaEffect && loaded >= 2 && vantaRef.current && (window as any).VANTA?.FOG) {
+      const effect = (window as any).VANTA.FOG({
+        el: vantaRef.current,
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.0,
+        minWidth: 200.0,
+        highlightColor: 0x5dafe8,
+        midtoneColor: 0xb6dcb8,
+        lowlightColor: 0xa4d5f2,
+        baseColor: 0x0099bb,
+        blurFactor: 0.52,
+        speed: 1.2,
+        zoom: 1.5,
+      });
+      setVantaEffect(effect);
+    }
+    return () => {
+      if (vantaEffect) vantaEffect.destroy?.();
+    };
+  }, [loaded, vantaEffect]);
+
   return (
     <section className="relative w-full overflow-visible min-h-svh">
-      {/* Single clouds background that spans full width */}
-      <Image
-        src="/hero-background.png"
-        alt="Sky background"
-        fill
-        priority
-        className="object-cover object-center"
+      {/* Vanta.js animated background */}
+      <div ref={vantaRef} className="absolute inset-0 -z-10" />
+      <Script
+        src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"
+        strategy="afterInteractive"
+        onLoad={() => setLoaded((c) => c + 1)}
+      />
+      <Script
+        src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"
+        strategy="afterInteractive"
+        onLoad={() => setLoaded((c) => c + 1)}
+      />
+
+      {/* Fade overlay to pure white at ~40% */}
+      <div
+        className="absolute inset-0 z-0 pointer-events-none"
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0.3) 60%, rgba(255,255,255,0.2) 100%)",
+        }}
       />
 
       {/* Content */}
