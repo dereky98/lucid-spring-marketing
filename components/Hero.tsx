@@ -11,6 +11,20 @@ export default function Hero() {
   const vantaRef = useRef<HTMLDivElement | null>(null);
   const [vantaEffect, setVantaEffect] = useState<any>(null);
   const [loaded, setLoaded] = useState(0);
+  const [initError, setInitError] = useState<string | null>(null);
+
+  // Basic WebGL support check to avoid crashes on some mobile browsers
+  function isWebGLAvailable() {
+    try {
+      const canvas = document.createElement("canvas");
+      return !!(
+        (canvas.getContext("webgl") || canvas.getContext("experimental-webgl")) &&
+        typeof (window as any).WebGLRenderingContext !== "undefined"
+      );
+    } catch {
+      return false;
+    }
+  }
 
   const handleSubmit = () => {
     openModal(email, true);
@@ -19,23 +33,41 @@ export default function Hero() {
   };
 
   useEffect(() => {
-    if (!vantaEffect && loaded >= 2 && vantaRef.current && (window as any).VANTA?.FOG) {
-      const effect = (window as any).VANTA.FOG({
-        el: vantaRef.current,
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: false,
-        minHeight: 200.0,
-        minWidth: 200.0,
-        highlightColor: 0x5dafe8,
-        midtoneColor: 0xb6dcb8,
-        lowlightColor: 0xa4d5f2,
-        baseColor: 0x0099bb,
-        blurFactor: 0.52,
-        speed: 2.5,
-        zoom: 1.5,
-      });
-      setVantaEffect(effect);
+    // Skip on reduced motion or if WebGL not available
+    const prefersReducedMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (
+      !vantaEffect &&
+      loaded >= 2 &&
+      vantaRef.current &&
+      (window as any).VANTA?.FOG &&
+      !prefersReducedMotion &&
+      isWebGLAvailable()
+    ) {
+      try {
+        const effect = (window as any).VANTA.FOG({
+          el: vantaRef.current,
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.0,
+          minWidth: 200.0,
+          highlightColor: 0x5dafe8,
+          midtoneColor: 0xb6dcb8,
+          lowlightColor: 0xa4d5f2,
+          baseColor: 0x0099bb,
+          blurFactor: 0.52,
+          speed: 2.5,
+          zoom: 1.5,
+        });
+        setVantaEffect(effect);
+      } catch (e: any) {
+        console.error("Vanta init error", e);
+        setInitError(e?.message || "Vanta init error");
+      }
     }
     return () => {
       if (vantaEffect) vantaEffect.destroy?.();
@@ -44,8 +76,27 @@ export default function Hero() {
 
   return (
     <section className="relative w-full overflow-visible min-h-svh">
+      {/* Static fallback background (visible until Vanta attaches or on failure) */}
+      <Image
+        src="/hero-background.png"
+        alt="Background"
+        fill
+        priority
+        className={`object-cover object-center absolute inset-0 -z-20 transition-opacity duration-500 ${
+          vantaEffect ? "opacity-0" : "opacity-100"
+        }`}
+      />
+
       {/* Vanta.js animated background */}
-      <div ref={vantaRef} className="absolute inset-0 -z-10" />
+      <div
+        ref={vantaRef}
+        className="absolute inset-0 -z-10"
+        style={
+          initError
+            ? { background: "linear-gradient(180deg, #ffffff 0%, #ffffff 40%, #eaf4fb 100%)" }
+            : undefined
+        }
+      />
       <Script
         src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"
         strategy="afterInteractive"
