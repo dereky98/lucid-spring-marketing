@@ -1,5 +1,6 @@
 "use client";
 
+import BottomCTA from "@/components/BottomCTA";
 import BuiltForScale from "@/components/BuiltForScale";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
@@ -37,6 +38,7 @@ export default function ClientHome() {
       <TeamInSync />
       <Integrations />
       <BuiltForScale />
+      <BottomCTA />
       <Footer />
     </div>
   );

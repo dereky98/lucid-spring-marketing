@@ -2,8 +2,8 @@
 
 export default function Footer() {
   return (
-    <footer className="py-8 bg-white border-t border-gray-200">
-      <div className="mx-auto px-[10%] flex flex-col-reverse items-center gap-4 sm:flex-row sm:justify-between sm:items-center">
+    <footer className="py-10 bg-[#272727]">
+      <div className="mx-auto px-[2%] flex flex-col-reverse items-center gap-6 sm:flex-row sm:justify-between sm:items-center">
         {/* Social icons on the left */}
         <div className="flex items-center gap-6 justify-center">
           {/* LinkedIn */}
@@ -11,7 +11,7 @@ export default function Footer() {
             href="https://www.linkedin.com/company/trypalace/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-600 hover:text-gray-900 transition-colors"
+            className="text-white/70 hover:text-white transition-colors"
             aria-label="LinkedIn"
           >
             <svg
@@ -30,7 +30,7 @@ export default function Footer() {
             href="https://x.com/usepalace"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-600 hover:text-gray-900 transition-colors"
+            className="text-white/70 hover:text-white transition-colors"
             aria-label="X (Twitter)"
           >
             <svg
@@ -46,9 +46,8 @@ export default function Footer() {
         </div>
 
         {/* Copyright text on the right */}
-        <div className="text-xs leading-5 text-gray-500 text-center sm:text-right">
-          <div>Copyright 2025 Lucid Spring Inc.</div>
-          <div>All Rights Reserved.</div>
+        <div className="text-xs leading-5 text-white/60 text-center sm:text-right">
+          <div>© 2025 Lucid Spring Inc. All rights reserved.</div>
         </div>
       </div>
     </footer>
