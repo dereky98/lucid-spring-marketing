@@ -178,19 +178,6 @@ export default function WaitlistModal() {
             </DialogHeader>
             <form onSubmit={handleSubmit} className="space-y-5 pt-4">
               <div className="space-y-2">
-                <label htmlFor="name" className="text-sm font-medium text-gray-700">
-                  Name
-                </label>
-                <input
-                  id="name"
-                  type="text"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  className="w-full rounded-md border border-gray-200 bg-white px-4 py-3 text-[#272727] placeholder-gray-400 focus:border-gray-400 focus:outline-none"
-                  placeholder="Enter your name"
-                />
-              </div>
-              <div className="space-y-2">
                 <label htmlFor="email" className="text-sm font-medium text-gray-700">
                   Email *
                 </label>
