@@ -128,3 +128,22 @@
     font-family: var(--font-playfair), serif !important;
   }
 }
+
+/* Calendly popup: center and fit within viewport */
+.calendly-overlay .calendly-popup {
+  max-width: min(96vw, 1000px) !important;
+  max-height: 100vh !important; /* allow full viewport height */
+  width: auto !important;
+}
+.calendly-overlay .calendly-popup-content {
+  display: flex !important;
+  flex-direction: column !important;
+  max-height: inherit !important; /* inherit 100dvh cap from parent */
+  overflow: auto !important; /* scroll inside the modal when needed */
+}
+.calendly-overlay .calendly-popup-iframe,
+.calendly-overlay iframe {
+  flex: 1 1 auto !important;
+  height: auto !important;
+  max-height: 100% !important;
+}

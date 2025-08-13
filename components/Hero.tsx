@@ -140,7 +140,7 @@ export default function Hero() {
         </p>
 
         {/* YC badge */}
-        <div className="mt-6 flex items-center justify-center">
+        <div className="mt-6 flex items-center justify-center mb-4">
           <div className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-black bg-white/20">
             <span className="text-xs sm:text-sm">Backed by</span>
             <Image
@@ -153,29 +153,11 @@ export default function Hero() {
             <span className="text-xs sm:text-sm font-normal">Combinator</span>
           </div>
         </div>
-
-        {/* CTA input pill */}
-        <div className="mt-8 flex w-full max-w-lg items-center justify-between rounded-full bg-white/70 p-2 pl-4 shadow-sm backdrop-blur md:mt-10 border-white border-3">
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="john.doe@fund.com"
-            className="flex-1 min-w-0 bg-transparent text-sm text-[#272727] placeholder:text-[#272727]/60 focus:outline-none"
-            onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
-          />
-          <button
-            onClick={handleSubmit}
-            className="shrink-0 whitespace-nowrap rounded-full bg-[#7B7B7B] px-5 py-2 text-xs font-normal text-white transition-colors hover:bg-[#7B7B7B]/80"
-          >
-            Sign Up
-          </button>
-        </div>
       </div>
 
       {/* Dashboard mock with callouts; spill into next section */}
       <div className="relative z-10 mx-auto -mb-24 mt-6 flex max-w-5xl justify-center px-6 sm:mt-8 md:mt-10">
-        <div className="relative w-full">
+        <div className="relative w-full translate-x-6 sm:translate-x-4 md:translate-x-6">
           <Image
             src="/hero-dashboard.png"
             alt="Palace dashboard"
