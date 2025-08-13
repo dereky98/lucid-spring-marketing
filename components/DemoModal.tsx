@@ -1,7 +1,5 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
 import {
   Select,
   SelectContent,
@@ -9,6 +7,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
 
 interface DemoModalProps {
   isOpen: boolean;

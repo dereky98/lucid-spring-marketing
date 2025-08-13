@@ -140,7 +140,7 @@ export default function Hero() {
         </p>
 
         {/* YC badge */}
-        <div className="mt-6 flex items-center justify-center md:mb-4 sm:mb-1">
+        <div className="mt-6 flex items-center justify-center">
           <div className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-black bg-white/20">
             <span className="text-xs sm:text-sm">Backed by</span>
             <Image
@@ -157,7 +157,7 @@ export default function Hero() {
 
       {/* Dashboard mock with callouts; spill into next section */}
       <div className="relative z-10 mx-auto -mb-24 mt-6 flex max-w-5xl justify-center px-6 sm:mt-8 md:mt-10">
-        <div className="relative w-full translate-x-6 sm:translate-x-0 md:translate-x-6">
+        <div className="relative w-full sm:translate-x-0 md:translate-x-6">
           <Image
             src="/hero-dashboard.png"
             alt="Palace dashboard"
