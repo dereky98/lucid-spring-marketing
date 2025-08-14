@@ -32,7 +32,7 @@ export default function Navbar() {
           </Link>
 
           <a
-            href="https://calendly.com/leedsrising/30min"
+            href="https://calendly.com/d/csdc-bnm-6qb"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-full bg-[#282828] px-4 py-2 text-xs font-normal text-white shadow hover:bg-[#282828]/90"
