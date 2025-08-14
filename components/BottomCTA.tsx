@@ -8,7 +8,7 @@ export default function BottomCTA() {
         aria-hidden
         className="pointer-events-none select-none absolute left-1/2 sm:left-2 -translate-x-1/2 sm:translate-x-0 bottom-2 z-0"
       >
-        <span className="font-playfair leading-none text-white text-[16vw] sm:text-[18vw] md:text-[20vw]">
+        <span className="font-playfair leading-none text-white text-[12vw] sm:text-[14vw] md:text-[16vw]">
           Palace
         </span>
       </div>

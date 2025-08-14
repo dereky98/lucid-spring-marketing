@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function SimplifiedReporting() {
   return (
     <section className="relative w-full bg-white">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-6 py-20 sm:py-24 md:grid-cols-2 md:gap-14">
+      <div className="mx-auto grid max-w-5xl grid-cols-1 items-center gap-14 px-6 py-20 sm:py-24 md:grid-cols-2 md:gap-18">
         {/* Left visual */}
         <motion.div
           className="relative order-2 md:order-1"
@@ -39,8 +39,8 @@ export default function SimplifiedReporting() {
           <h2 className="font-playfair text-3xl leading-snug text-[#272727] sm:text-4xl">
             Simplified Reporting
           </h2>
-          <div className="mt-4 h-px w-64 bg-black/20" />
-          <ul className="mt-6 space-y-6 text-sm text-[#272727]/85 sm:text-base">
+          <div className="mt-8 w-full border-t border-[#272727]" />
+          <ul className="mt-8 space-y-6 text-sm text-[#272727]/85 sm:text-base">
             <li className="flex items-start gap-3">
               <span className="flex h-7 items-center">→</span>
               <p className="leading-7">

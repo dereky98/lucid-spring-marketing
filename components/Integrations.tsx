@@ -3,47 +3,9 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const integrationCategories = [
-  {
-    title: "Accounting & ERP",
-    icon: "/accounting-and-erp.png",
-    integrations: ["QuickBooks", "NetSuite", "Xero", "Workday"],
-  },
-  {
-    title: "HRIS & Payroll",
-    icon: "/hris-and-payroll.png",
-    integrations: ["Gusto", "Rippling", "ADP"],
-  },
-  {
-    title: "File storage",
-    icon: "/file-storage.png",
-    integrations: ["Dropbox", "Box", "Google Drive"],
-  },
-  {
-    title: "Spreadsheets",
-    icon: "/spreadsheets.png",
-    integrations: ["Excel", "Google Sheets"],
-  },
-  {
-    title: "Cap Table & Equity Management",
-    icon: "/cap-table-and-equity-management.png",
-    integrations: ["Carta", "Pulley", "LTSE Equity"],
-  },
-  {
-    title: "CRM and deal flow",
-    icon: "/crm-and-dealflow.png",
-    integrations: ["Salesforce"],
-  },
-  {
-    title: "Banking & Spend Management",
-    icon: "/banking-and-spend-management.png",
-    integrations: ["Mercury", "Ramp", "Brex"],
-  },
-];
-
 export default function Integrations() {
   return (
-    <section className="relative w-full bg-white py-24">
+    <section className="relative w-full bg-white py-24 sm:mb-24">
       <div className="mx-auto max-w-5xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -51,14 +13,31 @@ export default function Integrations() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true, amount: 0.2 }}
         >
-          <Image
-            src="/integrations-with-text.svg"
-            alt="Integrations"
-            width={1400}
-            height={1000}
-            className="h-auto w-full md:w-[85%] mx-auto"
-            priority
-          />
+          {/* Title + copy on left half, image overlaps upward */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+            <div>
+              <h2 className="font-playfair text-3xl sm:text-4xl leading-snug text-[#272727]">
+                20+ Integrations
+              </h2>
+              <div className="mt-8 h-px w-full bg-[#272727]" />
+              <p className="mt-8 text-sm text-[#272727]/85 sm:text-base">
+                Your Palace can link to a portfolio investment’s entire stack and is built to funnel
+                data into a team wide resource.
+              </p>
+            </div>
+            <div className="hidden md:block" />
+          </div>
+
+          <div className="relative mt-12 sm:-mt-4 md:-mt-8 lg:-mt-12">
+            <Image
+              src="/integrations-without-text.png"
+              alt="Integrations"
+              width={1400}
+              height={1000}
+              className="h-auto w-full"
+              priority
+            />
+          </div>
         </motion.div>
       </div>
     </section>

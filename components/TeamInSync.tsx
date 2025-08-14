@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function TeamInSync() {
   return (
     <section className="relative w-full bg-white">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-6 py-20 sm:py-24 md:grid-cols-2 md:gap-14">
+      <div className="mx-auto grid max-w-5xl grid-cols-1 items-center gap-10 px-6 py-20 sm:py-24 md:grid-cols-2 md:gap-14">
         {/* Left copy */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -17,8 +17,8 @@ export default function TeamInSync() {
           <h2 className="font-playfair text-3xl leading-snug text-[#272727] sm:text-4xl">
             Keep your team in sync
           </h2>
-          <div className="mt-6 h-px w-72 bg-black/20" />
-          <ul className="mt-6 space-y-6 text-sm text-[#272727]/85 sm:text-base">
+          <div className="mt-8 w-full border-t border-[#272727]" />
+          <ul className="mt-8 space-y-6 text-sm text-[#272727]/85 sm:text-base">
             <li className="flex items-start gap-3">
               <span className="flex h-7 items-center">→</span>
               <p className="leading-7">

@@ -14,10 +14,10 @@ const features = [
 
 export default function BuiltForScale() {
   return (
-    <section id="security" className="relative bg-[#EEEEEE] py-32 px-8">
+    <section id="security" className="relative bg-[#EEEEEE] py-32 sm:py-64 px-8">
       {/* Shadow only below the top edge */}
       <div className="pointer-events-none absolute inset-x-0 top-[1px] h-0 shadow-[0_1px_4px_1px_#0000002B]"></div>
-      <div className="max-w-5xl mx-auto w-full">
+      <div className="max-w-4xl mx-auto w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Left visual: composite security icons image */}
           <motion.div
@@ -50,10 +50,10 @@ export default function BuiltForScale() {
             <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl text-[#272727] leading-tight">
               Built for scale. Designed for trust.
             </h2>
-            <div className="mt-6 h-px w-72 bg-black/20" />
+            <div className="mt-8 w-full border-t border-[#272727]" />
 
             {/* Bullet points with icons */}
-            <ul className="mt-6 space-y-6 text-sm sm:text-base">
+            <ul className="mt-8 space-y-6 text-sm sm:text-base">
               {features.map((feature, index) => (
                 <motion.li
                   key={index}
