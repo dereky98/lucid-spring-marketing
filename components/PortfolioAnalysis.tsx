@@ -23,22 +23,22 @@ export default function PortfolioAnalysis() {
               <span className="flex h-7 items-center">→</span>
               <p className="leading-7">
                 <span className="font-semibold">Flexible:</span> Pull key metrics from structured
-                (CSV, Excel, Tableau) or unstructured (board decks, monthly report packs, etc.)
-                data.
+                files (CSV, Excel, Tableau) or unstructured formats (board decks, monthly reports,
+                PDFs).
               </p>
             </li>
             <li className="flex items-start gap-3">
               <span className="flex h-7 items-center">→</span>
               <p className="leading-7">
-                <span className="font-semibold">Exportable:</span> Export to excel for deeper
-                analysis.
+                <span className="font-semibold">Intelligent checking:</span> Automatically compare
+                new data to historical trends, flag discrepancies, and request fixes.
               </p>
             </li>
             <li className="flex items-start gap-3">
               <span className="flex h-7 items-center">→</span>
               <p className="leading-7">
-                <span className="font-semibold">Sense checking:</span> Automatically compare new
-                submissions with historical data. Highlight discrepancies and send back for edits.
+                <span className="font-semibold">Exportable:</span> One click to get data in Excel
+                for deeper financial analysis.
               </p>
             </li>
           </ul>

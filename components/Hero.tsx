@@ -86,20 +86,23 @@ export default function Hero() {
   return (
     <section className="relative w-full overflow-visible min-h-svh">
       {/* Static fallback background (visible until Vanta attaches or on failure) */}
-      <Image
-        src="/hero-background.png"
-        alt="Background"
-        fill
-        priority
-        className={`object-cover object-center absolute inset-0 -z-20 transition-opacity duration-500 ${
-          vantaReady ? "opacity-0" : "opacity-100"
-        }`}
-      />
+      <div className="absolute inset-0 -z-20 overflow-hidden pointer-events-none">
+        <Image
+          src="/hero-background.png"
+          alt="Background"
+          fill
+          sizes="100vw"
+          priority
+          className={`object-cover object-center transition-opacity duration-500 ${
+            vantaReady ? "opacity-0" : "opacity-100"
+          }`}
+        />
+      </div>
 
-      {/* Vanta.js animated background */}
+      {/* Vanta.js animated background - clipped to viewport height */}
       <div
         ref={vantaRef}
-        className="absolute inset-0 -z-10"
+        className="absolute inset-0 -z-10 overflow-hidden"
         style={
           initError
             ? { background: "linear-gradient(180deg, #ffffff 0%, #ffffff 40%, #eaf4fb 100%)" }
@@ -117,12 +120,16 @@ export default function Hero() {
         onLoad={() => setLoaded((c) => c + 1)}
       />
 
-      {/* Fade overlay to pure white at ~40% */}
+      {/* Single overlay: white top then transparent; ensure clouds end at fold */}
       <div
         className="absolute inset-0 z-0 pointer-events-none"
         style={{
           background:
-            "linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0.3) 60%, rgba(255,255,255,0.2) 100%)",
+            "linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 22%, rgba(255,255,255,0) 65%)",
+          WebkitMaskImage:
+            "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 100%, rgba(0,0,0,0) 100%)",
+          maskImage:
+            "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 100%, rgba(0,0,0,0) 100%)",
         }}
       />
 
@@ -136,7 +143,7 @@ export default function Hero() {
           One platform for investment monitoring & reporting.
         </p>
         <p className="mt-1 max-w-3xl text-sm text-[#272727]/80 sm:text-base">
-          Real-time analysis of your portfolio company data, fund reports, and connected systems.
+          Get smarter from the data you already collect.
         </p>
 
         {/* YC badge */}
@@ -156,7 +163,7 @@ export default function Hero() {
       </div>
 
       {/* Dashboard mock with callouts; spill into next section */}
-      <div className="relative z-10 mx-auto -mb-24 mt-6 flex max-w-5xl justify-center px-6 sm:mt-8 md:mt-10">
+      <div className="relative z-10 mx-auto -mb-24 mt-6 flex max-w-7xl justify-center px-6 sm:mt-8 md:mt-10">
         <div className="relative w-full sm:translate-x-0 md:translate-x-6">
           <Image
             src="/hero-dashboard.png"

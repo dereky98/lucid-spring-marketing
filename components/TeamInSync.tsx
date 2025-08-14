@@ -23,14 +23,22 @@ export default function TeamInSync() {
               <span className="flex h-7 items-center">→</span>
               <p className="leading-7">
                 <span className="font-semibold">Personas:</span> Assign and manage user personas and
-                role-based permissions (portfolio company, investment team, finance, IR).
+                role-based permissions (portfolio company, investment team, finance, investor
+                relations).
               </p>
             </li>
             <li className="flex items-start gap-3">
               <span className="flex h-7 items-center">→</span>
               <p className="leading-7">
                 <span className="font-semibold">Workflows:</span> Establish reminders,
-                responsibilities, and approvals to streamling reporting and analysis.
+                responsibilities, and approvals to streamline reporting and analysis.
+              </p>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="flex h-7 items-center">→</span>
+              <p className="leading-7">
+                <span className="font-semibold">Audit trail:</span> Track every change, submission,
+                and approval so you always know who changed what and when.
               </p>
             </li>
           </ul>

@@ -37,29 +37,30 @@ export default function SimplifiedReporting() {
           viewport={{ once: true, amount: 0.2 }}
         >
           <h2 className="font-playfair text-3xl leading-snug text-[#272727] sm:text-4xl">
-            Simplified Reporting
+            Streamlined Reporting
           </h2>
           <div className="mt-8 w-full border-t border-[#272727]" />
           <ul className="mt-8 space-y-6 text-sm text-[#272727]/85 sm:text-base">
             <li className="flex items-start gap-3">
               <span className="flex h-7 items-center">→</span>
               <p className="leading-7">
-                <span className="font-semibold">Automate reminders:</span> Proactively request
-                portcos for required reporting.
+                <span className="font-semibold">Automated reminders:</span> Automatically request
+                portcos for required reporting so nothing gets missed.
               </p>
             </li>
             <li className="flex items-start gap-3">
               <span className="flex h-7 items-center">→</span>
               <p className="leading-7">
-                <span className="font-semibold">In the loop:</span> Dashboards are updated via live
-                integrations, allowing you real-time insight into data.
+                <span className="font-semibold">Live updates:</span> Dashboards refresh instantly
+                with new reporting data and integrate with portco tools to give you deep, real-time
+                visibility.
               </p>
             </li>
             <li className="flex items-start gap-3">
               <span className="flex h-7 items-center">→</span>
               <p className="leading-7">
-                <span className="font-semibold">Fully customizable:</span> Use templated solutions
-                or build bepoke dashboards per company.
+                <span className="font-semibold">Customizable views:</span> Use templated solutions
+                or create bespoke dashboards for each company.
               </p>
             </li>
           </ul>

@@ -22,7 +22,7 @@ export default function Integrations() {
               <div className="mt-8 h-px w-full bg-[#272727]" />
               <p className="mt-8 text-sm text-[#272727]/85 sm:text-base">
                 Your Palace can link to a portfolio investment’s entire stack and is built to funnel
-                data into a team wide resource.
+                data into a team-wide resource.
               </p>
             </div>
             <div className="hidden md:block" />
