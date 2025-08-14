@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     title: "Palace — One platform for deal monitoring and reporting",
     description:
       "Investment monitoring and reporting for private markets. Real-time analysis of portfolio company data, fund reports, and connected systems.",
-    images: ["/og-image.png"],
+    images: ["https://palace.so/og-image.png"],
   },
   themeColor: "#FFFFFF",
 };
