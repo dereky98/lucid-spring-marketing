@@ -140,7 +140,7 @@ export default function Hero() {
           <span className="font-semibold">second brain</span>
         </h1>
         <p className="mt-4 max-w-3xl text-sm text-[#272727]/80 sm:text-base">
-          One platform for investment monitoring & reporting.
+          One platform for private capital allocators to monitor and report on their investments.
         </p>
         <p className="mt-1 max-w-3xl text-sm text-[#272727]/80 sm:text-base">
           Get smarter from the data you already collect.
