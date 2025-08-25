@@ -148,16 +148,16 @@ export default function Hero() {
 
         {/* YC badge */}
         <div className="mt-6 flex items-center justify-center">
-          <div className="inline-flex items-center">
-            <a
-              href="https://www.ycombinator.com/launches/OBt-palace-one-platform-for-portfolio-company-monitoring-reporting"
-              target="_blank"
-            >
-              <img
-                src="https://www.ycombinator.com/launches/OBt-palace-one-platform-for-portfolio-company-monitoring-reporting/upvote_embed.svg"
-                alt="Launch YC: Palace 🏰 One platform for portfolio company monitoring &amp; reporting"
-              />
-            </a>
+          <div className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-black bg-white/20">
+            <span className="text-xs sm:text-sm">Backed by</span>
+            <Image
+              src="/yc-logo.png"
+              alt="Y Combinator"
+              width={18}
+              height={18}
+              className="rounded-[4px]"
+            />
+            <span className="text-xs sm:text-sm font-normal">Combinator</span>
           </div>
         </div>
       </div>
